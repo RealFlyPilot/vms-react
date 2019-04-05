@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "vms-react-version-20190404234057-authRole",
+            "UnauthRoleArn": "arn:aws:iam::726906999379:role/vms-react-version-20190404234057-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::726906999379:role/vms-react-version-20190404234057-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "vms-react-version-20190404234057-deployment",
+            "UnauthRoleName": "vms-react-version-20190404234057-unauthRole",
+            "StackName": "vms-react-version-20190404234057",
+            "StackId": "arn:aws:cloudformation:us-east-1:726906999379:stack/vms-react-version-20190404234057/9f8fedb0-5754-11e9-8ed6-0efda143af08"
+        },
+        "categories": {
+            "auth": {
+                "cognitoed54410a": {}
+            }
+        }
+    }
+}
