@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTask = `subscription OnCreateTask {
-  onCreateTask {
+export const onCreateJob = `subscription OnCreateJob {
+  onCreateJob {
     id
     title
     description
@@ -10,8 +10,8 @@ export const onCreateTask = `subscription OnCreateTask {
   }
 }
 `;
-export const onUpdateTask = `subscription OnUpdateTask {
-  onUpdateTask {
+export const onUpdateJob = `subscription OnUpdateJob {
+  onUpdateJob {
     id
     title
     description
@@ -19,8 +19,8 @@ export const onUpdateTask = `subscription OnUpdateTask {
   }
 }
 `;
-export const onDeleteTask = `subscription OnDeleteTask {
-  onDeleteTask {
+export const onDeleteJob = `subscription OnDeleteJob {
+  onDeleteJob {
     id
     title
     description
@@ -46,6 +46,504 @@ export const onDeletePrivateNote = `subscription OnDeletePrivateNote {
   onDeletePrivateNote {
     id
     content
+  }
+}
+`;
+export const onCreateWorker = `subscription OnCreateWorker {
+  onCreateWorker {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const onUpdateWorker = `subscription OnUpdateWorker {
+  onUpdateWorker {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const onDeleteWorker = `subscription OnDeleteWorker {
+  onDeleteWorker {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const onCreateAdmin = `subscription OnCreateAdmin {
+  onCreateAdmin {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const onUpdateAdmin = `subscription OnUpdateAdmin {
+  onUpdateAdmin {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const onDeleteAdmin = `subscription OnDeleteAdmin {
+  onDeleteAdmin {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const onCreateUser = `subscription OnCreateUser {
+  onCreateUser {
+    id
+    name
+    email
+  }
+}
+`;
+export const onUpdateUser = `subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    name
+    email
+  }
+}
+`;
+export const onDeleteUser = `subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    name
+    email
+  }
+}
+`;
+export const onCreateClient = `subscription OnCreateClient {
+  onCreateClient {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+  }
+}
+`;
+export const onUpdateClient = `subscription OnUpdateClient {
+  onUpdateClient {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+  }
+}
+`;
+export const onDeleteClient = `subscription OnDeleteClient {
+  onDeleteClient {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
   }
 }
 `;

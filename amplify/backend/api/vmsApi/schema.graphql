@@ -1,19 +1,176 @@
-type Task 
-  @model 
-  @auth(rules: [
-      {allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete]},
-      {allow: groups, groups: ["Employees"], queries: [get, list], mutations: null}
-    ])
-{
-  id: ID!
-  title: String!
-  description: String
-  status: String
+type Job
+	@model
+	@auth(
+		rules: [
+			{ allow: groups, groups: ["Admin", "MSP", "Client"], queries: null, mutations: [create, update, delete] }
+			{ allow: groups, groups: ["Worker", "Applicant"], queries: [get, list], mutations: null }
+		]
+	) {
+	id: ID!
+	title: String!
+	description: String
+	status: String
 }
-type PrivateNote
-  @model
-  @auth(rules: [{allow: owner}])
-{
-  id: ID!
-  content: String!
+
+type PrivateNote @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	content: String!
+}
+
+type Worker @model {
+	id: ID
+	name: String
+	email: String
+	clientId: ID
+	vendorId: ID
+}
+
+type Admin @model {
+	adminuserid: String
+	clientid: String
+	userid: String
+	fname: String
+	name: String
+	active: String
+	levelid: String
+	locationid: String
+	firsttimelogin: String
+	systemutility: String
+	timecardadjustment: String
+	email: String
+	created: String
+	createdby: String
+	modified: String
+	modifiedby: String
+	lastpasswordupdate: String
+	roleid: String
+	defaulttimezoneid: String
+	defaultlanguageid: String
+	comments: String
+	lasttimelogin: String
+	passwordtype: String
+	locked: String
+	passwordattempt: String
+	password: String
+	oldpassword1: String
+	oldpassword2: String
+	oldpassword3: String
+	oldpassword4: String
+	oldpassword5: String
+}
+
+type User @model {
+	id: ID
+	name: String
+	email: String
+}
+
+type Client @model {
+	clientuserid: String
+	clientlocationid: String
+	userid: String
+	fname: String
+	lname: String
+	title: String
+	email: String
+	tel: String
+	telext: String
+	fax: Int
+	ttdnumber: String
+	url: String
+	address: String
+	address2: String
+	city: String
+	state: String
+	zipcode: String
+	country: String
+	levelid: String
+	levelcode: String
+	accessgroup: String
+	active: String
+	created: String
+	modified: String
+	esignature: String
+	vendorlisting: String
+	createdby: String
+	modifiedby: String
+	firsttimelogin: String
+	vendorselectoption: String
+	approveinsidetimecard: String
+	approvalmethod: String
+	changeapproval: String
+	hidevendornamehiringproccess: String
+	blockemailfromvendor: String
+	hidebillrate: String
+	hidepayrate: String
+	disablebillrate: String
+	disablepayrate: String
+	lastpasswordupdate: String
+	hideassgbill: String
+	hideassgpay: String
+	hideassginclusive: String
+	hidejobestimate: String
+	hidemarkup: String
+	disablemarkup: String
+	popupmessage: String
+	selfregister: String
+	emailperschedule: String
+	getemail1: String
+	getemail2: String
+	getemail3: String
+	reportbasedonhirearchy: String
+	hierarchyreporttoid: String
+	organizationcode: String
+	denytimecardaprroval: String
+	disablespecialbill: String
+	disableworkdaysrequest: String
+	enableskilljobtitlesearch: String
+	disableassignmentextension: String
+	disableassignmentratechange: String
+	notallowcreatejob: String
+	reportscheduling: String
+	accepttermsconditions: String
+	disabledirectsend: String
+	clientadmin: String
+	worklocationcode: String
+	blocksystememail: String
+	allowzerobillreq: String
+	showassignmentudf: String
+	notallowmodifytimecard: String
+	notallowmodifyexpense: String
+	disablemodifytcproxy: String
+	disablemodifyjobproxy: String
+	disablemodifyassignmentproxy: String
+	hideresubmitorder: String
+	hidereplacement: String
+	openbidadmin: String
+	hideduplicatejob: String
+	disableprojectdirectengage: String
+	disablemodifysbprofile: String
+	showjobtitleadvancesearch: String
+	hidejobexempt: String
+	defaultlanguageid: String
+	defaulttimezoneid: String
+	onepagereqcreation: String
+	reqapprovalbymobile: String
+	contractadditionaluser: String
+	showclassificationrecommendation: String
+	ssouserid: String
+	displayallvendorlocation: String
+	enablecreateproject: String
+	enablecreatesow: String
+	vendorselectoptionProject: String
+	displayallvendorlocationProject: String
+	onepagereqcreationnobill: String
+	timecardapprovaltype: String
+	changeapprovalProject: String
+	hidejobexpense: String
+	hidejobadditionaltimecardspend: String
+	hideassgexpense: String
+	hideassgadditionaltimecardspend: String
+	hideassgestimate: String
+	lasttimelogin: String
+	passwordtype: String
+	locked: String
+	passwordattempt: String
 }

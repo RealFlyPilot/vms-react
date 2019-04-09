@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const createTask = `mutation CreateTask($input: CreateTaskInput!) {
-  createTask(input: $input) {
+export const createJob = `mutation CreateJob($input: CreateJobInput!) {
+  createJob(input: $input) {
     id
     title
     description
@@ -10,8 +10,8 @@ export const createTask = `mutation CreateTask($input: CreateTaskInput!) {
   }
 }
 `;
-export const updateTask = `mutation UpdateTask($input: UpdateTaskInput!) {
-  updateTask(input: $input) {
+export const updateJob = `mutation UpdateJob($input: UpdateJobInput!) {
+  updateJob(input: $input) {
     id
     title
     description
@@ -19,8 +19,8 @@ export const updateTask = `mutation UpdateTask($input: UpdateTaskInput!) {
   }
 }
 `;
-export const deleteTask = `mutation DeleteTask($input: DeleteTaskInput!) {
-  deleteTask(input: $input) {
+export const deleteJob = `mutation DeleteJob($input: DeleteJobInput!) {
+  deleteJob(input: $input) {
     id
     title
     description
@@ -46,6 +46,504 @@ export const deletePrivateNote = `mutation DeletePrivateNote($input: DeletePriva
   deletePrivateNote(input: $input) {
     id
     content
+  }
+}
+`;
+export const createWorker = `mutation CreateWorker($input: CreateWorkerInput!) {
+  createWorker(input: $input) {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const updateWorker = `mutation UpdateWorker($input: UpdateWorkerInput!) {
+  updateWorker(input: $input) {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const deleteWorker = `mutation DeleteWorker($input: DeleteWorkerInput!) {
+  deleteWorker(input: $input) {
+    id
+    name
+    email
+    clientId
+    vendorId
+  }
+}
+`;
+export const createAdmin = `mutation CreateAdmin($input: CreateAdminInput!) {
+  createAdmin(input: $input) {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const updateAdmin = `mutation UpdateAdmin($input: UpdateAdminInput!) {
+  updateAdmin(input: $input) {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const deleteAdmin = `mutation DeleteAdmin($input: DeleteAdminInput!) {
+  deleteAdmin(input: $input) {
+    adminuserid
+    clientid
+    userid
+    fname
+    name
+    active
+    levelid
+    locationid
+    firsttimelogin
+    systemutility
+    timecardadjustment
+    email
+    created
+    createdby
+    modified
+    modifiedby
+    lastpasswordupdate
+    roleid
+    defaulttimezoneid
+    defaultlanguageid
+    comments
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+    password
+    oldpassword1
+    oldpassword2
+    oldpassword3
+    oldpassword4
+    oldpassword5
+  }
+}
+`;
+export const createUser = `mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    id
+    name
+    email
+  }
+}
+`;
+export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    id
+    name
+    email
+  }
+}
+`;
+export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
+    id
+    name
+    email
+  }
+}
+`;
+export const createClient = `mutation CreateClient($input: CreateClientInput!) {
+  createClient(input: $input) {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+  }
+}
+`;
+export const updateClient = `mutation UpdateClient($input: UpdateClientInput!) {
+  updateClient(input: $input) {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
+  }
+}
+`;
+export const deleteClient = `mutation DeleteClient($input: DeleteClientInput!) {
+  deleteClient(input: $input) {
+    clientuserid
+    clientlocationid
+    userid
+    fname
+    lname
+    title
+    email
+    tel
+    telext
+    fax
+    ttdnumber
+    url
+    address
+    address2
+    city
+    state
+    zipcode
+    country
+    levelid
+    levelcode
+    accessgroup
+    active
+    created
+    modified
+    esignature
+    vendorlisting
+    createdby
+    modifiedby
+    firsttimelogin
+    vendorselectoption
+    approveinsidetimecard
+    approvalmethod
+    changeapproval
+    hidevendornamehiringproccess
+    blockemailfromvendor
+    hidebillrate
+    hidepayrate
+    disablebillrate
+    disablepayrate
+    lastpasswordupdate
+    hideassgbill
+    hideassgpay
+    hideassginclusive
+    hidejobestimate
+    hidemarkup
+    disablemarkup
+    popupmessage
+    selfregister
+    emailperschedule
+    getemail1
+    getemail2
+    getemail3
+    reportbasedonhirearchy
+    hierarchyreporttoid
+    organizationcode
+    denytimecardaprroval
+    disablespecialbill
+    disableworkdaysrequest
+    enableskilljobtitlesearch
+    disableassignmentextension
+    disableassignmentratechange
+    notallowcreatejob
+    reportscheduling
+    accepttermsconditions
+    disabledirectsend
+    clientadmin
+    worklocationcode
+    blocksystememail
+    allowzerobillreq
+    showassignmentudf
+    notallowmodifytimecard
+    notallowmodifyexpense
+    disablemodifytcproxy
+    disablemodifyjobproxy
+    disablemodifyassignmentproxy
+    hideresubmitorder
+    hidereplacement
+    openbidadmin
+    hideduplicatejob
+    disableprojectdirectengage
+    disablemodifysbprofile
+    showjobtitleadvancesearch
+    hidejobexempt
+    defaultlanguageid
+    defaulttimezoneid
+    onepagereqcreation
+    reqapprovalbymobile
+    contractadditionaluser
+    showclassificationrecommendation
+    ssouserid
+    displayallvendorlocation
+    enablecreateproject
+    enablecreatesow
+    vendorselectoptionProject
+    displayallvendorlocationProject
+    onepagereqcreationnobill
+    timecardapprovaltype
+    changeapprovalProject
+    hidejobexpense
+    hidejobadditionaltimecardspend
+    hideassgexpense
+    hideassgadditionaltimecardspend
+    hideassgestimate
+    lasttimelogin
+    passwordtype
+    locked
+    passwordattempt
   }
 }
 `;

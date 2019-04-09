@@ -8,16 +8,16 @@ Amplify.configure(aws_exports)
 Auth.configure(Auth)
 
 class App extends Component {
-  render () {
-    return (
-      <div>
-        <Header />
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<Header />
+			</div>
+		)
+	}
 }
 
-export default withAuthenticator(App, { includeGreetings: true })
+export default withAuthenticator(App)
 
 // import React from 'react'
 // import PropTypes from 'prop-types'

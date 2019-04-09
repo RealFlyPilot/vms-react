@@ -1,0 +1,596 @@
+
+
+// APPLICANT
+Napplicantid  // int 
+Cuserid // string
+Cfname // string
+Cmname // string
+Clname // string
+Caddress // string
+Caddress2 // string
+Ccity // string
+Cstate // string
+Czipcode // string
+Ccountry // string
+Ctel // string
+Cfax // string
+Cpager // string
+Cemail // string
+Cssn // string
+Cgovermentid // string
+Ddob // DateTime 
+Clanguage // string
+Ndesirerateperhour // decimal
+Ndesirerateperhourmax // decimal
+Dcreated // DateTime 
+Dmodified // DateTime 
+Nvendorlocationid  // int 
+Lactive // bool 
+Ccomments // string
+Nmodifiedby // int 
+Ncreatedby // int 
+Lfirsttimelogin // bool 
+Nworkhourhistory // decimal
+Cemptype // string
+Dlastpasswordupdate // DateTime 
+D1480reset // DateTime 
+Lpunchlogin // bool 
+Lisvendorcontact // bool 
+Ntotalworkmonths // decimal
+Ntotalworkdays // decimal
+Ntotalworkhours // decimal
+Ccellphone // string
+Cemergencycontactname // string
+Cemergencycontacttel // string
+Ccurrency // string
+Ndefaultlanguageid // int 
+Ndefaulttimezoneid // int 
+Lformeremployee // bool 
+Lformercontractor // bool 
+Cidentificationnumber // string
+Dformeremployeelastdate // DateTime 
+Dformercontractorlastdate // DateTime 
+Lnossn // bool 
+Lpopupmessage // bool 
+Lupdatesbillingrate // bool 
+LacaEnablebilling // bool 
+DacaBenefiteligible // DateTime 
+LacaBenefiteligible // bool 
+DacaBenefiteligibleupdated // DateTime 
+LacaSendsurveyemail // bool 
+Cencryptedssn // byte[] 
+Nglobalworkstatusid // int 
+NtotalworkhoursReg // decimal
+NtotalworkhoursOt // decimal
+NtotalworkhoursDt // decimal
+Daccepttermsconditions // DateTime 
+Ncreatedbywho // int 
+Nmodifiedbywho // int 
+Dlasttimelogin // DateTime 
+Cssouserid // string
+Llocked // bool 
+Lsso // bool 
+Nglobalpayincscheduleid // int 
+Dadjustedpayincschedulestartdate // DateTime 
+Cpasswordtype // string
+Dlocked // DateTime 
+Npasswordattempt // int 
+Cpassword // byte[] 
+Coldpassword1 // byte[] 
+Coldpassword2 // byte[] 
+Coldpassword3 // byte[] 
+Coldpassword4 // byte[] 
+Coldpassword5 // byte[] 
+
+
+
+// ADMIN (Partial Class Admin User)
+
+Nadminuserid  // int 
+Nclientid  // int 
+Cuserid // string
+Cfname // string
+Clname // string
+Lactive // bool 
+Nlevelid  // int 
+Nlocationid  // int 
+Lfirsttimelogin // bool 
+Lsystemutility //bool  
+Ltimecardadjustment //bool  
+Cemail // string
+Dcreated // DateTime  
+Ncreatedby  // int 
+Dmodified // DateTime  
+Nmodifiedby  // int 
+Dlastpasswordupdate // DateTime  
+Nroleid  // int 
+Ndefaulttimezoneid  // int 
+Ndefaultlanguageid  // int 
+Ccomments // string
+Dlasttimelogin // DateTime  
+Cpasswordtype // string
+Llocked //bool  
+Dlocked // DateTime  
+Npasswordattempt  // int 
+Cpassword // byte[] 
+Coldpassword1 // byte[] 
+Coldpassword2 // byte[] 
+Coldpassword3 // byte[] 
+Coldpassword4 // byte[] 
+Coldpassword5 // byte[] 
+
+// CLIENT  - Client-Table.csv
+
+Nclientid  // int 
+Caddress // string
+Caddress2 // string
+Ccity // string
+Cstate // string
+Czipcode // string
+Ccountry // string
+Ctel // string
+Ctel2 // string
+Cfax // string
+Cfax2 // string
+Ccontact // string
+Cemail // string
+Curl // string
+Dcreated // DateTime  
+Dmodified // DateTime  
+Lactive //bool  
+Caccountno // string
+Cgroupno // string
+Lskillmatch //bool  
+Ltesting //bool  
+Lrefcheck //bool  
+Lresumesubmit //bool  
+Ldrugcheck //bool  
+Lbackcheck //bool  
+Cdepartment // string
+Clocation // string
+Lesignature //bool  
+Ncreatedby  // int 
+Nmodifiedby  // int 
+Ccontact1place // string
+Ccontact1name // string
+Ccontact1tel // string
+Ccontact1tel2 // string
+Ccontact1email // string
+Ccontact2place // string
+Ccontact2name // string
+Ccontact2tel // string
+Ccontact2tel2 // string
+Ccontact2email // string
+Ccontact3place // string
+Ccontact3name // string
+Ccontact3tel // string
+Ccontact3tel2 // string
+Ccontact3email // string
+Lsendagemail //bool  
+Cagemail // string
+Lpasswordrule //bool  
+Npasswordchangeperiod //short  
+Lpopupmessagecontrol //bool  
+Nagile1discount // decimal  
+Ddiscountstart // DateTime  
+Ddiscountend // DateTime  
+Lcalriusinvoice //bool  
+Ntimecardentryweek  // int 
+Cinternalofficenumber // string
+Ldisplaytimecardtomanager //bool  
+Cagile1for // string
+Clink1 // string
+Clink2 // string
+Lneedbilltocontact //bool  
+NearlypaydiscountMarkfordelete // decimal  
+Ldeductmngfeefromvendor //bool  
+Lsendassgendemail15and30 //bool  
+Cmailsendfrom // string
+Lprojectwork //bool  
+Lapplicantreturnpolicy //bool  
+Napplicantreturnpolicy  // int 
+Lapplicantlookupbyssn //bool  
+Ndisableuseraccount  // int 
+Lshowpreferredbillrate //bool  
+Lvalidatedner //bool  
+Lhidevendoracceptjob //bool  
+Lhidevendorrejectjob //bool  
+Ldonotcomparepaybillrate //bool  
+Lallowassignmentdiscount //bool  
+Lmsp //bool  
+Cspecialbillvalidation // string
+Cspecialbillwebservicevalidationurl // string
+Cspecialbillreturnurl // string
+Lprimarytimecardapproval //bool  
+Lworklocationdrivenjob //bool  
+Nchargecodevalidation  // int 
+Lallowupdatecatalogitem //bool  
+Nremainingpercentnotify // decimal  
+Lhidejobfulfillmentoption //bool  
+Ntenurecumulativehour  // int 
+Lapplicantduplicatesubmittalcheck //bool  
+Ntimecardudfsource  // int 
+Lapplyjobtitleadditionalrate //bool  
+Lshowpayrollservicerate //bool  
+Lpopulatesbrelationship //bool  
+Nvalidateassignmentscreening  // int 
+Ndefaultlanguageid  // int 
+Cindustrycode // string
+Dbiweeklybillingenddate // DateTime  
+Ntimecarddualapprovaltype  // int 
+Lenableicc //bool  
+Lupdateassignmentstartdatebytimecardfirstdate //bool  
+Cpasswordtype // string
+Ndefaulttimezoneid  // int 
+Lexportenableinadmin //bool  
+Lexportonhold //bool  
+Cexportonholdby // string
+Dexportonholdcreated // DateTime  
+Cexportonholdcomment // string
+
+
+
+// CLIENT/USER -  client user
+
+Nclientuserid  // int 
+Nclientlocationid  // int 
+Cuserid // string
+Cfname // string
+Clname // string
+Ctitle // string
+Cemail // string
+Ctel // string
+Ctelext // string
+Cfax // string
+Cttdnumber // string
+Curl // string
+Caddress // string
+Caddress2 // string
+Ccity // string
+Cstate // string
+Czipcode // string
+Ccountry // string
+Nlevelid  // int 
+Clevelcode // string
+Caccessgroup // string
+Lactive //bool  
+Dcreated // DateTime  
+Dmodified // DateTime  
+Cesignature // string
+Lvendorlisting //bool  
+Ncreatedby  // int 
+Nmodifiedby  // int 
+Lfirsttimelogin //bool  
+Nvendorselectoption //short  
+Lapproveinsidetimecard //bool  
+Napprovalmethod  // int 
+Lchangeapproval //bool  
+Lhidevendornamehiringproccess //bool  
+Lblockemailfromvendor //bool  
+Lhidebillrate //bool  
+Lhidepayrate //bool  
+Ldisablebillrate //bool  
+Ldisablepayrate //bool  
+Dlastpasswordupdate // DateTime  
+Lhideassgbill //bool  
+Lhideassgpay //bool  
+Lhideassginclusive //bool  
+Lhidejobestimate //bool  
+Lhidemarkup //bool  
+Ldisablemarkup //bool  
+Lpopupmessage //bool  
+Lbillcontact //bool  
+Nbillcontactid  // int 
+Lselfregister //bool  
+Lemailperschedule //bool  
+Dgetemail1 // DateTime  
+Dgetemail2 // DateTime  
+Dgetemail3 // DateTime  
+Lreportbasedonhirearchy //bool  
+Nhierarchyreporttoid  // int 
+Corganizationcode // string
+Ldenytimecardaprroval //bool  
+Ldisablespecialbill //bool  
+Ldisableworkdaysrequest //bool  
+Lenableskilljobtitlesearch //bool  
+Ldisableassignmentextension //bool  
+Ldisableassignmentratechange //bool  
+Lnotallowcreatejob //bool  
+Lreportscheduling //bool  
+Daccepttermsconditions // DateTime  
+Ldisabledirectsend //bool  
+Llocked //bool  
+Lclientadmin //bool  
+Lworklocationcode //bool  
+Csb// string
+Lblocksystememail //bool  
+Lallowzerobillreq //bool  
+Lshowassignmentudf //bool  
+Lnotallowmodifytimecard //bool  
+Lnotallowmodifyexpense //bool  
+Ldisablemodifytcproxy //bool  
+Ldisablemodifyjobproxy //bool  
+Ldisablemodifyassignmentproxy //bool  
+Lhideresubmitorder //bool  
+Lhidereplacement //bool  
+Lsso //bool  
+Lopenbidadmin //bool  
+Lhideduplicatejob //bool  
+Ldisableprojectdirectengage //bool  
+Ldisablemodifysbprofile //bool  
+Lshowjobtitleadvancesearch //bool  
+Lhidejobexempt //bool  
+Ndefaultlanguageid  // int 
+Lallowmodifyjobinfo //bool  
+Ndefaulttimezoneid  // int 
+Lnotallowtcapproval //bool  
+Lonepagereqcreation //bool  
+Lreqapprovalbymobile //bool  
+Lcontractadditionaluser //bool  
+Lshowclassificationrecommendation //bool  
+Cssouserid // string
+Ldisplayallvendorlocation //bool  
+Lenablecreateproject //bool  
+Lenablecreatesow //bool  
+NvendorselectoptionProject //short  
+LdisplayallvendorlocationProject //bool  
+Lonepagereqcreationnobill //bool  
+Ntimecardapprovaltype  // int 
+LchangeapprovalProject //bool  
+Lhidejobexpense //bool  
+Lhidejobadditionaltimecardspend //bool  
+Lhideassgexpense //bool  
+Lhideassgadditionaltimecardspend //bool  
+Lhideassgestimate //bool  
+Dlasttimelogin // DateTime  
+Cpasswordtype // string
+Dlocked // DateTime  
+Npasswordattempt  // int 
+Cpassword // byte[] 
+Coldpassword1 // byte[] 
+Coldpassword2 // byte[] 
+Coldpassword3 // byte[] 
+Coldpassword4 // byte[] 
+Coldpassword5 // byte[] 
+Lhidenegotiaterate //bool  
+Liccapprovaluser //bool  
+LshowclassificationrecommendationNonbill //bool  
+LshowclassificationrecommendationSow //bool  
+LshowclassificationrecommendationProject //bool  
+Nmodifiedbywho  // int 
+Ncreatedbywho  // int 
+
+
+
+// Job Request
+
+Nrequestid  // int 
+Nclientlocationid  // int 
+Njobtitlecode  // int 
+Cjobtitlecode // string
+Cjobreqstatus // string
+Cjobtype // string
+Cemptype // string
+Nfill  // int 
+Creasoncode // string
+Creasoncomment // string
+Cpriority // string
+Dreqdate // DateTime  
+Nrequestor  // int 
+Nproxyuser  // int 
+Cfwdresumeid // string
+Dstart // DateTime  
+Dend // DateTime  
+Cendflag // string
+Cenddesc // string
+Cpaytype // string
+Nhrsperwk // decimal  
+Nhrpayratehour // decimal  
+Nhrpayratehourmax // decimal  
+Nhrbillratehour // decimal  
+Nhrbillratehourmax // decimal  
+Cpaycurrency // string
+Cpayperiodtype // string
+Nhrpayrateday // decimal  
+Cpaybonus // string
+Cpaybonusfreq // string
+Cpaybonusrange // string
+Npayrelocation // decimal  
+Cpayexpexc // string
+CbenifitdescP // string
+CbenifitdescUl // string
+CbenifitdescQualif // string
+Cpaysummary // string
+CqualifreqP // string
+CqualifreqUl // string
+CqualifreqQualif // string
+CqualifprefP // string
+CqualifprefUl // string
+CqualifprefQualif // string
+Ntrialperioddays  // int 
+Cworkeligibilitystatus // string
+Dstarttime // DateTime  
+Dendtime // DateTime  
+Nlunchbreak // decimal  
+Nreporttoid  // int 
+Nreportlocationid  // int 
+Creportphone // string
+Creportphoneext // string
+Creportdepartment // string
+Lneedresume //bool  
+Dresumedue // DateTime  
+Nresumerequired  // int 
+Lneedsubmital //bool  
+Dsubmitaldue // DateTime  
+Lneedinterview //bool  
+Dinterviewdue // DateTime  
+Lneedbackground //bool  
+Lneeddrugtest //bool  
+Lneedtravel //bool  
+Ctravelpercent // string
+Ctravelsummary // string
+Lneeddresscode //bool  
+Lneedcreditcheck //bool  
+Lneeddmvcheck //bool  
+Lneedovertime //bool  
+Lexempt //bool  
+Lnonexempt //bool  
+Cworklocaddress1 // string
+Cworklocaddress2 // string
+Cworkloccity // string
+Cworklocstate // string
+Cworkloczipcode // string
+Cworkloccountry // string
+Nclientpaypolicyid  // int 
+Ccomments // string
+Linternalreq //bool  
+Lvenodrmanagment //bool  
+Ldraftrequest //bool  
+Lactive //bool  
+Chireorgtype // string
+Cclassification // string
+Cdistribute // string
+Ldirecthire //bool  
+Lcontract //bool  
+Ltemp //bool  
+Ltemptoperm //bool  
+Csummary // string
+Lworkday1 //bool  
+Lworkday2 //bool  
+Lworkday3 //bool  
+Lworkday4 //bool  
+Lworkday5 //bool  
+Lworkday6 //bool  
+Lworkday7 //bool  
+Ntotalreghours // decimal  
+Nfulltimehoursweek // decimal  
+Cshiftdiff // string
+Ctemplenght // string
+Ctempsummary // string
+Covertimesummary // string
+CessfunctionP // string
+CessfunctionUi // string
+CessfunctionQualif // string
+CworkenvP // string
+CworkenvUi // string
+CworkenvQualif // string
+Chowtoapply // string
+Chowtoapplyinfo // string
+Chowtoapplysummary // string
+Nlinkedjobrequestid  // int 
+Nestimatedcost // decimal  
+Ncreatedby  // int 
+Cpreferredemployee // string
+Nmarkup // decimal  
+Nexpense // decimal  
+Cexpensecomment // string
+Ninitailbalance // decimal  
+Nremainbalance // decimal  
+Nspentamount // decimal  
+Nbuyingmanagerid  // int 
+LDner //bool  
+LDnem //bool  
+Ninclusivebill // decimal  
+Capprovalcomment // string
+Crequestsource // string
+Napprovalneed  // int 
+Nprojectdefid  // int 
+Cprojectname // string
+Creviewfrequency // string
+Npreferbillrate // decimal  
+Cworklocationname // string
+Dapproved // DateTime  
+Cclientrefnumber // string
+Limplementation //bool  
+Lshiftpremium //bool  
+Lopenbidjob //bool  
+Creasoncodeother // string
+Djobrelease // DateTime  
+Nothrsperwk // decimal  
+Ndthrsperwk // decimal  
+Nmarketrate // decimal  
+Nreqoriginalrate // decimal  
+Ldeliverablebasedproject //bool  
+Lonhold //bool  
+Nawrpayrate // decimal  
+Nsowid  // int 
+Nreporttoid2  // int 
+Dopenbidjob // DateTime  
+Lpunchoutassignment //bool  
+Lpunchoutjob //bool  
+Nprevailingpayrate // decimal  
+Lenableprevailingpayrate //bool  
+Lproposalaccepted //bool  
+Npaymenttermid  // int 
+Lnonbillworkerservice //bool  
+Nadditionaltimecardspend // decimal  
+Ntotalestimatedcost // decimal  
+Cprojectbilltype // string
+Cprojectsourcetype // string
+Nparentjobid  // int 
+Cduplicatedstatus // string
+DendFlexibilityearly // DateTime  
+DendFlexibilitylate // DateTime  
+Nsalary // decimal  
+Dsubmitted // DateTime  
+Lpayrollservice //bool  
+Lbypassproposalacceptreject //bool  
+Csource // string
+WorkLocComments // string
+SourcingFlag  // int 
+SecondHrBillRateHour // decimal  
+SecondHrBillRateHourMax // decimal  
+ThirdHrBillRateHour // decimal  
+ThirdHrBillRateHourMax // decimal  
+MinEstimatedCost // decimal  
+MinTotalEstimatedCost // decimal  
+NewScheduleFlag //bool  
+InterviewDuration  // int 
+LocationApproveFlag //bool  
+SecondHrPayRateHour // decimal  
+SecondHrPayRateHourMax // decimal  
+ThirdHrPayRateHour // decimal  
+ThirdHrPayRateHourMax // decimal  
+SecondOtHrPerWk // decimal  
+SecondDtHrPerWk // decimal  
+ThirdOtHrPerWk // decimal  
+ThirdDtHrPerWk // decimal  
+
+
+// Vendor Partial Class Vendor
+
+Nvendorid  // int 
+Cvendoraddress // string
+Cvendorcity // string
+Cvendorstate // string
+Cvendorzipcode // string
+Cvendorcountry // string
+Cvendortel // string
+Cvendorfax // string
+Cvendorttdnumber // string
+Cvendorcontact // string
+Cvendoremail // string
+Cvendorurl // string
+Dcreated // DateTime  
+Dmodified // DateTime  
+Lactive //bool  
+Nmodifiedby  // int 
+Ncreatedby  // int 
+Ldiversitysupplier //bool  
+Ldiversityhubzone //bool  
+Cdiversitycertstate // string
+Cdiversitygender // string
+Cdiversitybusinessclass // string
+Cdiversitysubclass // string
+Ldiversitycertified //bool  
+Cdiversitycertagency // string
+Cdiversitycertagencyother // string
+Ddiversitycertified // DateTime  
+Ddiversityexpiration // DateTime  
+Cdiversitysuppliercontact // string
+Cdiversitysupplierphone // string
+Cdiversitysupplieremail // string
+Cdiversityvmscontact // string
+Cdiversityvmsphone // string
+Cdiversityvmsemail // string
+Dstarttenurediscount // DateTime  

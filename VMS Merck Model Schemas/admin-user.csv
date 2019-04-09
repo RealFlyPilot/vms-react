@@ -1,0 +1,2 @@
+nadminuserid,nclientid,cuserid,cfname,clname,lactive,nlevelid,nlocationid,lfirsttimelogin,lsystemutility,ltimecardadjustment,cemail,dcreated,ncreatedby,dmodified,nmodifiedby,dlastpasswordupdate,nroleid,ndefaulttimezoneid,ndefaultlanguageid,ccomments,dlasttimelogin,cpasswordtype,llocked,dlocked,npasswordattempt,cpassword,coldpassword1,coldpassword2,coldpassword3,coldpassword4,coldpassword5
+1001,NULL,zislam,Zia,Islam,0,0,0,1,0,0,NULL,NULL,NULL,NULL,NULL,NULL,300,1014,NULL,NULL,NULL,Sha1,NULL,NULL,NULL,<b365ebe2 a755c03a ddc885eb 9c354545 0ab628de>,NULL,NULL,NULL,NULL,NULL
