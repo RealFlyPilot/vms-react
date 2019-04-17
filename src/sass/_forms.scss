@@ -1,0 +1,164 @@
+/* Styling shared between all form field library components */
+
+@import 'variables';
+
+:host ::ng-deep .mat-form-field {
+	font-weight: 500;
+	font-family: $font-stack;
+	width: 100%;
+	margin-bottom: 18px;
+
+	&:not(.has-prefix) {
+		padding-left: $prefixMargin;
+	}
+
+	&:not(.disabled) input {
+		* {
+			cursor: pointer;
+		}
+	}
+
+	.mat-form-field-wrapper {
+		padding-bottom: 16px;
+	}
+
+	.mat-form-field-infix {
+		padding: 8px 0 14px 0;
+		border-top: 16px solid transparent;
+	}
+
+	.mat-form-field-label-wrapper {
+		top: -16px;
+		padding-top: 16px;
+	}
+
+	.mat-form-field-label {
+		color: $black;
+		font-size: $label_font_size;
+		line-height: 18px;
+		top: 23px;
+	}
+
+	.mat-form-field-ripple {
+		transform-origin: 0;
+	}
+
+	.mat-form-field-underline {
+		background-color: $formGray;
+		bottom: 16px;
+	}
+
+	.mat-form-field-subscript-wrapper {
+		top: calc(100% - 8px);
+		margin-top: 0;
+	}
+
+	.mat-hint {
+		text-transform: uppercase;
+		color: $formGray;
+		font-size: 9px;
+	}
+
+	.material-icons,
+	.mat-select-arrow {
+		position: relative;
+		top: 8px;
+		color: $blue_primary;
+	}
+
+	// label raised for input
+	&.mat-form-field-can-float.mat-form-field-should-float {
+		.mat-form-field-label {
+			transform: translateY(-27px);
+			font-size: 12px;
+			color: $formGray;
+		}
+	}
+
+	// DISABLED
+	&.mat-form-field-disabled {
+		.mat-input-element:disabled {
+			color: $black;
+		}
+
+		.mat-form-field-underline {
+			background-image: linear-gradient(
+				to right,
+				$black 0%,
+				$black 33%,
+				transparent 0%
+			);
+		}
+
+		&.not-applicable {
+			.mat-form-field-label,
+			.mat-input-element:disabled {
+				color: $formGray;
+			}
+
+			.mat-form-field-underline {
+				background-image: none;
+				background-color: $formGray;
+			}
+		}
+
+		&.not-editable.not-applicable {
+			.mat-form-field-underline {
+				background-image: linear-gradient(
+					to right,
+					$formGray 0%,
+					$formGray 33%,
+					transparent 0%
+				);
+				background-color: transparent;
+			}
+		}
+	}
+
+	// ERRORS
+	&.mat-form-field-invalid {
+		.mat-input-element {
+			color: $orange;
+			caret-color: $orange;
+		}
+
+		.mat-form-field-ripple {
+			background-color: $orange;
+		}
+
+		.mat-form-field-label {
+			color: $orange !important;
+
+			.mat-form-field-required-marker {
+				color: $orange;
+			}
+		}
+
+		.mat-error {
+			color: $orange;
+			text-transform: uppercase;
+			font-size: 9px;
+		}
+	}
+
+	&.not-applicable {
+		.mat-select-disabled.mat-select {
+			.mat-select-value,
+			.mat-select-arrow {
+				color: $formGray;
+			}
+		}
+
+		&.not-editable {
+			.mat-form-field-underline {
+				background-image: linear-gradient(
+					to right,
+					$formGray 0%,
+					$formGray 33%,
+					transparent 0%
+				);
+				background-color: transparent;
+			}
+		}
+	}
+}

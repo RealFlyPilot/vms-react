@@ -1,19 +1,29 @@
-import React from 'react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import centered from '@storybook/addon-centered/react'
+import { WithFigma } from 'storybook-addon-figma'
+import { GridOverlay } from '../src/components/GridOverlay'
+import { withInfo, addParameters } from '@storybook/addon-info'
+import VmsInput from '../src/components/VmsInput'
+import TextareaAutosize from 'react-textarea-autosize'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+storiesOf('VMS Form Field Library', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
 
-import { Button, Welcome } from '@storybook/react/demo';
+storiesOf('VMS Form Field Library/VmsInputs', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('VMS Form Field Library/VmsInputs/Single', module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  .add('Default Single Line', () => <VmsInput type='default' />)
+  .add('Single Line Error', () => <VmsInput error />)
+  .add('Single Line Inactive', () => <VmsInput inactive />)
+  .add('Single Line Editable', () => <VmsInput editable />)
+  .add('Single Line Uneditable', () => <VmsInput editable={false} />)

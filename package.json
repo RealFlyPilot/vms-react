@@ -7,11 +7,18 @@
     "@material-ui/icons": "^3.0.2",
     "aws-amplify": "^1.1.24",
     "aws-amplify-react": "^2.3.4",
+    "css-loader": "^2.1.1",
+    "material-table": "^1.31.0",
+    "material-ui-pickers": "^2.2.4",
+    "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-admin": "^2.8.5",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-zeit-components": "^1.4.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,10 +39,23 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@sambego/storybook-styles": "^1.0.0",
     "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-backgrounds": "^5.0.6",
+    "@storybook/addon-centered": "^5.0.6",
+    "@storybook/addon-events": "^5.0.8",
+    "@storybook/addon-graphql": "^5.0.6",
+    "@storybook/addon-info": "^5.0.6",
+    "@storybook/addon-knobs": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
+    "@storybook/addon-notes": "^5.0.6",
+    "@storybook/addon-options": "^5.0.6",
+    "@storybook/addon-storyshots": "^5.0.6",
+    "@storybook/addon-storysource": "^5.0.6",
+    "@storybook/addon-viewport": "^5.0.8",
     "@storybook/addons": "^5.0.6",
     "@storybook/react": "^5.0.6",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "^8.0.5",
+    "storybook-addon-figma": "^0.1.0"
   }
 }

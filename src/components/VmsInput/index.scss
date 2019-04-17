@@ -1,0 +1,440 @@
+@import '../../sass/forms';
+@import '../../sass/variables';
+
+
+.vms-input {
+    // p {	
+    //     color: #212121;	font-family: Avenir;	font-size: 16px;	font-weight: 500;	line-height: 18px;
+    //     margin-top: -15px;
+    // }
+    width: 50vw;
+    label {
+            color: #C5C5C5;	font-family: Avenir;	font-size: 12px;	font-weight: 500;	line-height: 18px;
+                
+    }
+   
+    // .MuiInput-underline-286:before {
+
+    
+    // }
+
+}
+
+
+// 	// font-weight: bold;
+// 	// 		font-size: 0.85em;
+// 	// 		margin-left: 16px;
+// 		/* Workaround for edge case height mismatch / misalignment */
+// 		input[type='time'] {
+// 			margin-top: -3px;
+// 		}
+
+	
+// 		.input-element {
+// 			line-height: 18px;
+// 			font-size: $label_font_size;
+// 			font-family: $font-stack !important;
+// 		}
+
+// 		.form-field-invalid {
+// 			input {
+// 				background-color: rgba(224, 129, 116, 0.09);
+// 				border-radius: 3px;
+// 				margin: -6px -8px;
+// 				padding: 4px 8px;
+// 				padding-right: 32px;
+// 				width: calc(100% - 8px);
+// 			}
+
+// 			// .mat-form-field-infix {
+// 			// 	margin-right: -32px;
+// 			// }
+
+// 			// .mat-form-field-prefix,
+// 			// input {
+// 			// 	color: inherit !important;
+// 			// }
+
+// 			// .error-icon {
+// 			// 	display: block;
+// 			// }
+
+// 			// &.double-suffix {
+// 			// 	.error-icon {
+// 			// 		left: -43px;
+// 			// 		top: -4px;
+// 			// 	}
+
+// 			// 	.mat-form-field-infix {
+// 			// 		margin-right: -8px;
+// 			// 	}
+// 			// }
+// 		}
+
+// 		/* Replace Quill button icons */
+
+// 		// button.ql-list {
+// 		// 	margin: 0 3px;
+
+// 		// 	> svg {
+// 		// 		display: none;
+// 		// 	}
+
+// 		// 	&:before {
+// 		// 		content: ' ';
+// 		// 		float: left;
+// 		// 		height: 27px;
+// 		// 		width: 27px;
+// 		// 		margin-left: -3px;
+// 		// 		margin-top: -3px;
+// 		// 		background-size: contain;
+// 		// 		background-repeat: no-repeat;
+// 		// 	}
+
+// 		// 	&[value='ordered'] {
+// 		// 		margin-right: 12px;
+// 		// 	}
+
+// 		// 	&[value='bullet']:before {
+// 		// 		background-image: url(/assets/icons/bulleted_list.svg);
+// 		// 	}
+
+// 		// 	&[value='ordered']:before {
+// 		// 		background-image: url(/assets/icons/numbered_list.svg);
+// 		// 	}
+// 		// }
+
+// 		/* Prefixes */
+
+// 		.has-prefix {
+// 			&.mat-form-field-invalid .mat-form-field-prefix {
+// 				color: $orange;
+// 			}
+
+// 			&.not-applicable .mat-form-field-prefix {
+// 				color: $formGray;
+// 			}
+
+// 			.mat-form-field-underline {
+// 				width: calc(100% - #{$prefixMargin});
+// 				right: 0;
+// 			}
+
+// 			.mat-error,
+// 			.mat-hint {
+// 				margin-left: $prefixMargin;
+// 			}
+
+// 			.mat-form-field-prefix {
+// 				font-size: 18px;
+// 				flex: 0 0 27px;
+// 				margin-right: 18px;
+// 				display: flex;
+// 				align-items: center;
+// 				justify-content: center;
+// 				color: $black;
+// 			}
+// 		}
+
+// 		/* Datepicker */
+
+// 		 .mat-calendar-header {
+// 			padding: 0 5px;
+// 			background-color: $gray_FA;
+// 			border-top-right-radius: 6px;
+// 			border-top-left-radius: 6px;
+
+// 			.mat-calendar-controls {
+// 				margin: 0;
+// 				display: flex;
+// 				align-items: center;
+
+// 				> button {
+// 					color: $black;
+// 					font-size: 15px;
+// 				}
+// 			}
+
+// 			.mat-calendar-spacer {
+// 				display: none;
+// 			}
+
+// 			.mat-calendar-previous-button {
+// 				order: -1;
+
+// 				&:after {
+// 					border-left-width: 1px;
+// 				}
+// 			}
+
+// 			.mat-calendar-next-button:after {
+// 				border-right-width: 1px;
+// 			}
+
+// 			.mat-calendar-next-button::after,
+// 			.mat-calendar-previous-button::after {
+// 				border-top-width: 1px;
+// 			}
+
+// 			.mat-calendar-period-button {
+// 				flex-grow: 1;
+// 			}
+
+// 			.mat-calendar-arrow {
+// 				margin: 0 0 3px 5px;
+// 			}
+// 		}
+
+// 		.mat-datepicker-content {
+// 			left: -18px;
+// 			position: relative;
+
+// 			mat-calendar.mat-calendar {
+// 				height: auto;
+// 				width: 279px;
+// 			}
+
+// 			.mat-calendar-content {
+// 				border-top: 1px solid #eee;
+// 				padding-top: 12px;
+
+// 				.mat-calendar-table-header {
+// 					color: $black;
+
+// 					th {
+// 						font-weight: 900;
+// 					}
+// 				}
+
+// 				.mat-calendar-table-header-divider {
+// 					display: none;
+// 				}
+
+// 				.mat-calendar-body {
+// 					font-size: 12px;
+
+// 					> tr:first-child td {
+// 						&[colspan='7'] {
+// 							display: none;
+// 						}
+
+// 						&:first-child {
+// 							color: transparent;
+// 							text-indent: -999px;
+// 						}
+// 					}
+
+// 					.mat-calendar-body-cell-content {
+// 						width: 84%;
+// 						height: 89%;
+// 					}
+
+// 					.mat-calendar-body-cell-content:hover {
+// 						background-color: #eeeeee;
+// 					}
+
+// 					.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+// 						border: 1px solid #212121;
+// 					}
+// 				}
+// 			}
+// 		}
+	
+
+// .error-icon {
+// 	display: none;
+// 	color: #e28071;
+// 	position: absolute;
+// 	left: -23px;
+// 	top: -16px;
+// 	width: 24px !important;
+// }
+
+// /* Lookup styling */
+
+// mat-card.background {
+// 	position: absolute;
+// 	top: -32px;
+// 	left: -16px;
+// 	width: calc(100% + 66px);
+// 	height: calc(100% + 72px);
+// 	z-index: 0;
+// }
+
+// input {
+// 	position: relative;
+// 	z-index: 1;
+// }
+
+
+
+// 		input:not([aria-expanded='true']) + mat-card.background {
+// 			display: none;
+// 		}
+
+// 		mat-form-field.lookup {
+// 			padding-right: 18px;
+
+// 			&.mat-focused {
+// 				z-index: 1001;
+// 				position: relative;
+// 			}
+
+// 			.mat-form-field-flex {
+// 				position: relative;
+// 				left: -18px;
+// 				padding-left: 18px;
+// 			}
+// 		}
+
+// .cdk-overlay-pane {
+// 	> .mat-autocomplete-panel.vms-input-lookup {
+// 		margin-left: 47px;
+// 		margin-right: -34px;
+// 		margin-top: 36px;
+// 		border-top: solid 1px #e0e0e0;
+// 		border-bottom-left-radius: 6px !important;
+// 		border-bottom-right-radius: 6px !important;
+// 		box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.09);
+// 		max-height: 256px;
+// 		display: flex;
+// 		flex-direction: column;
+// 		overflow: hidden;
+
+// 		cdk-virtual-scroll-viewport {
+// 			max-height: 256px;
+// 		}
+
+// 		table {
+// 			display: flex;
+// 			flex-direction: column;
+// 		}
+
+// 		thead {
+// 			display: flex;
+// 			flex-direction: row;
+
+// 			> * {
+// 				display: flex;
+// 				padding: 8px 18px;
+// 				font-family: Avenir;
+// 				font-weight: 900;
+// 				font-size: 12px;
+
+// 				&:first-child {
+// 					width: 100%;
+// 					flex-grow: 1;
+// 				}
+// 			}
+// 		}
+
+// 		tbody {
+// 			background-color: $gray_FA;
+// 			padding: 2px 4px;
+// 			border-top: 1px solid $gray_CF;
+// 		}
+
+// 		tr {
+// 			display: flex;
+// 		}
+
+// 		td {
+// 			width: 100%;
+// 		}
+
+// 		.mat-option {
+// 			padding: 9px 14px;
+// 			height: 36px;
+// 			line-height: 18px;
+
+// 			&:hover:not(.mat-option-disabled) {
+// 				background-color: $gray_EE !important;
+// 			}
+
+// 			&.placeholder {
+// 				display: none;
+// 			}
+
+// 			.mat-option-text {
+// 				display: flex;
+// 				font-size: 12px;
+
+// 				> *:first-child {
+// 					flex-grow: 1;
+// 				}
+// 			}
+// 		}
+
+// 		.details-button {
+// 			margin-right: 0;
+// 			margin-left: 48px;
+// 			margin-top: -2px;
+// 			height: 15px !important;
+// 			vertical-align: top;
+// 		}
+
+// 		.lookup-footer {
+// 			font-size: 12px;
+// 			line-height: 18px;
+// 			color: $black;
+// 			height: 32px;
+// 			min-height: 32px;
+// 			display: flex;
+// 			align-items: center;
+// 			position: sticky;
+// 			bottom: 0;
+// 			border-top: 1px solid $gray_E0;
+// 			background-color: $white;
+// 			padding: 0 18px;
+
+// 			a {
+// 				text-decoration: underline;
+// 				color: $blue_primary;
+// 				cursor: pointer;
+// 				font-weight: 900;
+// 				margin-left: 9px;
+// 			}
+// 		}
+
+// 		> .lookup-details {
+// 			background-color: #fff;
+// 			border: solid #e0e0e0 1px;
+
+// 			.content {
+// 				padding: 18.5px;
+// 			}
+
+// 			.text {
+// 				min-height: 80px;
+// 			}
+
+// 			.title {
+// 				font-size: 18px;
+// 				border: none !important;
+// 				border-bottom: solid #e0e0e0 1px;
+// 			}
+
+// 			.subtitle,
+// 			.text {
+// 				font-size: 12px;
+// 			}
+
+// 			.actions,
+// 			.subtitle,
+// 			.text,
+// 			.title {
+// 				margin: 8px;
+// 				padding: 8px;
+// 			}
+// 		}
+// 	}
+
+// 	&.mat-autocomplete-panel-above > .mat-autocomplete-panel.vms-input-lookup {
+// 		border-bottom: 1px solid #e0e0e0;
+// 		border-bottom-left-radius: 0 !important;
+// 		border-bottom-right-radius: 0 !important;
+// 		border-top: none !important;
+// 		transform: translateY(-16px);
+// 		box-shadow: 0 0px 9px 0 rgba(0, 0, 0, 0.09);
+// 	}
+// }
