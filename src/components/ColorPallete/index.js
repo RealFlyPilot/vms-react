@@ -27,7 +27,7 @@ const ColorCard = ({ currentColor }) => (
     className={`color-card color-${currentColor}`}
     style={{ background: colors[currentColor][4] }}
   >
-    {colors[currentColor].splice(0, 4).map(shade => (
+    {colors[currentColor].slice(0, 4).map(shade => (
       <div className={`shade-${shade}`} style={{ background: shade }} />
     ))}
     <div>{currentColor}</div>
