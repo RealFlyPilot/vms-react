@@ -1,97 +1,63 @@
 import React, { Component } from 'react'
-import Amplify, { Auth } from 'aws-amplify'
+import Amplify, { Auth, Hub } from 'aws-amplify'
 import aws_exports from './aws-exports'
-import { withAuthenticator } from 'aws-amplify-react'
-import Header from './components/Header'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { withAuthenticator, withOAuth, withFederated } from 'aws-amplify-react'
+import { blue, indigo } from '@material-ui/core/colors'
+import Routes from './routes'
+
+const theme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: blue[900]
+    },
+    primary: {
+      main: indigo[700]
+    }
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: ['"Lato"', 'sans-serif'].join(',')
+  }
+})
 
 Amplify.configure(aws_exports)
-Auth.configure(Auth)
-
+// Auth.configure({
+//   ...Auth,
+//   mandatorySignIn: true
+// })
 class App extends Component {
-	render() {
-		return (
-			<div>
-				<Header />
-			</div>
-		)
-	}
+  state = {
+    signedIn: false
+  }
+  componentDidMount () {
+    // Auth.federatedSignIn({ provider: 'Google' })
+    console.log(this.props)
+  }
+  handleAuthStateChange = data => {
+    console.log('TCL: App -> handleAuthStateChange -> data', data)
+  }
+  render () {
+    const LoginButton = props => (
+      <button onClick={props.googleSignIn}>Open Google</button>
+    )
+    const Federated = withFederated(LoginButton)
+    const federated = {
+      google_client_id:
+        '60702670011-g6lf5t95d093pn5at4tbla0garkga6jj.apps.googleusercontent.com' // Enter your google_client_id here
+    }
+    return (
+      <div>
+        <MuiThemeProvider theme={theme}>
+          {this.state.signedIn ? (
+            <Routes />
+          ) : (
+            <Federated federated={federated} />
+          )}
+        </MuiThemeProvider>
+      </div>
+    )
+  }
 }
 
-export default withAuthenticator(App)
-
-// import React from 'react'
-// import PropTypes from 'prop-types'
-// import Button from '@material-ui/core/Button'
-// import Dialog from '@material-ui/core/Dialog'
-// import DialogTitle from '@material-ui/core/DialogTitle'
-// import DialogContent from '@material-ui/core/DialogContent'
-// import DialogContentText from '@material-ui/core/DialogContentText'
-// import DialogActions from '@material-ui/core/DialogActions'
-// import Typography from '@material-ui/core/Typography'
-// import { withStyles } from '@material-ui/core/styles'
-// import withRoot from '../withRoot'
-
-// const styles = theme => ({
-//   root: {
-//     textAlign: 'center',
-//     paddingTop: theme.spacing.unit * 20
-//   }
-// })
-
-// class Index extends React.Component {
-//   state = {
-//     open: false
-//   }
-
-//   handleClose = () => {
-//     this.setState({
-//       open: false
-//     })
-//   }
-
-//   handleClick = () => {
-//     this.setState({
-//       open: true
-//     })
-//   }
-
-//   render () {
-//     const { classes } = this.props
-//     const { open } = this.state
-
-//     return (
-//       <div className={classes.root}>
-//         <Dialog open={open} onClose={this.handleClose}>
-//           <DialogTitle>Super Secret Password</DialogTitle>
-//           <DialogContent>
-//             <DialogContentText>1-2-3-4-5</DialogContentText>
-//           </DialogContent>
-//           <DialogActions>
-//             <Button color='primary' onClick={this.handleClose}>
-//               OK
-//             </Button>
-//           </DialogActions>
-//         </Dialog>
-//         <Typography variant='h4' gutterBottom>
-//           Material-UI
-//         </Typography>
-//         <Typography variant='subtitle1' gutterBottom>
-//           example project
-//         </Typography>
-//         <Button
-//           variant='contained'
-//           color='secondary'
-//           onClick={this.handleClick}
-//         >
-//           Super Secret Password
-//         </Button>
-//       </div>
-//     )
-//   }
-// }
-
-// Index.propTypes = {
-//   classes: PropTypes.object.isRequired
-// }
-
-// export default withRoot(withStyles(styles)(Index))
+export default withOAuth(App)
