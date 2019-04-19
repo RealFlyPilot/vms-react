@@ -1,21 +1,15 @@
 import React from 'react'
 import { Route, HashRouter, Switch } from 'react-router-dom'
-import Dashboard from './components/Dashboard'
-import Wizard from './components/Wizard'
-import Mason from './components/Mason'
-import Main from './components/Main'
-import Signup from './components/Signup'
-import ScrollToTop from './components/ScrollTop'
+import ScrollToTop from './apps/AccelerationHQ/components/ScrollTop'
+import PlusMinusHQ from './apps/PlusMinusHQ'
+import AccelerationHQ from './apps/AccelerationHQ'
 
 export default props => (
   <HashRouter>
     <ScrollToTop>
       <Switch>
-        <Route exact path='/' component={Main} />
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/wizard' component={Wizard} />
-        <Route exact path='/mason' component={Mason} />
+        <Route exact path='/' component={PlusMinusHQ} />
+        <Route exact path='/acceleration' component={AccelerationHQ} />
       </Switch>
     </ScrollToTop>
   </HashRouter>

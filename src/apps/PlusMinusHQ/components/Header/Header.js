@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Authenticator, SignOut } from 'aws-amplify-react'
 import { Avatar, RaisedContainer, ShowMore } from 'react-zeit-components'
+import './index.scss'
 
-class Header extends Component {
+export class Header extends Component {
   state = {
     left: false
   }
@@ -15,19 +16,13 @@ class Header extends Component {
 
   render () {
     return (
-      <div className='jsx-4179596294 menu'>
-        <div className='jsx-4179596294 menu-inner'>
-          <div className='jsx-4179596294 logo'>
-            <a href='#' className='jsx-4179596294'>
-              <Avatar />
-            </a>
-          </div>
-          <h2 className='jsx-4179596294'>
+      <header className='pm-hq header' style={{ marginTop: '20px' }}>
+        <div className='pm-hq menu'>
+          <h2 className='pm-hq header-logo'>
             <div className='jsx-1702738178 breadcrumb'>
               <div className='jsx-3977622176 breadcrumb'>
                 <div className='jsx-900906369 item'>
-                  <div className='jsx-4188800376 trigger team-picker-menu'>
-                  </div>
+                  <div className='jsx-4188800376 trigger team-picker-menu' />
                   <span className='jsx-3194330087 divider'>
                     <svg
                       width='10px'
@@ -37,12 +32,7 @@ class Header extends Component {
                       xmlnsXlink='http://www.w3.org/1999/xlink'
                       aria-label='divider'
                     >
-                      <path
-                        d='M8.48 1.14l-7 24'
-                        stroke='#eaeaea'
-                        strokeWidth='1'
-                        fill='none'
-                      />
+                      <path d='M8.48 1.14l-7 24' stroke='#eaeaea' strokeWidth='1' fill='none' />
                     </svg>
                   </span>
                   <a className='jsx-1702738178 settings' href='/account'>
@@ -62,57 +52,61 @@ class Header extends Component {
                     </svg>
                   </a>
                   <a className='jsx-1702738178 plan' href='/account/plan'>
-                    Liam
+                    Plus Minus HQ
                   </a>
                 </div>
               </div>
             </div>
           </h2>
-          <ul className='jsx-4179596294 items'>
-            <li className='jsx-4179596294 item active'>
-              <a className='jsx-4179596294' href='/dashboard'>
-                Dashboard
-              </a>
-            </li>
-            <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/projects'>
-                Projects
-              </a>
-            </li>
-            <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/events'>
-                Acceleration
-              </a>
-            </li>
-            <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/domains'>
-                Components
-              </a>
-            </li>
-            <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/certs'>
-                StyleGuide Generator
-              </a>
-            </li>
-            <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/usage'>
-                Airtable
-              </a>
-            </li>
-              <li className='jsx-4179596294 item'>
-              <a className='jsx-4179596294' href='/dashboard/usage'>
-                Mason
-              </a>
-            </li>
-          </ul>
+
+          <div className='pm-hq menu-inner'>
+            <div className='pm-hq logo' />
+
+            <ul className='pm-hq items'>
+              <li className='pm-hq item active'>
+                <a className='pm-hq' href='/dashboard'>
+                  Dashboard
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/projects'>
+                  Projects
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/events'>
+                  Acceleration
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/domains'>
+                  Components
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/certs'>
+                  StyleGuide Generator
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/usage'>
+                  Airtable
+                </a>
+              </li>
+              <li className='pm-hq item'>
+                <a className='pm-hq' href='/dashboard/usage'>
+                  Mason
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </header>
     )
   }
 }
-
-export default Header
-
+{
+  /*
 //  <ShowMore>
 //                       <div style={{ padding: 20, textAlign: 'center' }}>
 //                         <div className='jsx-4188800376'>
@@ -124,9 +118,9 @@ export default Header
 //                                   <Avatar />
 //                                 </span>
 //                               </span>
-                            
+
 //                             </span>
-                          
+
 //                         </div>
 
 //                         <span className='jsx-4188800376 dropdown'>
@@ -147,4 +141,5 @@ export default Header
 //                           </span>
 //                         </span>
 //                       </div>
-//                     </ShowMore>
+//                     </ShowMore> */
+}

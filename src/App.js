@@ -1,32 +1,8 @@
 import React, { Component } from 'react'
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-// import { withAuthenticator, withOAuth, withFederated } from 'aws-amplify-react'
-
-import { blue, indigo } from '@material-ui/core/colors'
-// import { Login } from './components/Login'
-import { Button, RaisedContainer, Note } from 'react-zeit-components'
-import Routes from './routes'
-
-const LoginButton = props => (
-  <Button color='secondary' onClick={props.signIn}>
-    Sign In
-  </Button>
-)
-
-const theme = createMuiTheme({
-  palette: {
-    secondary: {
-      main: blue[900]
-    },
-    primary: {
-      main: indigo[700]
-    }
-  },
-  typography: {
-    fontFamily: ['"Lato"', 'sans-serif'].join(',')
-  }
-})
+import AccelerationHQ from './apps/AccelerationHQ'
+import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
+import PlusMinusHQ from './apps/PlusMinusHQ'
 
 export default class App extends Component {
   state = {
@@ -38,25 +14,33 @@ export default class App extends Component {
   handleAuthStateChange = data => {
     console.log('TCL: App -> handleAuthStateChange -> data', data)
   }
+  componentDidUpdate (prevProps, prevState) {
+    console.log('TCL: App -> componentDidUpdate -> prevProps', prevProps)
+    console.log('TCL: App -> componentDidUpdate -> new props', this.props)
+  }
   render () {
     return (
-      <RaisedContainer>
-        {this.props.authState == 'signedIn' ? (
-          <MuiThemeProvider theme={theme}>
-            <Routes />
-          </MuiThemeProvider>
-        ) : (
-          <RaisedContainer>
-            <Note>
-              Welcome to PlusMinus HQ
-              <br />
-              <Button color='secondary' onClick={this.signIn}>
-                Sign In
-              </Button>
-            </Note>
-          </RaisedContainer>
-        )}
-      </RaisedContainer>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            render={() => {
+              return <PlusMinusHQ {...this.props} />
+            }}
+          />
+          {/* <Route exact path='/hq/acceleration' component={PlusMinusHQ} /> */}
+
+          {/* <Route exact path='/hq/styleguide' component={AccelerationHQ} /> */}
+          <Route
+            exact
+            path='/app/acceleration'
+            render={() => {
+              return <AccelerationHQ {...this.props} />
+            }}
+          />
+        </Switch>
+      </BrowserRouter>
     )
   }
 }

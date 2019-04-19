@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
+
+import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
+import PlusMinusHQ from './apps/PlusMinusHQ'
 import * as serviceWorker from './serviceWorker'
 import Amplify, { Auth, Hub } from 'aws-amplify'
 import aws_exports from './aws-exports'
-
-// import { withAuthenticator, withOAuth, withFederated } from 'aws-amplify-react'
 import { Authenticator, SignOut, Greetings } from 'aws-amplify-react/dist/Auth'
+import App from './App'
 Amplify.configure(aws_exports)
 
 const federated = {
-  google_client_id:
-    '60702670011-g6lf5t95d093pn5at4tbla0garkga6jj.apps.googleusercontent.com' // Enter your google_client_id here
+  google_client_id: process.env.GOOGLE_CLIENT_ID
 }
 
 ReactDOM.render(

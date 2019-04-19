@@ -13,11 +13,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-// import Sidebar from './components/Sidebar'
-
 import Menu from './Menu'
 
-const logo = require('../images/logo.svg')
+const logo = require('../../../images/logo.svg')
 
 const styles = theme => ({
   appBar: {
@@ -131,7 +129,7 @@ class Topbar extends Component {
                 <Typography variant='h6' color='inherit' noWrap>
                   <Link to='/' className={classes.link}>
                     <img width={20} src={logo} alt='' />
-                    <span className={classes.tagline}>PlusMinus FAAS</span>
+                    <span className={classes.tagline}>Acceleration HQ</span>
                   </Link>
                 </Typography>
               </div>

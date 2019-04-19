@@ -22,7 +22,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import Fade from '@material-ui/core/Fade'
 import Back from './common/Back'
 
-const logo = require('../images/logo.svg')
+const logo = require('../../../images/logo.svg')
 
 const numeral = require('numeral')
 numeral.defaultFormat('0')

@@ -11,6 +11,83 @@ import SwipeDialog from './dialogs/SwipeDialog'
 
 import Topbar from './Topbar'
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+
+    overflow: 'hidden',
+
+    backgroundSize: 'cover',
+    backgroundPosition: '0 400px',
+    paddingBottom: 200
+  },
+  grid: {
+    width: 1200,
+    marginTop: 40,
+    [theme.breakpoints.down('sm')]: {
+      width: 'calc(100% - 20px)'
+    }
+  },
+  paper: {
+    padding: theme.spacing.unit * 3,
+    textAlign: 'left',
+    color: theme.palette.text.secondary
+  },
+  rangeLabel: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    paddingTop: theme.spacing.unit * 2
+  },
+  topBar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 32
+  },
+  outlinedButtom: {
+    textTransform: 'uppercase',
+    margin: theme.spacing.unit
+  },
+  actionButtom: {
+    textTransform: 'uppercase',
+    margin: theme.spacing.unit,
+    width: 152
+  },
+  blockCenter: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center'
+  },
+  block: {
+    padding: theme.spacing.unit * 2
+  },
+  box: {
+    marginBottom: 40,
+    height: 65
+  },
+  inlining: {
+    display: 'inline-block',
+    marginRight: 10
+  },
+  buttonBar: {
+    display: 'flex'
+  },
+  alignRight: {
+    display: 'flex',
+    justifyContent: 'flex-end'
+  },
+  noBorder: {
+    borderBottomStyle: 'hidden'
+  },
+  loadingState: {
+    opacity: 0.05
+  },
+  loadingMessage: {
+    position: 'absolute',
+    top: '40%',
+    left: '40%'
+  }
+})
+
 class Main extends Component {
   state = {
     learnMoredialog: false,
@@ -39,35 +116,23 @@ class Main extends Component {
     const { classes } = this.props
     return (
       <React.Fragment>
+        <CssBaseline />
+        <Topbar />
         <div className={classes.root}>
           <Grid container justify='center'>
-            <Grid
-              spacing={24}
-              alignItems='center'
-              justify='center'
-              container
-              className={classes.grid}
-            >
+            <Grid spacing={24} alignItems='center' justify='center' container className={classes.grid}>
               <Grid item xs={12} md={4}>
                 <Paper className={classes.paper}>
                   <div className={classes.box}>
-                    <Typography
-                      style={{ textTransform: 'uppercase' }}
-                      color='secondary'
-                      gutterBottom
-                    >
-                      Airtable Module
+                    <Typography style={{ textTransform: 'uppercase' }} color='secondary' gutterBottom>
+                      Acceleration V2
                     </Typography>
-                    <Typography variant='body2' gutterBottom>
+                    {/* <Typography variant='body2' gutterBottom>
                       A first title style <br /> with two lines
-                    </Typography>
+                    </Typography> */}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button
-                      onClick={this.openDialog}
-                      variant='outlined'
-                      className={classes.actionButtom}
-                    >
+                    <Button onClick={this.openDialog} variant='outlined' className={classes.actionButtom}>
                       Demo
                     </Button>
                   </div>
@@ -76,21 +141,13 @@ class Main extends Component {
               <Grid item xs={12} md={4}>
                 <Paper className={classes.paper}>
                   <div className={classes.box}>
-                    <Typography
-                      style={{ textTransform: 'uppercase' }}
-                      color='secondary'
-                      gutterBottom
-                    >
+                    <Typography style={{ textTransform: 'uppercase' }} color='secondary' gutterBottom>
                       Mason Module
                     </Typography>
                     <Typography variant='body1' gutterBottom />
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button
-                      onClick={this.openDialog}
-                      variant='outlined'
-                      className={classes.actionButtom}
-                    >
+                    <Button onClick={this.openDialog} variant='outlined' className={classes.actionButtom}>
                       Demo
                     </Button>
                   </div>
@@ -99,11 +156,7 @@ class Main extends Component {
               <Grid item xs={12} md={4}>
                 <Paper className={classes.paper}>
                   <div className={classes.box}>
-                    <Typography
-                      style={{ textTransform: 'uppercase' }}
-                      color='secondary'
-                      gutterBottom
-                    >
+                    <Typography style={{ textTransform: 'uppercase' }} color='secondary' gutterBottom>
                       Style Guide Generator
                     </Typography>
                     <Typography variant='body1' gutterBottom>
@@ -135,11 +188,7 @@ class Main extends Component {
                         </Typography>
                       </div>
                       <div className={classes.alignRight}>
-                        <Button
-                          color='primary'
-                          variant='contained'
-                          className={classes.actionButtom}
-                        >
+                        <Button color='primary' variant='contained' className={classes.actionButtom}>
                           Learn more
                         </Button>
                       </div>
@@ -149,14 +198,8 @@ class Main extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <SwipeDialog
-            open={this.state.learnMoredialog}
-            onClose={this.dialogClose}
-          />
-          <InstructionDialog
-            open={this.state.getStartedDialog}
-            onClose={this.closeGetStartedDialog}
-          />
+          <SwipeDialog open={this.state.learnMoredialog} onClose={this.dialogClose} />
+          <InstructionDialog open={this.state.getStartedDialog} onClose={this.closeGetStartedDialog} />
         </div>
       </React.Fragment>
     )

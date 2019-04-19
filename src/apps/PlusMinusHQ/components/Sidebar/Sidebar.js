@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-import Button from '@material-ui/core/Button'
+// import { Button } from 'react-zeit-components'
 import List from '@material-ui/core/List'
 import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
@@ -10,7 +10,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
+import { Avatar, Button, RaisedContainer, Note, Table, THead, TH, TBody, TR, TD } from 'react-zeit-components'
 
+// import { Avatar, RaisedContainer, ShowMore, Table, THead, TH, TBody, TR, TD } from 'react-zeit-components'
+import './index.scss'
 const styles = {
   list: {
     width: 250
@@ -42,9 +45,7 @@ class Sidebar extends React.Component {
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -53,9 +54,7 @@ class Sidebar extends React.Component {
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -68,9 +67,7 @@ class Sidebar extends React.Component {
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -79,9 +76,7 @@ class Sidebar extends React.Component {
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -90,8 +85,14 @@ class Sidebar extends React.Component {
     )
 
     return (
-      <div>
-        <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
+      <div className='sidebar pm-hq'>
+        <Note label='Profile' type='hint'>
+          <a className='plan jsx-1702738178'>{this.props.user.phone_number}</a>
+          <a className='plan jsx-1702738178'>{this.props.user.email}</a>
+        </Note>
+        <br />
+
+        {/* <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
         <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button>
         <Button onClick={this.toggleDrawer('top', true)}>Open Top</Button>
         <Button onClick={this.toggleDrawer('bottom', true)}>Open Bottom</Button>
@@ -153,7 +154,7 @@ class Sidebar extends React.Component {
           >
             {sideList}
           </div>
-        </SwipeableDrawer>
+        </SwipeableDrawer> */}
       </div>
     )
   }

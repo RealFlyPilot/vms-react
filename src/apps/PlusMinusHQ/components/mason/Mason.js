@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
-import CardItem from './cards/CardItem'
-import Topbar from './Topbar'
+import CardItem from '../../../AccelerationHQ/components/cards/CardItem'
+import Topbar from '../../../AccelerationHQ/components/Topbar'
 import Paper from '@material-ui/core/Paper'
-import SectionHeader from './typo/SectionHeader'
+import SectionHeader from '../../../AccelerationHQ/components/typo/SectionHeader'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import { JobRequestForm } from './mason/JobRequestForm'
-import { MasonUserStoryAuthenticationForm } from './mason/MasonUserStoryAuthenticationForm'
+import { JobRequestForm } from './JobRequestForm'
+import { MasonUserStoryAuthenticationForm } from './MasonUserStoryAuthenticationForm'
 
 const styles = theme => ({
   root: {
@@ -99,18 +99,9 @@ class Mason extends Component {
         <Topbar currentPath={currentPath} />
         <div className={classes.root}>
           <Grid container justify='center'>
-            <Grid
-              spacing={24}
-              alignItems='center'
-              justify='center'
-              container
-              className={classes.grid}
-            >
+            <Grid spacing={24} alignItems='center' justify='center' container className={classes.grid}>
               <Grid item xs={12} md={6}>
-                <SectionHeader
-                  title='Mason Front End Components'
-                  subtitle='Testing environment for data'
-                />
+                <SectionHeader title='Mason Front End Components' subtitle='Testing environment for data' />
                 <Paper className={classes.paper}>
                   <JobRequestForm />
                 </Paper>
