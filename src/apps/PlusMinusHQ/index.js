@@ -3,8 +3,7 @@ import { Header } from './components/Header/Header'
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
 import AccelerationHQ from '../AccelerationHQ'
 import Sidebar from './components/Sidebar/Sidebar'
-import Mason from './components/mason/Mason'
-import { AirTableAssetList } from './components/airtable'
+
 import { Avatar, Button, RaisedContainer, Note, Table, THead, TH, TBody, TR, TD } from 'react-zeit-components'
 import './theme.zeit.scss'
 
@@ -144,8 +143,8 @@ class PlusMinusHQ extends Component {
             <Switch>
               <Route exact path='/hq/acceleration' component={AccelerationHQ} />
               {/* <Route exact path='/hq/faas' component={AccelerationHQ} /> */}
-              <Route exact path='/hq/mason' component={Mason} />
-              <Route exact path='/hq/airtable' component={AirTableAssetList} />
+              {/* <Route exact path='/hq/mason' component={Mason} /> */}
+
               <Route exact path='/hq/styleguide' component={AccelerationHQ} />
               <Route exact path='/app/acceleration' component={AccelerationHQ} />
             </Switch>

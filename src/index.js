@@ -1,9 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-
-import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
-import PlusMinusHQ from './apps/PlusMinusHQ'
 import * as serviceWorker from './serviceWorker'
 import Amplify, { Auth, Hub } from 'aws-amplify'
 import aws_exports from './aws-exports'

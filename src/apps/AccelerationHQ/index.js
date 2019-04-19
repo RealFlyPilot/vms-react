@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { AirTableAssetList } from './components/airtable'
 import { Route, HashRouter, Switch } from 'react-router-dom'
-import Dashboard from './components/Dashboard'
 import Wizard from './components/Wizard'
 import Main from './components/Main'
 import Signup from './components/Signup'
@@ -27,16 +27,29 @@ export default class AccelerationHQ extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <Main />
-        <HashRouter>
-          <ScrollToTop>
-            <Switch>
-              <Route exact path='/app/acceleration' component={Main} />
-              <Route exact path='/app/acceleration/dashboard' component={Dashboard} />
-              <Route exact path='/app/acceleration/signup' component={Signup} />
-              <Route exact path='/app/acceleration/wizard' component={Wizard} />
-            </Switch>
-          </ScrollToTop>
-        </HashRouter>
+        <AirTableAssetList />
+        {/* <HashRouter>
+          <ScrollToTop> */}
+        {/* <Route
+          path='/app/acceleration/resources'
+          render={() => {
+            return <AirTableAssetList />
+          }}
+        /> */}
+        {/* <Switch>
+          <Route exact path='/app/acceleration' component={Main} />
+          <Route
+            exact
+            path='/app/acceleration/resources'
+            render={() => {
+              return <AirTableAssetList />
+            }}
+          />
+          <Route exact path='/app/acceleration/signup' component={Signup} />
+          <Route exact path='/app/acceleration/wizard' component={Wizard} />
+        </Switch> */}
+        {/* </ScrollToTop>
+        </HashRouter> */}
       </MuiThemeProvider>
     )
   }

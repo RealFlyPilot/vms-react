@@ -1,0 +1,124 @@
+$font-stack: 'Avenir Roman', sans-serif;
+
+$white: #ffffff;
+$white_F5: #f5f5f5;
+$white_FA: #fafbfb;
+
+$gray_CF: #cfd8dc;
+$gray_9E: #9e9e9e;
+$gray_EE: #eeeeee;
+$gray_E0: #e0e0e0;
+$gray_F5: #f5f5f5;
+$gray_FA: #fafafa;
+$gray_BD: #bdbdbd;
+$gray_C5: #c5c5c5;
+$gray_75: #757575;
+
+$black: #212121;
+
+$green_45: #455a64;
+
+$orange: #ff6666;
+
+$blue_primary: #607d8b;
+$blue_primary_hover: #4f6772;
+$blue_primary_active: #7c94a0;
+$primary_inactive: #eeeeee; // Is this a better/worse naming convention than line 11?
+
+$box_shadow_1: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
+$box_shadow_3: 0px 3px 3px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
+$box_shadow_inset_1: inset 0px 1px 1px rgba(0, 0, 0, 0.18), inset 0px 0px 1px rgba(0, 0, 0, 0.27);
+
+/* Blue/E2E7E9: #E2E7E9; */
+
+$blue_54: #546e7a;
+
+$label_font_size: 15px;
+$prefixMargin: 45px;
+$formGray: $gray_C5;
+
+// @include mat-button-theme($candy-app-theme);
+
+$primary-color: mat-color($mat-blue-grey, 500);
+$my-app-primary: mat-palette($mat-blue-grey, 500, 100, 800);
+$my-app-accent: mat-palette($mat-deep-orange, 600, 100, 800);
+$my-app-warn: mat-palette($mat-red, 800);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+%inactive {
+	&[disabled] {
+		color: $gray_C5;
+		box-shadow: none;
+		outline: none;
+		border: 0 none !important;
+		cursor: not-allowed;
+	}
+}
+
+%mat-raised {
+	box-shadow: $box_shadow_1;
+	&:hover {
+		box-shadow: $box_shadow_3;
+	}
+	&:active {
+		box-shadow: $box_shadow_inset_1;
+	}
+
+	&[disabled] {
+		color: $gray_C5;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+%button-base {
+	min-height: 45px;
+	min-width: 192px;
+	border-radius: 4px; // Changed this because while the specs are clear in figma - I might be crazy but it doesnt look the same in Storybook
+	font-size: 12px;
+	line-height: 18px;
+	font-family: Avenir;
+	text-align: center;
+	font-weight: 700;
+	line-height: 45px;
+	padding: 0 27px;
+	border: none;
+
+	@extend %inactive; // all buttons seem to need to inherit these styles
+}
+
+%primary-base {
+	background-color: $blue_primary;
+	color: #ffffff;
+
+	@extend %mat-raised;
+	@extend %button-base;
+
+	&:hover {
+		background-color: $blue_primary_hover;
+	}
+	&:active {
+		background-color: $blue_primary_active;
+	}
+	&[disabled] {
+		background: #eeeeee;
+	}
+}
+
+%secondary-base {
+	color: $blue_primary;
+	background: #ffffff;
+
+	@extend %mat-raised;
+	@extend %button-base;
+
+	&:hover {
+		background: #e2e7e9;
+	}
+	&:active {
+		background: #f0f3f4;
+	}
+	&[disabled] {
+		background: #ffffff;
+	}
+}
