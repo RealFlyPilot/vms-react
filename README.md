@@ -13,6 +13,28 @@ Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/
 Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=7vntmdkkv5049fn5nkqmjh6kjh&redirect_uri=http://localhost:3000/
 
 
+### React Material UI
+
+**Style Guide:**
+
+[Material](https://material-ui.com/customization/default-theme/)
+
+```
+breakpoints: Object
+direction: "ltr"
+mixins: Object
+overrides: Object
+palette: Object
+props: Object
+shadows: Array[25]
+typography: Object
+shape: Object
+borderRadius: 4
+spacing: Object
+transitions: Object
+zIndex: Object 
+```
+
 ### Storybook 
 
 1. [Options](https://github.com/storybooks/storybook/tree/next/addons/options)
