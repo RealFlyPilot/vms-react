@@ -9,14 +9,19 @@ import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverla
 import { withInfo, addParameters } from '@storybook/addon-info'
 import VmsInput from '../../src/apps/AccelerationHQ/components/VmsInput'
 import VmsTable from '../../src/apps/AccelerationHQ/components/VmsTable'
-
+import TableContainer from '../../src/apps/AccelerationHQ/components/TableContainer'
 import { VmsColorPallete } from '../../src/apps/AccelerationHQ/components/ColorPallete'
+import { buttonRoot, componentLibraryRoot, formFieldLibraryRoot } from '../roots'
 
-storiesOf('VMS Form Field Library', module)
+storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
-storiesOf('VMS Form Field Library/Colors/Color Pallete', module)
+storiesOf(`${formFieldLibraryRoot}`, module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
+
+storiesOf(`${formFieldLibraryRoot}/Vms Colors/Color Pallete`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
   .add('All', () => <VmsColorPallete />)
@@ -34,11 +39,11 @@ storiesOf('VMS Form Field Library/Colors/Color Pallete', module)
     </WithFigma>
   ))
 
-storiesOf('VMS Form Field Library/VmsInputs', module)
+storiesOf(`${formFieldLibraryRoot}/Vms Input Fields`, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
-storiesOf('VMS Form Field Library/VmsInputs/Single', module)
+storiesOf(`${formFieldLibraryRoot}/Vms Input Fields/Single`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
 
@@ -48,7 +53,18 @@ storiesOf('VMS Form Field Library/VmsInputs/Single', module)
   .add('Single Line Editable', () => <VmsInput editable />)
   .add('Single Line Uneditable', () => <VmsInput editable={false} />)
 
-storiesOf('VMS Form Field Library/Tables', module)
+storiesOf(`${formFieldLibraryRoot}/Vms Tables`, module)
+
+storiesOf(`${formFieldLibraryRoot}/Vms Tables/Single`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Default Table', () => <VmsTable />)
+  .add('Default Table', () => <TableContainer />)
+
+storiesOf(`${formFieldLibraryRoot}/VMS Select Fields`, module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
+
+storiesOf(`${formFieldLibraryRoot}/VMS Select Fields/Calendar Select`, module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
+  .addDecorator(centered)

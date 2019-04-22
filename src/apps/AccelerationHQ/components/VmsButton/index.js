@@ -3,10 +3,11 @@ import './index.scss'
 import { dynamicAttributes } from '../utils'
 import { PropTypes } from 'prop-types'
 
-const VmsButton = ({ cssClass, buttonType, ...props }) => {
-  const attrs = dynamicAttributes(buttonType, 'true')
+const VmsButton = ({ cssClass, buttonType, disabled, ...props }) => {
+  const type = dynamicAttributes(buttonType, 'true')
+  const dis = dynamicAttributes('disabled', disabled)
   return (
-    <button {...attrs} className={`${buttonType}`}>
+    <button {...type} {...dis} className={`${buttonType}`}>
       {props.children}
     </button>
   )
@@ -14,6 +15,7 @@ const VmsButton = ({ cssClass, buttonType, ...props }) => {
 
 VmsButton.propTypes = {
   cssClass: PropTypes.string,
+  disabled: PropTypes.bool,
   buttonType: PropTypes.string.isRequired
 }
 

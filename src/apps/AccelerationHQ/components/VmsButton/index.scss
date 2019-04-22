@@ -1,101 +1,93 @@
+@import '../../sass/mixins';
 @import '../../sass/variables';
 
 button {
 	outline: none;
 	max-width: 50vw;
-}
-button[primary],
-button[secondary],
-button[secondary_alt],
-button[tertiary] {
-	min-height: 45px;
-	min-width: 192px;
-	max-width: 200px;
-	border-radius: 3px;
-	font-size: 12px;
-	line-height: 18px;
-	font-family: Avenir;
-font-weight: 700;
-text-align: center;
-}
-button[primary],
-button[secondary] {
-	box-shadow: 0 0 1px 0 rgba(33, 33, 33, 0.24),
-		0 1px 3px 0 rgba(33, 33, 33, 0.18);
-}
-
-button[primary] {
-	background-color: $blue_primary;
-	color: #ffffff;
-	&:hover {
-		background-color: #455a64;
-		box-shadow: 0 0 1px 0 rgba(33, 33, 33, 0.24),
-			0 3px 6px 0 rgba(33, 33, 33, 0.24);
-	}
-	&:active {
-		background-color: #90a4ae;
-		box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.24),
-			inset 0 1px 3px 0 rgba(33, 33, 33, 0.24);
-	}
-}
-button[secondary] {
-	color: #4F6772;
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
-	background-color: #ffffff;
-
-	&:hover {
-    
-    background: #E2E7E9;
-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
-	}
-	&:active {
-  color: #7C94A0;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.18), inset 0px 0px 1px rgba(0, 0, 0, 0.27);
-	}
-}
-button[secondary_alt] {
-	border: 2px solid #607d8b;
-	background: transparent;
-	color: #607D8B;
-}
-button[tertiary] {
-	color: $blue_primary;
-	background-color: #ffffff;
-	border: none;
-
-	&:hover {
-		color: #455a64;
-	}
-	&:active {
-		color: #90a4ae;
-	}
-	&.inactive {
-		color: #bdbdbd;
+	&.primary {
+		@extend %primary-base;
 	}
 
-}
+	&.secondary {
+		@extend %secondary-base;
+	}
 
-button[pill] {
-	border-radius: 13.5px;
-	width: 180px;
-	min-height: 27px;
-	border: 2px solid #607d8b;
-	font-family: Avenir;
-	font-size: 12px;
-	line-height: 18px;
-	text-align: center;
-	background: transparent;
-	font-weight: 700;
-	color: #607D8B;
-}
+	&.tertiary {
+		color: $blue_primary;
+		background-color: transparent;
+		border: none;
 
-button[link] {
-	font-family: Avenir;
-	font-size: 12px;
-	line-height: 18px;
-	text-align: center;
-	background: transparent;
-	font-weight: 700;
-	border: none;
-	color: #607D8B;
+		@extend %button-base;
+
+		&:hover {
+			background: #e2e7e9;
+		}
+		&:active {
+			color: #7c94a0;
+			background: #f0f3f4;
+		}
+
+		// Disabled handled by button-base
+	}
+
+	&.pill {
+		border-radius: 13.5px !important;
+		min-width: 180px;
+		background: #ffffff;
+		border-radius: 13.5px;
+		padding: 6px 26px;
+		border: none;
+		outline: none;
+		min-height: 27px;
+
+		&:not([disabled]) {
+			color: #58727f !important;
+		}
+		position: relative;
+		font-weight: 700;
+		color: inherit;
+		line-height: 18px;
+		box-shadow: none;
+
+		&:hover {
+			background: #e2e7e9;
+			color: #4f6772;
+			box-shadow: none;
+		}
+		&:active {
+			background: #f0f3f4;
+			color: #7c94a0;
+			box-shadow: none;
+		}
+		&[disabled] {
+			background: #ffffff;
+		}
+		@extend %inactive;
+
+		&:after {
+			position: absolute;
+			content: '+';
+			left: 24px;
+			top: auto;
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+	&.link {
+		@extend %button-base;
+		color: #607d8b;
+		border: none;
+		text-decoration-line: underline;
+
+		&:hover {
+			color: #4f6772;
+		}
+		&:active {
+			color: #7c94a0;
+		}
+
+		&[disabled] {
+			color: #c5c5c5;
+		}
+	}
 }

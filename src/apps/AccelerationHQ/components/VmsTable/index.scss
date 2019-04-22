@@ -1,0 +1,34 @@
+.MuiTableSortLabel-icon-64,
+.MuiTableSortLabel-active-2711 .MuiTableSortLabel-icon-2712 {
+	fill: #bdbdbd;
+}
+.MuiTableSortLabel-root-2710 {
+	width: 100%;
+	display: block;
+}
+.vms-table-header__with-select {
+	position: relative;
+	// .grip-icon {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	right: 0;
+	// }
+	.dropdown {
+		width: 100%;
+		*:before {
+			border: none;
+		}
+		.MuiSelect-root-104,
+		input,
+		label {
+			font-size: 12px;
+			line-height: normal;
+			font-weight: 400;
+			color: #212121;
+			letter-spacing: 1px;
+		}
+		svg {
+			fill: #607d8b;
+		}
+	}
+}

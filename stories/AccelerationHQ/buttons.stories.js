@@ -8,27 +8,25 @@ import { WithFigma } from 'storybook-addon-figma'
 import { VmsButton } from '../../src/apps/AccelerationHQ/components/VmsButton'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
+import { buttonRoot, componentLibraryRoot, formFieldLibraryRoot } from '../roots'
 
-storiesOf('VMS Form Field Library', module)
+storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
-storiesOf('VMS Form Field Library/Buttons', module)
+storiesOf(`${formFieldLibraryRoot}`, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
-storiesOf('VMS Form Field Library/Buttons/Primary', module)
+storiesOf(`${buttonRoot}`, module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
+
+storiesOf(`${buttonRoot}/Primary`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add(
-    'Default',
-    () => (
-      <GridOverlay>
-        <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
-      </GridOverlay>
-    ),
-    {
-      info: `
+  .add('Default', () => <VmsButton buttonType={`primary`}>Primary Button</VmsButton>, {
+    info: `
             #### Primary Button CSS
 
             - background: #607D8B; Blue/607D8B
@@ -40,8 +38,17 @@ storiesOf('VMS Form Field Library/Buttons/Primary', module)
             - color: #FFFFFF;
             - box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
           `
-    }
-  )
+  })
+  .add('Disabled', () => (
+    <VmsButton buttonType={`primary`} disabled>
+      Primary Button
+    </VmsButton>
+  ))
+  .add('With Grid', () => (
+    <GridOverlay>
+      <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
+    </GridOverlay>
+  ))
   .add('Primary Button With Figma', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73'}
@@ -50,18 +57,28 @@ storiesOf('VMS Form Field Library/Buttons/Primary', module)
     </WithFigma>
   ))
 
-storiesOf('VMS Form Field Library/Buttons/Secondary', module)
-  .addParameters({
-    backgrounds: [{ name: 'twitter', value: '#00aced', default: true }, { name: 'facebook', value: '#3b5998' }]
-  })
+storiesOf(`${buttonRoot}/Secondary`, module)
   .addDecorator(centered)
   .add('Default', () => <VmsButton buttonType={'secondary'}>Secondary Button</VmsButton>)
-storiesOf('VMS Form Field Library/Buttons/Secondary Alt', module)
-  .addDecorator(centered)
-  .add('Default', () => <VmsButton buttonType={'secondary_alt'}>Secondary Alt Button</VmsButton>)
-storiesOf('VMS Form Field Library/Buttons/Tertiary', module)
+  .add('Disabled', () => (
+    <VmsButton buttonType={'secondary'} disabled>
+      Secondary Button
+    </VmsButton>
+  ))
+
+storiesOf(`${buttonRoot}/Tertiary`, module)
   .addDecorator(centered)
   .add('Default', () => <VmsButton buttonType={'tertiary'}>Tertiary Button</VmsButton>)
+  .add('Disabled', () => (
+    <VmsButton buttonType={'tertiary'} disabled>
+      Tertiary Button
+    </VmsButton>
+  ))
 
-  .add('Link', () => <VmsButton buttonType={'link'}>Link</VmsButton>)
-  .add('Pill', () => <VmsButton buttonType={'pill'}>Link</VmsButton>)
+storiesOf(`${buttonRoot}/Link`, module)
+  .addDecorator(centered)
+  .add('Default', () => <VmsButton buttonType={'link'}>Call to Action</VmsButton>)
+
+storiesOf(`${buttonRoot}/Pill`, module)
+  .addDecorator(centered)
+  .add('Default', () => <VmsButton buttonType={'pill'}>Pill</VmsButton>)

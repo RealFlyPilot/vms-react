@@ -6,94 +6,125 @@ import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
+import Collapse from '@material-ui/core/Collapse'
+import Tooltip from '@material-ui/core/Tooltip'
+import TableSortLabel from '@material-ui/core/TableSortLabel'
 import Paper from '@material-ui/core/Paper'
+import { TableHeaderWithSelect } from './TableHeader'
+import './index.scss'
 
 const styles = theme => ({
   root: {
     width: '100%',
     marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
-    padding: 20
+    overflowX: 'auto'
   },
   table: {
-    minWidth: 500,
-
+    minWidth: 500
   },
   tableHeader: {
     fontSize: 12,
     fontFamily: 'Avenir',
     fontWeight: '600',
-    color: '#212121'
+    letterSpacing: '1px',
+    padding: '13px 13px 0',
+    color: '#212121',
+    borderBottom: ' 1px solid rgba(224, 224, 224, 1)',
+    borderRight: ' 1px solid rgba(224, 224, 224, 1)'
+  },
+  tableCell: {
+    borderBottom: ' 1px solid rgba(224, 224, 224, 1)',
+    borderRight: ' 1px solid rgba(224, 224, 224, 1)'
+  },
+  tableRow: {
+    padding: '20px'
+  },
+  icon: {
+    color: '#BDBDBD'
   }
 })
 
-let id = 0
-function createData ( Worker, Status, BillRate, CostDate, TotalCost, ModifyStartDate, EndDate, TimeCardSubmittalDate, End, Vendor, Submitted ) {
-  id += 1
-  return { Worker, Status, BillRate, CostDate, TotalCost, ModifyStartDate, EndDate, TimeCardSubmittalDate, End, Vendor, Submitted }
+function desc (a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1
+  }
+  return 0
 }
 
-const rows = [
-  createData('Mike Lovascio', 159, 6.0, 24, 4.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  createData('Daddy Greco', 237, 9.0, 37, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  createData('P Steezy', 262, 16.0, 24, 6.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  createData('Lee Bag', 305, 3.7, 67, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  createData('J Capitan', 356, 16.0, 49, 3.9, 0, 0, 0, 0, 0, 0, 0, 0)
+function stableSort (array, cmp) {
+  const stabilizedThis = array.map((el, index) => [el, index])
+  stabilizedThis.sort((a, b) => {
+    const order = cmp(a[0], b[0])
+    if (order !== 0) return order
+    return a[1] - b[1]
+  })
+  return stabilizedThis.map(el => el[0])
+}
+
+function getSorting (order, orderBy) {
+  return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy)
+}
+
+const columns = [
+  'ContingentWorker',
+  'Id',
+  'Status',
+  'BillRate',
+  'CostDate',
+  'TotalCost',
+  'Modify',
+  'StartDate',
+  'EndDate',
+  'TimeCardSubmittalDate',
+  'End',
+  'Vendor',
+  'Submitted'
 ]
 
 function VmsTable (props) {
-  const { classes } = props
+  const { classes, onSelectAllClick, order, orderBy, data, numSelected, createSortHandler, selected, rowCount } = props
+  const isSelected = id => selected.indexOf(id) !== -1
 
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell className={classes.tableHeader}>Contingent Worker</TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              ID
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Status
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Bill Rate
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Cost to Date
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Total Cost
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Modify
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Start Date
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              End Date
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Time Card Submittal Date
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              End
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Vendor
-            </TableCell>
-            <TableCell className={classes.tableHeader} align='center'>
-              Submitted
-            </TableCell>
+            {columns.map((col, i) => (
+              <TableHeaderWithSelect
+                order={order}
+                orderBy={orderBy}
+                id={i}
+                classes={classes}
+                key={i}
+                createSortHandler={createSortHandler}
+                cssClass={classes.tableHeader}
+                colHeader={col}
+              />
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => {
+          {stableSort(data, getSorting(order, orderBy)).map(row => {
+            const selected = isSelected(row.id)
             return (
-              <TableRow key={row.id}>
+              <TableRow
+                hover
+                onClick={event => this.handleClick(event, row.id)}
+                // role='checkbox'
+                // aria-checked={selected}
+                // tabIndex={-1}
+                key={row.id}
+                selected={selected}
+              >
                 {Object.keys(row).map(key => (
-                  <TableCell key={key} align='center'>{row[key] ? row[key] : 0}</TableCell>
+                  <TableCell className={classes.tableCell} key={key} align='left'>
+                    {row[key] ? row[key] : 0}
+                  </TableCell>
                 ))}
               </TableRow>
             )
@@ -105,7 +136,13 @@ function VmsTable (props) {
 }
 
 VmsTable.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  order: PropTypes.string.isRequired,
+  orderBy: PropTypes.string.isRequired,
+  rowCount: PropTypes.number.isRequired,
+  numSelected: PropTypes.number.isRequired,
+  onRequestSort: PropTypes.func.isRequired,
+  onSelectAllClick: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(VmsTable)

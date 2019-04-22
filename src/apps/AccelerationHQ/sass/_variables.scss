@@ -1,4 +1,4 @@
-// @import '~@angular/material/theming';
+$font-stack: 'Avenir Roman', sans-serif;
 
 $white: #ffffff;
 $white_F5: #f5f5f5;
@@ -21,17 +21,19 @@ $green_45: #455a64;
 $orange: #ff6666;
 
 $blue_primary: #607d8b;
-$blue_54: #546e7a;
+$blue_primary_hover: #4f6772;
+$blue_primary_active: #7c94a0;
+$primary_inactive_bg: #eeeeee; // Is this a better/worse naming convention than line 11?
+$button_inactive_text: #c5c5c5;
 
-$font-stack: 'Avenir Roman', sans-serif;
+$box_shadow_1: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
+$box_shadow_3: 0px 3px 3px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
+$box_shadow_inset_1: inset 0px 1px 1px rgba(0, 0, 0, 0.18), inset 0px 0px 1px rgba(0, 0, 0, 0.27);
+
+/* Blue/E2E7E9: #E2E7E9; */
+
+$blue_54: #546e7a;
 
 $label_font_size: 15px;
 $prefixMargin: 45px;
-
 $formGray: $gray_C5;
-
-// $primary-color: mat-color($mat-blue-grey, 500);
-// $my-app-primary: mat-palette($mat-blue-grey, 500, 100, 800);
-// $my-app-accent: mat-palette($mat-deep-orange, 600, 100, 800);
-// $my-app-warn: mat-palette($mat-red, 800);
-// $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
