@@ -118,8 +118,17 @@ class Main extends Component {
       <React.Fragment>
         <CssBaseline />
         <Topbar />
-        <div className={classes.root}>
-          <Grid container justify='center'>
+        <div className={classes.root} />
+      </React.Fragment>
+    )
+  }
+}
+
+export default withRouter(withStyles(styles)(Main))
+
+/*
+
+   <Grid container justify='center'>
             <Grid spacing={24} alignItems='center' justify='center' container className={classes.grid}>
               <Grid item xs={12} md={4}>
                 <Paper className={classes.paper}>
@@ -127,9 +136,7 @@ class Main extends Component {
                     <Typography style={{ textTransform: 'uppercase' }} color='secondary' gutterBottom>
                       Acceleration V2
                     </Typography>
-                    {/* <Typography variant='body2' gutterBottom>
-                      A first title style <br /> with two lines
-                    </Typography> */}
+
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Button onClick={this.openDialog} variant='outlined' className={classes.actionButtom}>
@@ -200,10 +207,5 @@ class Main extends Component {
           </Grid>
           <SwipeDialog open={this.state.learnMoredialog} onClose={this.dialogClose} />
           <InstructionDialog open={this.state.getStartedDialog} onClose={this.closeGetStartedDialog} />
-        </div>
-      </React.Fragment>
-    )
-  }
-}
 
-export default withRouter(withStyles(styles)(Main))
+*/

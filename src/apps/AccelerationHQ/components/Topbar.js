@@ -80,7 +80,7 @@ const styles = theme => ({
 class Topbar extends Component {
   state = {
     value: 0,
-    menuDrawer: false
+    menuDrawer: true
   }
 
   handleChange = (event, value) => {
@@ -100,20 +100,23 @@ class Topbar extends Component {
   }
 
   current = () => {
-    if (this.props.currentPath === '/home') {
+    if (this.props.currentPath === '/acceleration-vms') {
       return 0
     }
-    if (this.props.currentPath === '/dashboard') {
+    if (this.props.currentPath === '/agile-one') {
       return 1
     }
-    if (this.props.currentPath === '/signup') {
+    if (this.props.currentPath === '/styleguide') {
       return 2
     }
-    if (this.props.currentPath === '/wizard') {
+    if (this.props.currentPath === '/v1-resources') {
       return 3
     }
-    if (this.props.currentPath === '/mason') {
+    if (this.props.currentPath === '/v1.5-snakeskin') {
       return 4
+    }
+    if (this.props.currentPath === '/v2-') {
+      return 5
     }
   }
 

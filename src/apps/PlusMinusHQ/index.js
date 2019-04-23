@@ -11,12 +11,7 @@ class PlusMinusHQ extends Component {
   state = {
     signedIn: false
   }
-  componentDidMount () {
-    console.log(this.props)
-  }
-  handleAuthStateChange = data => {
-    console.log('TCL: App -> handleAuthStateChange -> data', data)
-  }
+
   render () {
     console.log(this.props)
 
@@ -74,7 +69,10 @@ class PlusMinusHQ extends Component {
                   style={{
                     padding: '50px',
                     height: '-webkit-fill-available',
-                    width: '25%',
+                    width: '50%',
+                    position: 'absolute',
+                    top: '100px',
+                    right: 0,
                     borderLeft: '1px solid #eee'
                   }}
                 >
