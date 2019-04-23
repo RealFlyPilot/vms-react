@@ -49,22 +49,44 @@ storiesOf(`${buttonRoot}/Primary`, module)
       <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
     </GridOverlay>
   ))
-  .add('Primary Button With Figma', () => (
-    <WithFigma
-      url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73'}
-    >
-      <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
-    </WithFigma>
-  ))
+  .add(
+    'Primary Button With Figma',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73'}
+      >
+        <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
+      </WithFigma>
+    ),
+    {
+      info: `
+            ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73)
+          `
+    }
+  )
 
 storiesOf(`${buttonRoot}/Secondary`, module)
   .addDecorator(centered)
+  .addDecorator(withInfo)
   .add('Default', () => <VmsButton buttonType={'secondary'}>Secondary Button</VmsButton>)
   .add('Disabled', () => (
     <VmsButton buttonType={'secondary'} disabled>
       Secondary Button
     </VmsButton>
   ))
+  .add(
+    'Secondary Button With Figma',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=29%3A42'}
+      >
+        <VmsButton buttonType={'secondary'}>Secondary Button</VmsButton>
+      </WithFigma>
+    ),
+    {
+      info: ` ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=29%3A42) `
+    }
+  )
 
 storiesOf(`${buttonRoot}/Tertiary`, module)
   .addDecorator(centered)

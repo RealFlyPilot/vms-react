@@ -11,15 +11,7 @@ import VmsInput from '../../src/apps/AccelerationHQ/components/VmsInput'
 import VmsTable from '../../src/apps/AccelerationHQ/components/VmsTable'
 import { VmsColorPallete } from '../../src/apps/AccelerationHQ/components/ColorPallete'
 import { buttonRoot, componentLibraryRoot, formFieldLibraryRoot } from '../roots'
-import TableHandler from '../../src/apps/AccelerationHQ/components/VmsTable/TableHandler'
-
-const dataSet1 = ['Mike Lovascio', 159, 6.0, 24, 4.0, 0, 0, 0, 0, 0, 0, 0, 0]
-const dataSet2 = ['Daddy Greco', 237, 9.0, 37, 4.3, 0, 0, 0, 0, 0, 0, 0, 0]
-const dataSet3 = ['P Steezy', 262, 16.0, 24, 6.0, 0, 0, 0, 0, 0, 0, 0, 0]
-const dataSet4 = ['Lee Bag', 305, 3.7, 67, 4.3, 0, 0, 0, 0, 0, 0, 0, 0]
-const dataSet5 = ['J Capitan', 356, 16.0, 49, 3.9, 0, 0, 0, 0, 0, 0, 0, 0]
-
-const allWorkerData = [dataSet1, dataSet2, dataSet3, dataSet4, dataSet5]
+import { allWorkerData, allCandidateData } from '../data'
 
 storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
@@ -66,7 +58,8 @@ storiesOf(`${formFieldLibraryRoot}/Vms Tables`, module)
 storiesOf(`${formFieldLibraryRoot}/Vms Tables/Single`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Worker Table', () => <TableHandler tableType='worker' data={allWorkerData} />)
+  .add('Worker Table', () => <VmsTable tableType='worker' data={allWorkerData} />)
+  .add('Candidate Table', () => <VmsTable tableType='candidate' data={allCandidateData} />)
 
 storiesOf(`${formFieldLibraryRoot}/VMS Select Fields`, module)
   .addDecorator(centered)

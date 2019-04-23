@@ -1,25 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import Collapse from '@material-ui/core/Collapse'
-import Tooltip from '@material-ui/core/Tooltip'
-import TableSortLabel from '@material-ui/core/TableSortLabel'
 import Paper from '@material-ui/core/Paper'
-import { TableHeaderWithSelect } from './TableHeader'
-import { VmsButton } from '../VmsButton'
-import './index.scss'
+import WorkerTable from './WorkerTable'
+import CandidateTable from './CandidateTable'
 
 const styles = theme => ({
   root: {
     width: '100%',
     marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto'
+    overflowX: 'auto',
+    padding: 20
   },
   table: {
     minWidth: 500
@@ -28,122 +19,166 @@ const styles = theme => ({
     fontSize: 12,
     fontFamily: 'Avenir',
     fontWeight: '600',
-    letterSpacing: '1px',
-    padding: '13px 13px 0',
-    color: '#212121',
-    borderBottom: ' 1px solid rgba(224, 224, 224, 1)',
-    borderRight: ' 1px solid rgba(224, 224, 224, 1)'
-  },
-  tableCell: {
-    borderBottom: ' 1px solid rgba(224, 224, 224, 1)',
-    borderRight: ' 1px solid rgba(224, 224, 224, 1)'
-  },
-  tableRow: {
-    padding: '20px'
-  },
-  icon: {
-    color: '#BDBDBD'
+    color: '#212121'
   }
 })
 
-function desc (a, b, orderBy) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1
+class VmsTable extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      order: 'asc',
+      orderBy: 'Status',
+      selected: [],
+      data: [],
+      page: 0,
+      rowsPerPage: 5
+    }
+
+    this.candidateSchema = [
+      'candidate',
+      'engageorReject',
+      'status',
+      'resumeRelevence',
+      'skillsMatch',
+      'formerEmployee',
+      'formerContractor',
+      'rating',
+      'interview',
+      'currentBillRate',
+      'negotiate',
+      'vendor',
+      'submitted'
+    ]
+    this.workerSchema = [
+      'contingentWorker',
+      'id',
+      'status',
+      'billRate',
+      'costDate',
+      'totalCost',
+      'modify',
+      'startDate',
+      'endDate',
+      'timeCardSubmittalDate',
+      'end',
+      'vendor',
+      'submitted'
+    ]
   }
-  if (b[orderBy] > a[orderBy]) {
-    return 1
+
+  handleRequestSort = (event, property) => {
+    const orderBy = property
+    let order = 'desc'
+
+    if (this.state.orderBy === property && this.state.order === 'desc') {
+      order = 'asc'
+    }
+
+    this.setState({ order, orderBy })
   }
-  return 0
-}
 
-function stableSort (array, cmp) {
-  const stabilizedThis = array.map((el, index) => [el, index])
-  stabilizedThis.sort((a, b) => {
-    const order = cmp(a[0], b[0])
-    if (order !== 0) return order
-    return a[1] - b[1]
-  })
-  return stabilizedThis.map(el => el[0])
-}
+  handleSelectAllClick = event => {
+    if (event.target.checked) {
+      this.setState(state => ({ selected: state.data.map(n => n.id) }))
+      return
+    }
+    this.setState({ selected: [] })
+  }
 
-function getSorting (order, orderBy) {
-  return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy)
-}
+  handleClick = (event, id) => {
+    const { selected } = this.state
+    const selectedIndex = selected.indexOf(id)
+    let newSelected = []
 
-const columns = [
-  'ContingentWorker',
-  'Id',
-  'Status',
-  'BillRate',
-  'CostDate',
-  'TotalCost',
-  'Modify',
-  'StartDate',
-  'EndDate',
-  'TimeCardSubmittalDate',
-  'End',
-  'Vendor',
-  'Submitted'
-]
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, id)
+    } else if (selectedIndex === 0) {
+      newSelected = newSelected.concat(selected.slice(1))
+    } else if (selectedIndex === selected.length - 1) {
+      newSelected = newSelected.concat(selected.slice(0, -1))
+    } else if (selectedIndex > 0) {
+      newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1))
+    }
 
-function VmsTable (props) {
-  const { classes, onSelectAllClick, order, orderBy, data, numSelected, createSortHandler, selected, rowCount } = props
-  const isSelected = id => selected.indexOf(id) !== -1
+    this.setState({ selected: newSelected })
+  }
 
-  return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            {columns.map((col, i) => (
-              <TableHeaderWithSelect
-                order={order}
-                orderBy={orderBy}
-                id={i}
-                classes={classes}
-                key={i}
-                createSortHandler={createSortHandler}
-                cssClass={classes.tableHeader}
-                colHeader={col}
-              />
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {stableSort(data, getSorting(order, orderBy)).map(row => {
-            const selected = isSelected(row.id)
-            return (
-              <TableRow hover onClick={event => this.handleClick(event, row.id)} key={row.id} selected={selected}>
-                {Object.keys(row).map(key => (
-                  <TableCell
-                    className={`${classes.tableCell} ${key === 'end' || key === 'modify' ? 'raised' : ''}`}
-                    key={key}
-                    align='left'
-                  >
-                    {key === 'end' || key === 'modify' ? (
-                      <VmsButton buttonType='secondary'>{row[key]}</VmsButton>
-                    ) : (
-                      row[key]
-                    )}
-                  </TableCell>
-                ))}
-              </TableRow>
-            )
-          })}
-        </TableBody>
-      </Table>
-    </Paper>
-  )
+  handleChangePage = (event, page) => {
+    this.setState({ page })
+  }
+
+  handleChangeRowsPerPage = event => {
+    this.setState({ rowsPerPage: event.target.value })
+  }
+  createSortHandler = property => event => {
+    this.props.onRequestSort(event, property)
+  }
+
+  createTableData = dataArray => {
+    const merged = (values, keys) => values.reduce((obj, value, index) => ({ ...obj, [keys[index]]: value }), {})
+    const schema = this.props.tableType === 'candidate' ? this.candidateSchema : this.workerSchema
+
+    return dataArray.map(arr => {
+      const dataObj = merged(arr, schema)
+      return dataObj
+    })
+  }
+
+  componentDidMount () {
+    const { data } = this.props
+    const tableData = this.createTableData(data)
+    this.setState({
+      data: tableData
+    })
+  }
+
+  isSelected = id => this.state.selected.indexOf(id) !== -1
+
+  render () {
+    const { classes, tableType } = this.props
+    const { data, order, orderBy, selected } = this.state
+    const table =
+      tableType === 'candidate' ? (
+        <CandidateTable
+          numSelected={selected.length}
+          order={order}
+          createSortHandler={this.createSortHandler}
+          orderBy={orderBy}
+          selected={this.state.selected}
+          onSelectAllClick={this.handleSelectAllClick}
+          onRequestSort={this.handleRequestSort}
+          rowCount={data.length}
+          data={this.state.data}
+          columns={this.candidateSchema}
+        />
+      ) : (
+        <WorkerTable
+          numSelected={selected.length}
+          order={order}
+          createSortHandler={this.createSortHandler}
+          orderBy={orderBy}
+          selected={this.state.selected}
+          onSelectAllClick={this.handleSelectAllClick}
+          onRequestSort={this.handleRequestSort}
+          rowCount={data.length}
+          data={this.state.data}
+          columns={this.workerSchema}
+        />
+      )
+
+    return (
+      <Paper className={classes.root}>
+        <div className={classes.tableWrapper}>{table}</div>
+      </Paper>
+    )
+  }
 }
 
 VmsTable.propTypes = {
   classes: PropTypes.object.isRequired,
-  order: PropTypes.string.isRequired,
-  orderBy: PropTypes.string.isRequired,
-  rowCount: PropTypes.number.isRequired,
-  numSelected: PropTypes.number.isRequired,
-  onRequestSort: PropTypes.func.isRequired,
-  onSelectAllClick: PropTypes.func.isRequired
+  tableType: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired
 }
 
 export default withStyles(styles)(VmsTable)

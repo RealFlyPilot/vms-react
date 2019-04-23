@@ -14,6 +14,7 @@ table {
 	thead {
 		tr {
 			th.vms-table-header__with-select {
+				padding: 13px 0 0 13px !important;
 			}
 		}
 	}
@@ -34,7 +35,7 @@ tbody {
 	right: 5px;
 	bottom: 10px;
 	height: 84%;
-	width: 30px;
+	width: 15px;
 	background-repeat: space space;
 }
 .vms-table-header {

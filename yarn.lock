@@ -1251,9 +1251,9 @@
     react-textarea-autosize "^7.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-graphql@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-graphql/-/addon-graphql-5.0.6.tgz#a56f3f980d84c7ed1d9be67021703c81b78aab19"
+"@storybook/addon-graphql@^5.0.10":
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-graphql/-/addon-graphql-5.0.10.tgz#472e8f01ac875b3e7abc7158ac47e26c05849ba9"
   dependencies:
     core-js "^2.6.5"
     global "^4.3.2"
