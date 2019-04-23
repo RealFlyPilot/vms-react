@@ -24,32 +24,20 @@ const theme = createMuiTheme({
 
 export default class AccelerationHQ extends Component {
   render () {
+    console.log(this.props)
+
     return (
       <MuiThemeProvider theme={theme}>
-        <Main />
-        <AirTableAssetList />
-        {/* <HashRouter>
-          <ScrollToTop> */}
-        {/* <Route
-          path='/app/acceleration/resources'
-          render={() => {
-            return <AirTableAssetList />
-          }}
-        /> */}
-        {/* <Switch>
+        {/* <Main />
+        <AirTableAssetList /> */}
+
+        {/* <HashRouter> */}
+        <ScrollToTop>
           <Route exact path='/app/acceleration' component={Main} />
-          <Route
-            exact
-            path='/app/acceleration/resources'
-            render={() => {
-              return <AirTableAssetList />
-            }}
-          />
-          <Route exact path='/app/acceleration/signup' component={Signup} />
-          <Route exact path='/app/acceleration/wizard' component={Wizard} />
-        </Switch> */}
-        {/* </ScrollToTop>
-        </HashRouter> */}
+          <Route path='/app/acceleration/sections/signup' component={Signup} />
+          <Route path='/app/acceleration/sections/wizard' component={Wizard} />
+        </ScrollToTop>
+        {/* </HashRouter> */}
       </MuiThemeProvider>
     )
   }

@@ -1,21 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import Collapse from '@material-ui/core/Collapse'
 import Tooltip from '@material-ui/core/Tooltip'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
-import Paper from '@material-ui/core/Paper'
 import TableSelect from '../VmsSelect/TableSelect'
-import { GripTexture } from '../Icons'
+import { revertCamelCase } from '../utils'
 
 export const TableHeader = ({ classes, cssClass, colHeader, orderBy, order, id, createSortHandler }) => (
   <TableCell className={`vms-table-header ${cssClass}`}>
+    <div className='grip-texture' />
     <Tooltip title='Sort' placement={'bottom-start'} enterDelay={300}>
       <TableSortLabel
         active
@@ -26,15 +21,15 @@ export const TableHeader = ({ classes, cssClass, colHeader, orderBy, order, id, 
           createSortHandler(id)
         }}
       >
-        {colHeader}
+        {revertCamelCase(colHeader)}
       </TableSortLabel>
     </Tooltip>
-    <GripTexture />
   </TableCell>
 )
 
 export const TableHeaderWithSelect = ({ classes, cssClass, colHeader, orderBy, order, id, createSortHandler }) => (
   <TableCell className={`vms-table-header__with-select  ${cssClass}`}>
+    <div className='grip-texture' />
     <Tooltip title='Sort' placement={'bottom-start'} enterDelay={300}>
       <TableSortLabel
         active
@@ -45,13 +40,11 @@ export const TableHeaderWithSelect = ({ classes, cssClass, colHeader, orderBy, o
           createSortHandler(id)
         }}
       >
-        {colHeader}
+        {revertCamelCase(colHeader)}
       </TableSortLabel>
     </Tooltip>
-    <br />
     <div className='dropdown'>
       <TableSelect />
     </div>
-    <GripTexture />
   </TableCell>
 )

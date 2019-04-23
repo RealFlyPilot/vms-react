@@ -12,6 +12,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 import Paper from '@material-ui/core/Paper'
 import { TableHeaderWithSelect } from './TableHeader'
+import { VmsButton } from '../VmsButton'
 import './index.scss'
 
 const styles = theme => ({
@@ -112,18 +113,18 @@ function VmsTable (props) {
           {stableSort(data, getSorting(order, orderBy)).map(row => {
             const selected = isSelected(row.id)
             return (
-              <TableRow
-                hover
-                onClick={event => this.handleClick(event, row.id)}
-                // role='checkbox'
-                // aria-checked={selected}
-                // tabIndex={-1}
-                key={row.id}
-                selected={selected}
-              >
+              <TableRow hover onClick={event => this.handleClick(event, row.id)} key={row.id} selected={selected}>
                 {Object.keys(row).map(key => (
-                  <TableCell className={classes.tableCell} key={key} align='left'>
-                    {row[key] ? row[key] : 0}
+                  <TableCell
+                    className={`${classes.tableCell} ${key === 'end' || key === 'modify' ? 'raised' : ''}`}
+                    key={key}
+                    align='left'
+                  >
+                    {key === 'end' || key === 'modify' ? (
+                      <VmsButton buttonType='secondary'>{row[key]}</VmsButton>
+                    ) : (
+                      row[key]
+                    )}
                   </TableCell>
                 ))}
               </TableRow>

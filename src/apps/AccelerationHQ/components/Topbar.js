@@ -80,7 +80,7 @@ const styles = theme => ({
 class Topbar extends Component {
   state = {
     value: 0,
-    menuDrawer: true
+    menuDrawer: false
   }
 
   handleChange = (event, value) => {

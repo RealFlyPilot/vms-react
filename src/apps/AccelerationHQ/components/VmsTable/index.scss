@@ -2,17 +2,62 @@
 .MuiTableSortLabel-active-2711 .MuiTableSortLabel-icon-2712 {
 	fill: #bdbdbd;
 }
+.TableSelect-formControl-964 {
+	margin: 0;
+}
 .MuiTableSortLabel-root-2710 {
 	width: 100%;
 	display: block;
 }
+
+table {
+	thead {
+		tr {
+			th.vms-table-header__with-select {
+			}
+		}
+	}
+}
+
+tbody {
+	tr {
+		td {
+			&.raised {
+			}
+		}
+	}
+}
+.grip-texture {
+	background-image: url(/img/Grip.png);
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	bottom: 10px;
+	height: 84%;
+	width: 30px;
+	background-repeat: space space;
+}
+.vms-table-header {
+	position: relative;
+}
+.TableSelect-formControl-82 {
+	margin: 0 !important;
+	min-width: 120px;
+	width: -webkit-fill-available !important;
+	padding-right: 25px !important;
+}
 .vms-table-header__with-select {
 	position: relative;
-	// .grip-icon {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	right: 0;
-	// }
+	span {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+
+		svg {
+			fill: #bdbdbd;
+			margin-right: 30px;
+		}
+	}
 	.dropdown {
 		width: 100%;
 		*:before {

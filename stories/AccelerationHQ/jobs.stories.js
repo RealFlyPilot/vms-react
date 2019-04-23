@@ -8,7 +8,7 @@ import { WithFigma } from 'storybook-addon-figma'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
 import VmsTable from '../../src/apps/AccelerationHQ/components/VmsTable'
-import TableContainer from '../../src/apps/AccelerationHQ/components/TableContainer'
+
 import { jobsModuleStoryRoot } from '../roots'
 
 storiesOf(jobsModuleStoryRoot, module)

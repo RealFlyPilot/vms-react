@@ -19,7 +19,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import FilterListIcon from '@material-ui/icons/FilterList'
 import { lighten } from '@material-ui/core/styles/colorManipulator'
 
-import VmsTable from './VmsTable'
+import VmsTable from '.'
 
 const styles = theme => ({
   root: {
@@ -39,51 +39,17 @@ const styles = theme => ({
   }
 })
 
-let id = 0
-function createData (
-  ContingentWorker,
-  Id,
-  Status,
-  BillRate,
-  CostDate,
-  TotalCost,
-  Modify,
-  StartDate,
-  EndDate,
-  TimeCardSubmittalDate,
-  End,
-  Vendor,
-  Submitted
-) {
-  id += 1
-  return {
-    ContingentWorker,
-    Id: id,
-    Status,
-    BillRate,
-    CostDate,
-    TotalCost,
-    Modify,
-    StartDate,
-    EndDate,
-    TimeCardSubmittalDate,
-    End,
-    Vendor,
-    Submitted
-  }
-}
-
-class TableContainer extends React.Component {
+class TableHandler extends React.Component {
   state = {
     order: 'asc',
     orderBy: 'Status',
     selected: [],
     data: [
-      createData('Mike Lovascio', 159, 6.0, 24, 4.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-      createData('Daddy Greco', 237, 9.0, 37, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-      createData('P Steezy', 262, 16.0, 24, 6.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-      createData('Lee Bag', 305, 3.7, 67, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-      createData('J Capitan', 356, 16.0, 49, 3.9, 0, 0, 0, 0, 0, 0, 0, 0)
+      // createData('Mike Lovascio', 159, 6.0, 24, 4.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+      // createData('Daddy Greco', 237, 9.0, 37, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+      // createData('P Steezy', 262, 16.0, 24, 6.0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+      // createData('Lee Bag', 305, 3.7, 67, 4.3, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+      // createData('J Capitan', 356, 16.0, 49, 3.9, 0, 0, 0, 0, 0, 0, 0, 0)
     ],
     page: 0,
     rowsPerPage: 5
@@ -134,16 +100,56 @@ class TableContainer extends React.Component {
     this.setState({ rowsPerPage: event.target.value })
   }
   createSortHandler = property => event => {
-  this.props.onRequestSort(event, property)
-}
+    this.props.onRequestSort(event, property)
+  }
 
+  createWorkerData = dataArray => {
+    const merged = (values, keys) => values.reduce((obj, value, index) => ({ ...obj, [keys[index]]: value }), {})
+    const workerSchema = [
+      'contingentWorker',
+      'id',
+      'status',
+      'billRate',
+      'costDate',
+      'totalCost',
+      'modify',
+      'startDate',
+      'endDate',
+      'timeCardSubmittalDate',
+      'end',
+      'vendor',
+      'submitted'
+    ]
+
+    return dataArray.map(arr => {
+      const dataObj = merged(arr, workerSchema)
+      console.log('TCL: TableHandler -> createWorkerData -> dataObj', dataObj)
+      return dataObj
+    })
+  }
+
+  componentDidMount () {
+    const { tableType, data } = this.props
+    if (tableType === 'worker') {
+      const workerData = this.createWorkerData(data)
+      this.setState({
+        data: workerData
+      })
+    }
+
+    if (tableType === 'candidate') {
+      const workerData = this.createWorkerData(data)
+      this.setState({
+        data: workerData
+      })
+    }
+  }
 
   isSelected = id => this.state.selected.indexOf(id) !== -1
 
   render () {
     const { classes } = this.props
-    const { data, order, orderBy, selected, rowsPerPage, page } = this.state
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage)
+    const { data, order, orderBy, selected } = this.state
 
     return (
       <Paper className={classes.root}>
@@ -159,33 +165,16 @@ class TableContainer extends React.Component {
             rowCount={data.length}
             data={this.state.data}
           />
-
-          {/* <Table className={classes.table} aria-labelledby='tableTitle'>
-            <TableContainerHead
-              numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
-              onSelectAllClick={this.handleSelectAllClick}
-              onRequestSort={this.handleRequestSort}
-              rowCount={data.length}
-            />
-            <TableBody>
-
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 49 * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-          </Table> */}
         </div>
       </Paper>
     )
   }
 }
 
-TableContainer.propTypes = {
-  classes: PropTypes.object.isRequired
+TableHandler.propTypes = {
+  classes: PropTypes.object.isRequired,
+  tableType: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired
 }
 
-export default withStyles(styles)(TableContainer)
+export default withStyles(styles)(TableHandler)
