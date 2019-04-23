@@ -2081,3 +2081,34 @@ a.jsx-3117058068 {
 		max-width: 160px;
 	}
 }
+
+.dashboard-right {
+	transition: all .4s ease-in-out;
+	position: relative;
+	height: -webkit-fill-available;
+	position: relative;
+	width: 60vw;
+	height: -webkit-fill-available;
+
+	.dashboard-right__inner {
+		transition: height .2s ease-in-out, transform .4s ease-in-out;
+		padding: 50px;
+		height: -webkit-fill-available;
+
+		border-left: 1px solid #eee;
+	}
+	&.closed {
+		.dashboard-right__inner {
+			height: 0%;
+			transform: translateX(105%);
+		}
+	}
+}
+
+.toggle-activity-button {
+	position: absolute !important;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	z-index: 100;
+}

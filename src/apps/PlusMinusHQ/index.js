@@ -9,7 +9,15 @@ import './theme.zeit.scss'
 
 class PlusMinusHQ extends Component {
   state = {
-    signedIn: false
+    signedIn: false,
+    activityMenuOpen: true
+  }
+
+  toggleActivityMenu = e => {
+    e.preventDefault()
+    this.setState({
+      activityMenuOpen: !this.state.activityMenuOpen
+    })
   }
 
   render () {
@@ -64,77 +72,77 @@ class PlusMinusHQ extends Component {
                   className='dashboard-left'
                   style={{ padding: '50px', height: '-webkit-fill-available', width: '75%' }}
                 />
-                <RaisedContainer
-                  className='dashboard-right'
-                  style={{
-                    padding: '50px',
-                    height: '-webkit-fill-available',
-                    width: '50%',
-                    position: 'absolute',
-                    top: '100px',
-                    right: 0,
-                    borderLeft: '1px solid #eee'
-                  }}
-                >
-                  {user ? (
-                    <Note label={`Welcome to PlusMinus HQ ${user.username}`}>
-                      Please be patient while we're under construction
-                    </Note>
-                  ) : null}
-                  <br />
-                  <RaisedContainer>
-                    <div>
-                      <Note label='Project Log'>Activity</Note>
-                    </div>
+
+                <div className={`dashboard-right ${this.state.activityMenuOpen ? 'open' : 'closed'}`}>
+                  <Button
+                    className='toggle-activity-button'
+                    color='abort'
+                    style={{ width: 'max-content' }}
+                    onClick={this.toggleActivityMenu}
+                  >
+                    {this.state.activityMenuOpen ? <img src='/minus-circle.svg' /> : <img src='/plus-circle.svg' />}
+                  </Button>
+                  <RaisedContainer className={`dashboard-right__inner`}>
+                    {user ? (
+                      <Note label={`Welcome to PlusMinus HQ ${user.username}`}>
+                        Please be patient while we're under construction
+                      </Note>
+                    ) : null}
+                    <br />
+                    <RaisedContainer>
+                      <div>
+                        <Note label='Project Log'>Activity</Note>
+                      </div>
+                    </RaisedContainer>
+                    <RaisedContainer>
+                      <Table>
+                        <THead>
+                          <TR>
+                            <TH />
+                            <TH>Project</TH>
+                            <TH>Resource</TH>
+                          </TR>
+                        </THead>
+                        <TBody>
+                          <TR>
+                            <TD>
+                              <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
+                            </TD>
+                            <TD>StyleGuide Generator</TD>
+                            <TD>Link</TD>
+                          </TR>
+                          <TR>
+                            <TD>
+                              <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
+                            </TD>
+                            <TD>
+                              <Link to='/hq/airtable'>Airtable</Link>
+                            </TD>
+                            <TD>FAAS</TD>
+                          </TR>
+                          <TR>
+                            <TD>
+                              <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
+                            </TD>
+                            <TD>
+                              <Link to='/hq/mason'>Mason</Link>
+                            </TD>
+                            <TD>FAAS</TD>
+                          </TR>
+                          <TR>
+                            <TD>
+                              <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
+                            </TD>
+                            <TD>
+                              <Link to='/app/acceleration'>Acceleration</Link>
+                            </TD>
+                            <TD>AgileOne</TD>
+                          </TR>
+                        </TBody>
+                      </Table>
+                    </RaisedContainer>
                   </RaisedContainer>
-                  <RaisedContainer>
-                    <Table>
-                      <THead>
-                        <TR>
-                          <TH />
-                          <TH>Project</TH>
-                          <TH>Resource</TH>
-                        </TR>
-                      </THead>
-                      <TBody>
-                        <TR>
-                          <TD>
-                            <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
-                          </TD>
-                          <TD>StyleGuide Generator</TD>
-                          <TD>Link</TD>
-                        </TR>
-                        <TR>
-                          <TD>
-                            <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
-                          </TD>
-                          <TD>
-                            <Link to='/hq/airtable'>Airtable</Link>
-                          </TD>
-                          <TD>FAAS</TD>
-                        </TR>
-                        <TR>
-                          <TD>
-                            <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
-                          </TD>
-                          <TD>
-                            <Link to='/hq/mason'>Mason</Link>
-                          </TD>
-                          <TD>FAAS</TD>
-                        </TR>
-                        <TR>
-                          <TD>
-                            <Avatar src='https://zeit.co/api/www/avatar/?u=evilrabbit&s=240' />
-                          </TD>
-                          <TD>
-                            <Link to='/app/acceleration'>Acceleration</Link>
-                          </TD>
-                          <TD>AgileOne</TD>
-                        </TR>
-                      </TBody>
-                    </Table>
-                  </RaisedContainer>
-                </RaisedContainer>
+                </div>
               </div>
             </main>
 
