@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { withRouter } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -8,15 +8,65 @@ import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import InstructionDialog from './dialogs/InstructionDialog'
 import SwipeDialog from './dialogs/SwipeDialog'
+import { Query } from 'react-apollo'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import SwipeableViews from 'react-swipeable-views'
+
+import ListSubheader from '@material-ui/core/ListSubheader'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import Collapse from '@material-ui/core/Collapse'
+import ViewAgenda from '@material-ui/icons/ViewAgenda'
+import ViewModule from '@material-ui/icons/ViewModule'
+import SendIcon from '@material-ui/icons/Send'
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
+import StarBorder from '@material-ui/icons/StarBorder'
+
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+
+import gql from 'graphql-tag'
 
 import Topbar from './Topbar'
+
+const ALL_AIRTABLE_DATA = gql`
+  query allAirtableData {
+    allAirtableData {
+      appModules {
+        name
+        id
+        views {
+          name
+          id
+          components {
+            name
+            id
+          }
+        }
+      }
+    }
+  }
+`
+
+function TabContainer ({ children, dir }) {
+  return (
+    <Typography component='div' dir={dir} style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  )
+}
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-
     overflow: 'hidden',
-
     backgroundSize: 'cover',
     backgroundPosition: '0 400px',
     paddingBottom: 200
@@ -85,13 +135,17 @@ const styles = theme => ({
     position: 'absolute',
     top: '40%',
     left: '40%'
+  },
+  nested: {
+    paddingLeft: theme.spacing.unit * 4
   }
 })
 
 class Main extends Component {
   state = {
     learnMoredialog: false,
-    getStartedDialog: false
+    getStartedDialog: false,
+    value: 0
   }
 
   componentDidMount () {
@@ -114,13 +168,117 @@ class Main extends Component {
     this.setState({ getStartedDialog: false })
   }
 
+  handleChange = (event, value) => {
+    this.setState({ value })
+  }
+
+  handleChangeIndex = index => {
+    this.setState({ value: index })
+  }
+
   render () {
     const { classes } = this.props
     return (
       <React.Fragment>
         <CssBaseline />
         <Topbar />
-        <div className={classes.root} />
+        <div className={classes.root}>
+          <Query query={ALL_AIRTABLE_DATA}>
+            {({ loading, data }) => {
+              console.log('TCL: data', data)
+              if (data && !loading) {
+                const { allAirtableData } = data
+                const { appModules } = allAirtableData
+
+                return (
+                  <Grid container justify='center'>
+                    <Grid spacing={24} alignItems='center' justify='center' container className={classes.grid}>
+                      <Grid item xs={12} md={4}>
+                        <Paper className={classes.paper}>
+                          <Tabs
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                            variant='fullWidth'
+                            indicatorColor='primary'
+                            textColor='primary'
+                          >
+                            <Tab icon={<ViewModule />} />
+                            <Tab icon={<ViewAgenda />} />
+                            <Tab icon={<ViewAgenda />} />
+                          </Tabs>
+
+                          <SwipeableViews
+                            axis={'x-reverse'}
+                            index={this.state.value}
+                            onChangeIndex={this.handleChangeIndex}
+                          >
+                            <TabContainer>
+                              <Typography className={classes.heading}>App Modules</Typography>
+                              {appModules.map(appModule => (
+                                <ExpansionPanel>
+                                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                    <Typography className={classes.heading}>{appModule.name}</Typography>
+                                  </ExpansionPanelSummary>
+                                  <ExpansionPanelDetails>
+                                    <Typography />
+                                    <List
+                                      component='nav'
+                                      subheader={<ListSubheader component='div'>Views</ListSubheader>}
+                                      className={classes.root}
+                                    >
+                                      {appModule.views.map(view => {
+                                        const comps = view.components.length ? (
+                                          <Collapse in timeout='auto' unmountOnExit>
+                                            <Typography className={classes.heading}>Components</Typography>
+
+                                            <List component='div' disablePadding>
+                                              {view.components.map(comp => (
+                                                <ListItem
+                                                  className={classes.nested}
+                                                  style={{ background: '#cfd0d4' }}
+                                                  divider
+                                                >
+                                                  <ListItemIcon>
+                                                    <ViewAgenda />
+                                                  </ListItemIcon>
+                                                  <ListItemText>{comp.name}</ListItemText>
+                                                </ListItem>
+                                              ))}
+                                            </List>
+                                          </Collapse>
+                                        ) : null
+
+                                        return (
+                                          <Fragment>
+                                            <ListItem button>
+                                              <ListItemIcon>
+                                                <ViewModule />
+                                              </ListItemIcon>
+                                              <ListItemText inset>{view.name}</ListItemText>
+                                            </ListItem>
+                                            {comps}
+                                          </Fragment>
+                                        )
+                                      })}
+                                    </List>
+                                  </ExpansionPanelDetails>
+                                </ExpansionPanel>
+                              ))}
+                            </TabContainer>
+                            <TabContainer>Views</TabContainer>
+                            <TabContainer>Components</TabContainer>
+                          </SwipeableViews>
+                        </Paper>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                )
+              } else {
+                return 'Loading'
+              }
+            }}
+          </Query>
+        </div>
       </React.Fragment>
     )
   }
