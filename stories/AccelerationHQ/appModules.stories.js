@@ -10,121 +10,14 @@ import gql from 'graphql-tag'
 // import { client } from '../../src/GraphQLClient'
 
 import centered from '@storybook/addon-centered/react'
-import { Jobs } from '../../src/apps/AccelerationHQ/components/Jobs'
+import Jobs from '../../src/apps/AccelerationHQ/components/Jobs'
 // import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
 // import VmsTable from '../../src/apps/AccelerationHQ/components/VmsTable'
 import { jobsModuleStoryRoot, appModuleStoryRoot } from '../roots'
 // import apolloStorybookDecorator from 'apollo-storybook-react'
 import { allAirtableData, jobData } from './data'
-
-// import { withLiveEditScope } from 'storybook-addon-react-live-edit'
-
-// import ExternalComponent from 'a-apackage'
-
-// addDecorator(withLiveEditScope({ ExternalComponent }))
-
-// const graphiql = setupGraphiQL({ url: 'http://localhost:4000' })
-
-// const typeDefs = `
-//    scalar JSON
-//   type UserStories {
-//     id: String
-//     name: String
-//   }
-//   type AppModules {
-//     id: String
-//     name: String
-//     views: [AppViews]
-//   }
-//   type AppViews {
-//     id: String
-//     name: String
-//     appModules: [String]
-//     components: [AppComponents]
-//     actions: [String]
-//   }
-//   type AppComponents {
-//     id: String
-//     name: String
-//     types: [String]
-//     visualReference: [JSON]
-//     developmentAlias: String
-//     designAlias: String
-//     status: [String]
-//     views: [AppViews]
-//     notes: String
-//     designFile: [JSON]
-//     component: String
-//     invisionLibrary: String
-//   }
-//   type AppUserStories {
-//     id: String
-//     name: String
-//   }
-//   type AllAirtableData {
-//     appModules: [AppModules]
-//     appViews: [AppViews]
-//     appComponents: [AppComponents]
-//   }
-
-//   type Query {
-//     userStories: [UserStories]
-//     appModules: [AppModules]
-//     appModuleById: AppModules
-//     helloWorld: String
-//     appViews: [AppViews]
-//     appComponents: [AppComponents]
-//     appUserStories: [AppUserStories]
-//     allAirtableData: AllAirtableData
-//   }
-
-// `
-
-// const mocks = {
-//   Query: () => {
-//     return {
-//       helloWorld: () => {
-//         return 'Hello from Apollo!!'
-//       }
-//       // userStories: () => {},
-//       // appModules: () => {},
-//       // appViews: async () => {},
-//       // appComponents: async () => {},
-//       // appModuleById: () => jobData,
-//       // appUserStories: async () => {},
-//       // allAirtableData: () => allAirtableData
-//     }
-//   }
-// }
-
-// const APP_MODULE_BY_ID = gql`
-//   query appModuleById {
-//     name
-//     id
-//     views {
-//       name
-//       components {
-//         name
-//       }
-//     }
-//   }
-// `
-
-// const JobModuleWithQuery = ({ id }) => (
-//   <Query
-//     query={gql`
-//       query hello {
-//         helloWorld
-//       }
-//     `}
-//   >
-//     {({ loading, data }) => {
-//       console.log('TCL: data', data)
-//       return <Jobs data={data} />
-//     }}
-//   </Query>
-// )
+import Iframe from 'react-iframe'
 
 storiesOf(appModuleStoryRoot, module)
   .addDecorator(withKnobs)
@@ -132,20 +25,34 @@ storiesOf(appModuleStoryRoot, module)
 
 storiesOf(jobsModuleStoryRoot, module)
   .addDecorator(withKnobs)
-  .add('Stories of Jobs Module', <Jobs data={jobData} />)
-// .apolloStorybookDecorator({
-//   typeDefs,
-//   mocks
-// })
-
-// storiesOf(jobsModuleStoryRoot, module)
-//   .addDecorator(withKnobs)
-//   .addDecorator(centered)
-//   .add(
-//     'Stories of Jobs Module',
-//     graphiql(`{
-//     appModuleById(id:"recIUptV0QOlOPSVf") {
-//       name
-//     }
-//   }`)
-//   )
+  .add('Stories of Jobs Module', () => (
+    <div
+      style={{
+        height: '100vh',
+        overflow: 'scroll',
+        padding: '30px',
+        width: '100vw',
+        position: 'relative',
+        display: 'flex'
+      }}
+    >
+      <div style={{ width: '25%' }}>
+        <Jobs data={jobData} />
+      </div>
+      <div style={{ width: '75%' }}>
+        <Iframe
+          url='http://acceleration.plusminussays.com/#g=1'
+          width='100%'
+          height='100%'
+          id='wireframe'
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
+            width: '100%'
+          }}
+        />
+      </div>
+    </div>
+  ))
