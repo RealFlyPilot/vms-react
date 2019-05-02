@@ -22,9 +22,33 @@ storiesOf(`${componentLibraryRoot}/Colors`, module)
 storiesOf(`${componentLibraryRoot}/Colors/All`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Full Pallete', () => <VmsColorPallete />)
-  .add('Grey', () => <VmsColorPallete color='grey' />)
-  .add('Blue', () => <VmsColorPallete color='blue' />)
+  .add(
+    'Grey',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=22%3A0'}
+      >
+        <VmsColorPallete color='grey' />
+      </WithFigma>
+    ),
+    {
+      info: ` ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=22%3A0) `
+    }
+  )
+  .add(
+    'Blue',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=23%3A26'}
+      >
+        <VmsColorPallete color='blue' />)
+      </WithFigma>
+    ),
+    {
+      info: ` ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=23%3A26) `
+    }
+  )
+
   .add('Cyan', () => <VmsColorPallete color='cyan' />)
   .add('Green', () => <VmsColorPallete color='green' />)
   .add('Yellow', () => <VmsColorPallete color='yellow' />)

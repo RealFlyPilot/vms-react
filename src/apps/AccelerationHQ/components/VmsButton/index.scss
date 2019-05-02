@@ -45,8 +45,10 @@ button {
 
 			&:after {
 				position: absolute;
-				left: 0.1rem;
-				height: 94%;
+				left: 1px;
+				top: 1px;
+				bottom: 1px;
+				height: 43px;
 				width: 4px;
 				background: #d89e6d;
 				border-radius: 2px;

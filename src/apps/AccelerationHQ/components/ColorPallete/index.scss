@@ -1,4 +1,5 @@
 // Colors
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400');
 $color-1: slategray;
 $color-2: tomato;
 $color-3: whitesmoke;
@@ -20,59 +21,67 @@ body {
 .color-palette {
 	position: relative;
 	display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-    // width: 31.25rem;
-    max-width: 90vw;
-	
-	.color-card {
-        margin: 20px;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-end;
-		width: 9.375rem;
-		height: 15.625rem;
-		padding-bottom: 1.25rem;
-		border-radius: 0.3125rem;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-		
-		&:hover {
-			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	// width: 31.25rem;
+	max-width: 90vw;
+	.color-card-container {
+		margin: 0 27px 27px 0;
+		// display: flex;
+		.currentColor {
+			margin-top: 14px;
+			font-family: 'Roboto Mono';
+			font-style: normal;
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 18px; /* identical to box height, or 150% */
+			text-transform: uppercase;
 		}
-		
-		
-		> div {
-            	position: relative;
-			display: block;
-			width: 100%;
-			padding: 5px 0 0;
-			color: white;
-			font-size: 0.75rem;
-			text-align: center;
-			&:nth-of-type(1) {
-				padding: 10px 0;
-				
+		.color-card {
+			position: relative;
+			display: -webkit-flex;
+			display: flex;
+			/* -webkit-flex-direction: column; */
+			/* flex-direction: column; */
+			/* -webkit-align-items: center; */
+			/* align-items: center; */
+
+			font-size: 12px;
+
+			width: 90px;
+			height: 90px;
+			/* padding-bottom: 1.25rem; */
+			border-radius: 6px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+			&:hover {
+				box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 			}
-			&:nth-of-type(2) {
-				padding: 10px 0;
-				
-			}
-			&:nth-of-type(3) {
-				padding: 10px 0;
-				
-			}
-			&:nth-of-type(4) {
-				margin: 0 0 20px;
-				padding: 10px 0;
-				
-			}
+
+			// > div {
+			// 	position: relative;
+			// 	display: block;
+			// 	width: 100%;
+			// 	padding: 5px 0 0;
+			// 	// color: white;
+			// 	font-size: 0.75rem;
+			// 	text-align: center;
+			// 	&:nth-of-type(1) {
+			// 		padding: 10px 0;
+			// 	}
+			// 	&:nth-of-type(2) {
+			// 		padding: 10px 0;
+			// 	}
+			// 	&:nth-of-type(3) {
+			// 		padding: 10px 0;
+			// 	}
+			// 	&:nth-of-type(4) {
+			// 		margin: 0 0 20px;
+			// 		padding: 10px 0;
+			// 	}
+			// }
 		}
 	}
-	
-
 }

@@ -41,7 +41,7 @@ storiesOf(jobsModuleStoryRoot, module)
       </div>
       <div style={{ width: '75%' }}>
         <Iframe
-          url='http://acceleration.plusminussays.com/#g=1'
+          url='https://ywsmhw.axshare.com/#g=1&p=form_field_library'
           width='100%'
           height='100%'
           id='wireframe'
