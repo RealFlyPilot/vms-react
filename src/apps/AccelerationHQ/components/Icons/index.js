@@ -2,11 +2,11 @@ import React from 'react'
 
 export const CheckMark = props => (
 	<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path d="M7 14L10.2929 17.2929C10.6834 17.6834 11.3166 17.6834 11.7071 17.2929L20 9" stroke="#607D8B" />
+		<path d="M7 14L10.2929 17.2929C10.6834 17.6834 11.3166 17.6834 11.7071 17.2929L20 9" stroke={color} />
 	</svg>
 )
 
-const Dot = () => {
+export const Dot = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="13.5" cy="13.5" r="3.5" fill="#D89E6D" />
@@ -14,18 +14,18 @@ const Dot = () => {
 	)
 }
 
-export const Edit = () => {
+export const Edit = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="M15 8L19 12M6.92535 16.224L5.15811 21.5257C5.09297 21.7211 5.2789 21.907 5.47434 21.8419L10.776 20.0747C10.9233 20.0256 11.0572 19.9428 11.1669 19.8331L20.5858 10.4142C21.3668 9.63316 21.3668 8.36684 20.5858 7.58579L19.4142 6.41421C18.6332 5.63317 17.3668 5.63317 16.5858 6.41421L7.16693 15.8331C7.05715 15.9428 6.97444 16.0767 6.92535 16.224Z"
-				stroke="#607D8B"
+				stroke={color}
 			/>
 		</svg>
 	)
 }
 
-export const Error = () => {
+export const Error = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
@@ -38,62 +38,62 @@ export const Error = () => {
 	)
 }
 
-export const FPO = () => {
+export const FPO = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="13.5" cy="13.5" r="7" stroke="#607D8B" />
+			<circle cx="13.5" cy="13.5" r="7" stroke={color} />
 		</svg>
 	)
 }
 
-export const Menu = () => {
+export const Menu = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M3 18.5H24" stroke="#607D8B" />
-			<path d="M3 13.5H24" stroke="#607D8B" />
-			<path d="M3 8.5H24" stroke="#607D8B" />
+			<path d="M3 18.5H24" stroke={color} />
+			<path d="M3 13.5H24" stroke={color} />
+			<path d="M3 8.5H24" stroke={color} />
 		</svg>
 	)
 }
 
-export const More = () => {
+export const More = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="19.5" cy="13.5" r="1.5" fill="#607D8B" />
-			<circle cx="13.5" cy="13.5" r="1.5" fill="#607D8B" />
-			<circle cx="7.5" cy="13.5" r="1.5" fill="#607D8B" />
+			<circle cx="19.5" cy="13.5" r="1.5" fill={color} />
+			<circle cx="13.5" cy="13.5" r="1.5" fill={color} />
+			<circle cx="7.5" cy="13.5" r="1.5" fill={color} />
 		</svg>
 	)
 }
 
-export const Pending = () => {
+export const Pending = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="13.5" cy="13.5" r="6.5" stroke="#607D8B" />
-			<path d="M13.5 9.5V14.5L16 12" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<circle cx="13.5" cy="13.5" r="6.5" stroke={color} />
+			<path d="M13.5 9.5V14.5L16 12" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	)
 }
 
-export const Schedule = () => {
+export const Schedule = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<rect x="7.5" y="7.5" width="12" height="12" rx="1.5" stroke="#607D8B" />
-			<path d="M7.5 10.5H19.5" stroke="#607D8B" />
-			<path d="M9.5 7.5V5.5M17.5 7.5V5.5" stroke="#607D8B" strokeLinecap="round" />
-			<path d="M11 15L12.5 16.5L16 13" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<rect x="7.5" y="7.5" width="12" height="12" rx="1.5" stroke={color} />
+			<path d="M7.5 10.5H19.5" stroke={color} />
+			<path d="M9.5 7.5V5.5M17.5 7.5V5.5" stroke={color} strokeLinecap="round" />
+			<path d="M11 15L12.5 16.5L16 13" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	)
 }
 
-export const Share = () => {
+export const Share = ({ color = '#607D8B' }) => {
 	return (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				fill-rule="evenodd"
 				clip-rule="evenodd"
 				d="M6.5 8C6.5 7.17157 7.17157 6.5 8 6.5H13V5.5H8C6.61929 5.5 5.5 6.61929 5.5 8V19C5.5 20.3807 6.61929 21.5 8 21.5H19C20.3807 21.5 21.5 20.3807 21.5 19V14H20.5V19C20.5 19.8284 19.8284 20.5 19 20.5H8C7.17157 20.5 6.5 19.8284 6.5 19V8ZM19.7929 6.5H16V5.5H21H21.5V6V11H20.5V7.20711L10.3536 17.3536L9.64645 16.6464L19.7929 6.5Z"
-				fill="#607D8B"
+				fill={color}
 			/>
 		</svg>
 	)
@@ -115,22 +115,22 @@ export const CheckBox = ({ checked = false }) => {
 export const DropdownArrow = ({ up = false }) => {
 	return up ? (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M17.5 15.5L13.5 11.5L9.5 15.5" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M17.5 15.5L13.5 11.5L9.5 15.5" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	) : (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M9.5 11.5L13.5 15.5L17.5 11.5" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M9.5 11.5L13.5 15.5L17.5 11.5" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	)
 }
 
-export const Heart = ({ filled = false }) => {
+export const Heart = ({ filled = false, color }) => {
 	return filled ? (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="M7.25 14.25L13.5 20.5L19.75 14.25C21.2688 12.7312 21.2688 10.2688 19.75 8.75C18.2312 7.23122 15.7688 7.23122 14.25 8.75L13.5 9.5L12.75 8.75C11.2312 7.23122 8.76878 7.23122 7.25 8.75C5.73122 10.2688 5.73121 12.7312 7.25 14.25Z"
-				fill="#607D8B"
-				stroke="#607D8B"
+				fill={color}
+				stroke={color}
 				strokeLinecap="round"
 				strokeLinejoin="round"
 			/>
@@ -147,12 +147,12 @@ export const Heart = ({ filled = false }) => {
 	)
 }
 
-export const RatingStar = ({ size, filled = false }) => {
+export const RatingStar = ({ size, filled = false, color }) => {
 	return filled ? (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				d="M8.5079 20.5225L10.1685 15.6918L6.26961 12.9069C5.8738 12.6241 6.07381 12 6.56023 12H11.4375L13.0272 7.37554C13.1818 6.9256 13.8182 6.9256 13.9728 7.37554L15.5625 12H20.4398C20.9262 12 21.1262 12.6241 20.7304 12.9069L16.8315 15.6918L18.4921 20.5225C18.6503 20.9827 18.1246 21.3747 17.7286 21.0919L13.5 18.0714L9.27136 21.0919C8.87538 21.3747 8.34971 20.9827 8.5079 20.5225Z"
-				fill="#607D8B"
+				fill={color}
 			/>
 		</svg>
 	) : (
@@ -165,16 +165,59 @@ export const RatingStar = ({ size, filled = false }) => {
 	)
 }
 
-export const SortArrow = ({ up = false }) => {
+export const SortArrow = ({ up = false, color }) => {
 	return up ? (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M13.5 9V18" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
-			<path d="M17.5 13L13.5 9L9.5 13" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M13.5 9V18" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M17.5 13L13.5 9L9.5 13" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	) : (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M9.5 14L13.5 18L17.5 14" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
-			<path d="M13.5 9V18" stroke="#607D8B" strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M9.5 14L13.5 18L17.5 14" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
+			<path d="M13.5 9V18" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
+		</svg>
+	)
+}
+
+export const Grip = () => {
+	return (
+		<svg
+			width="11"
+			height="38"
+			viewBox="0 0 11 38"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			className="grip-icon"
+		>
+			<path
+				fill-rule="evenodd"
+				clip-rule="evenodd"
+				d="M10 1.75C10.4142 1.75 10.75 1.41421 10.75 1C10.75 0.585786 10.4142 0.25 10 0.25C9.58578 0.25 9.25 0.585786 9.25 1C9.25 1.41421 9.58578 1.75 10 1.75ZM10.75 5.5C10.75 5.91421 10.4142 6.25 10 6.25C9.58578 6.25 9.25 5.91421 9.25 5.5C9.25 5.08579 9.58578 4.75 10 4.75C10.4142 4.75 10.75 5.08579 10.75 5.5ZM10 10.75C10.4142 10.75 10.75 10.4142 10.75 10C10.75 9.58579 10.4142 9.25 10 9.25C9.58578 9.25 9.25 9.58579 9.25 10C9.25 10.4142 9.58578 10.75 10 10.75ZM10.75 14.5C10.75 14.9142 10.4142 15.25 10 15.25C9.58578 15.25 9.25 14.9142 9.25 14.5C9.25 14.0858 9.58578 13.75 10 13.75C10.4142 13.75 10.75 14.0858 10.75 14.5ZM10 19.75C10.4142 19.75 10.75 19.4142 10.75 19C10.75 18.5858 10.4142 18.25 10 18.25C9.58578 18.25 9.25 18.5858 9.25 19C9.25 19.4142 9.58578 19.75 10 19.75ZM10.75 23.5C10.75 23.9142 10.4142 24.25 10 24.25C9.58578 24.25 9.25 23.9142 9.25 23.5C9.25 23.0858 9.58578 22.75 10 22.75C10.4142 22.75 10.75 23.0858 10.75 23.5ZM10 28.75C10.4142 28.75 10.75 28.4142 10.75 28C10.75 27.5858 10.4142 27.25 10 27.25C9.58578 27.25 9.25 27.5858 9.25 28C9.25 28.4142 9.58578 28.75 10 28.75ZM10.75 32.5C10.75 32.9142 10.4142 33.25 10 33.25C9.58578 33.25 9.25 32.9142 9.25 32.5C9.25 32.0858 9.58578 31.75 10 31.75C10.4142 31.75 10.75 32.0858 10.75 32.5ZM1 37.75C1.41422 37.75 1.75 37.4142 1.75 37C1.75 36.5858 1.41422 36.25 1 36.25C0.585785 36.25 0.25 36.5858 0.25 37C0.25 37.4142 0.585785 37.75 1 37.75ZM6.25 37C6.25 37.4142 5.91422 37.75 5.5 37.75C5.08578 37.75 4.75 37.4142 4.75 37C4.75 36.5858 5.08578 36.25 5.5 36.25C5.91422 36.25 6.25 36.5858 6.25 37ZM10.75 37C10.75 37.4142 10.4142 37.75 10 37.75C9.58578 37.75 9.25 37.4142 9.25 37C9.25 36.5858 9.58578 36.25 10 36.25C10.4142 36.25 10.75 36.5858 10.75 37ZM5.5 33.25C5.91422 33.25 6.25 32.9142 6.25 32.5C6.25 32.0858 5.91422 31.75 5.5 31.75C5.08578 31.75 4.75 32.0858 4.75 32.5C4.75 32.9142 5.08578 33.25 5.5 33.25ZM1.75 32.5C1.75 32.9142 1.41422 33.25 1 33.25C0.585785 33.25 0.25 32.9142 0.25 32.5C0.25 32.0858 0.585785 31.75 1 31.75C1.41422 31.75 1.75 32.0858 1.75 32.5ZM6.25 28C6.25 28.4142 5.91422 28.75 5.5 28.75C5.08578 28.75 4.75 28.4142 4.75 28C4.75 27.5858 5.08578 27.25 5.5 27.25C5.91422 27.25 6.25 27.5858 6.25 28ZM1 28.75C1.41422 28.75 1.75 28.4142 1.75 28C1.75 27.5858 1.41422 27.25 1 27.25C0.585785 27.25 0.25 27.5858 0.25 28C0.25 28.4142 0.585785 28.75 1 28.75ZM5.5 24.25C5.91422 24.25 6.25 23.9142 6.25 23.5C6.25 23.0858 5.91422 22.75 5.5 22.75C5.08578 22.75 4.75 23.0858 4.75 23.5C4.75 23.9142 5.08578 24.25 5.5 24.25ZM1.75 23.5C1.75 23.9142 1.41422 24.25 1 24.25C0.585785 24.25 0.25 23.9142 0.25 23.5C0.25 23.0858 0.585785 22.75 1 22.75C1.41422 22.75 1.75 23.0858 1.75 23.5ZM6.25 19C6.25 19.4142 5.91422 19.75 5.5 19.75C5.08578 19.75 4.75 19.4142 4.75 19C4.75 18.5858 5.08578 18.25 5.5 18.25C5.91422 18.25 6.25 18.5858 6.25 19ZM1 19.75C1.41422 19.75 1.75 19.4142 1.75 19C1.75 18.5858 1.41422 18.25 1 18.25C0.585785 18.25 0.25 18.5858 0.25 19C0.25 19.4142 0.585785 19.75 1 19.75ZM5.5 15.25C5.91422 15.25 6.25 14.9142 6.25 14.5C6.25 14.0858 5.91422 13.75 5.5 13.75C5.08578 13.75 4.75 14.0858 4.75 14.5C4.75 14.9142 5.08578 15.25 5.5 15.25ZM1.75 14.5C1.75 14.9142 1.41422 15.25 1 15.25C0.585785 15.25 0.25 14.9142 0.25 14.5C0.25 14.0858 0.585785 13.75 1 13.75C1.41422 13.75 1.75 14.0858 1.75 14.5ZM6.25 10C6.25 10.4142 5.91422 10.75 5.5 10.75C5.08578 10.75 4.75 10.4142 4.75 10C4.75 9.58579 5.08578 9.25 5.5 9.25C5.91422 9.25 6.25 9.58579 6.25 10ZM1 10.75C1.41422 10.75 1.75 10.4142 1.75 10C1.75 9.58579 1.41422 9.25 1 9.25C0.585785 9.25 0.25 9.58579 0.25 10C0.25 10.4142 0.585785 10.75 1 10.75ZM5.5 6.25C5.91422 6.25 6.25 5.91421 6.25 5.5C6.25 5.08579 5.91422 4.75 5.5 4.75C5.08578 4.75 4.75 5.08579 4.75 5.5C4.75 5.91421 5.08578 6.25 5.5 6.25ZM1.75 5.5C1.75 5.91421 1.41422 6.25 1 6.25C0.585785 6.25 0.25 5.91421 0.25 5.5C0.25 5.08579 0.585785 4.75 1 4.75C1.41422 4.75 1.75 5.08579 1.75 5.5ZM6.25 1C6.25 1.41421 5.91422 1.75 5.5 1.75C5.08578 1.75 4.75 1.41421 4.75 1C4.75 0.585786 5.08578 0.25 5.5 0.25C5.91422 0.25 6.25 0.585786 6.25 1ZM1 1.75C1.41422 1.75 1.75 1.41421 1.75 1C1.75 0.585786 1.41422 0.25 1 0.25C0.585785 0.25 0.25 0.585786 0.25 1C0.25 1.41421 0.585785 1.75 1 1.75Z"
+				fill="#E2E7E9"
+			/>
+		</svg>
+	)
+}
+
+export const GripTexture = () => (
+	<div
+		style={{
+			display: 'flex',
+			flexDirection: 'column',
+			position: 'absolute',
+			top: 0,
+			right: 0
+		}}
+	>
+		<Grip />
+		<Grip />
+	</div>
+)
+
+export const CaretDown = () => {
+	return (
+		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M17.5 11H9.5L13.5 17L17.5 11Z" fill="#607D8B" />
 		</svg>
 	)
 }

@@ -9,6 +9,7 @@ import { VmsButton } from '../../src/apps/AccelerationHQ/components/VmsButton'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
 import { buttonRoot, componentLibraryRoot } from '../roots'
+import { FPO } from '../../src/apps/AccelerationHQ/components/Icons/index.js'
 
 storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
@@ -21,7 +22,7 @@ storiesOf(`${buttonRoot}`, module)
 storiesOf(`${buttonRoot}/Primary`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Primary Button', () => <VmsButton buttonType={`primary`}>Primary Button</VmsButton>, {
+  .add('Default', () => <VmsButton buttonType={`primary`}>Call To Action</VmsButton>, {
     info: `
             #### Primary Button CSS
 
@@ -35,33 +36,43 @@ storiesOf(`${buttonRoot}/Primary`, module)
             - box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
           `
   })
-  .add('w/Icon', () => (
-    <VmsButton buttonType={`primary`} disabled>
-      Primary Button
-    </VmsButton>
-  ))
   .add('Disabled', () => (
     <VmsButton buttonType={`primary`} disabled>
-      Primary Button
+      Call To Action
     </VmsButton>
   ))
   .add('With Grid', () => (
     <GridOverlay>
-      <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
+      <VmsButton buttonType={`primary`}>Call To Action</VmsButton>
     </GridOverlay>
   ))
+  .add('w/Icon', () => (
+    <VmsButton buttonType={`primary`} Icon={FPO}>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon Inactive', () => (
+    <VmsButton buttonType={`primary`} Icon={FPO} disabled>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon + Notify', () => (
+    <VmsButton buttonType={`primary`} cssClass='notify' Icon={FPO}>
+      Call To Action
+    </VmsButton>
+  ))
   .add(
-    'Primary Button With Figma',
+    'W/ Figma',
     () => (
       <WithFigma
-        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73'}
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A1'}
       >
-        <VmsButton buttonType={`primary`}>Primary Button</VmsButton>
+        <VmsButton buttonType={`primary`}>Call To Action</VmsButton>
       </WithFigma>
     ),
     {
       info: `
-            ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=14%3A73)
+            ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A1)
           `
     }
   )
@@ -72,29 +83,59 @@ storiesOf(`${buttonRoot}/Secondary`, module)
   .add('Default', () => <VmsButton buttonType={'secondary'}>Secondary Button</VmsButton>)
   .add('Disabled', () => (
     <VmsButton buttonType={'secondary'} disabled>
-      Secondary Button
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon', () => (
+    <VmsButton buttonType={`secondary`} Icon={FPO}>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon Inactive', () => (
+    <VmsButton buttonType={`secondary`} Icon={FPO} disabled>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon + Notify', () => (
+    <VmsButton buttonType={`secondary`} cssClass='notify' Icon={FPO}>
+      Call To Action
     </VmsButton>
   ))
   .add(
-    'Secondary Button With Figma',
+    'W/ Figma',
     () => (
       <WithFigma
-        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=29%3A42'}
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A1'}
       >
-        <VmsButton buttonType={'secondary'}>Secondary Button</VmsButton>
+        <VmsButton buttonType={'secondary'}>Call To Action</VmsButton>
       </WithFigma>
     ),
     {
-      info: ` ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=29%3A42) `
+      info: ` ## Figma Link: [View](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A1) `
     }
   )
 
 storiesOf(`${buttonRoot}/Tertiary`, module)
   .addDecorator(centered)
-  .add('Default', () => <VmsButton buttonType={'tertiary'}>Tertiary Button</VmsButton>)
+  .add('Default', () => <VmsButton buttonType={'tertiary'}>Call To Action</VmsButton>)
   .add('Disabled', () => (
     <VmsButton buttonType={'tertiary'} disabled>
-      Tertiary Button
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon', () => (
+    <VmsButton buttonType={`tertiary`} Icon={FPO}>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon Inactive', () => (
+    <VmsButton buttonType={`tertiary`} Icon={FPO} disabled>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('w/Icon + Notify', () => (
+    <VmsButton buttonType={`tertiary`} cssClass='notify' Icon={FPO}>
+      Call To Action
     </VmsButton>
   ))
 
@@ -104,4 +145,24 @@ storiesOf(`${buttonRoot}/Link`, module)
 
 storiesOf(`${buttonRoot}/Pill`, module)
   .addDecorator(centered)
-  .add('Default', () => <VmsButton buttonType={'pill'}>Pill</VmsButton>)
+  .add('Default', () => <VmsButton buttonType={'pill'}>Call To Action</VmsButton>)
+  .add('Primary', () => (
+    <VmsButton buttonType={'pill'} cssClass='primary'>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('Secondary', () => (
+    <VmsButton buttonType={'pill'} cssClass='secondary'>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('Tertiary', () => (
+    <VmsButton buttonType={'pill'} cssClass='tertiary'>
+      Call To Action
+    </VmsButton>
+  ))
+  .add('Disabled', () => (
+    <VmsButton buttonType={'pill'} disabled>
+      Call To Action
+    </VmsButton>
+  ))

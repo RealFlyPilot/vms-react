@@ -18,17 +18,15 @@ storiesOf(componentLibraryRoot, module)
 storiesOf(`${componentLibraryRoot}/Colors`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('All', () => <VmsColorPallete />)
-  .add('By Color: Red', () => <VmsColorPallete color='red' />)
-  .add('All With Grid Background', () => (
-    <GridOverlay>
-      <VmsColorPallete />
-    </GridOverlay>
-  ))
-  .add('With Figma', () => (
-    <WithFigma
-      url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
-    >
-      <VmsColorPallete />
-    </WithFigma>
-  ))
+
+storiesOf(`${componentLibraryRoot}/Colors/All`, module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
+  .add('Full Pallete', () => <VmsColorPallete />)
+  .add('Grey', () => <VmsColorPallete color='grey' />)
+  .add('Blue', () => <VmsColorPallete color='blue' />)
+  .add('Cyan', () => <VmsColorPallete color='cyan' />)
+  .add('Green', () => <VmsColorPallete color='green' />)
+  .add('Yellow', () => <VmsColorPallete color='yellow' />)
+  .add('Orange', () => <VmsColorPallete color='orange' />)
+  .add('Red', () => <VmsColorPallete color='red' />)

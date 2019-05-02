@@ -19,5 +19,10 @@ storiesOf(componentLibraryRoot, module)
 storiesOf(`${tableElementRoot}`, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
+
+storiesOf(`${tableElementRoot}/Tables`, module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
+
   .add('Worker Table', () => <VmsTable tableType='worker' data={allWorkerData} />)
   .add('Candidate Table', () => <VmsTable tableType='candidate' data={allCandidateData} />)

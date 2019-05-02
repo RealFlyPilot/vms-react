@@ -28,8 +28,10 @@
 }
 
 %button-base {
-	min-height: 45px;
-	min-width: 192px;
+	max-height: 45px;
+	height: 45px;
+	outline: none;
+	width: auto;
 	border-radius: 4px; // Changed this because while the specs are clear in figma - I might be crazy but it doesnt look the same in Storybook
 	font-size: 12px;
 	line-height: 18px;
