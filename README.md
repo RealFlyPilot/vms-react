@@ -1,8 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Up and Running
 
-In the project directory, you can run:
+1. [Front End VMS-REACT](https://github.com/RealFlyPilot/vms-react.git) Git Clone the repo and cd into root directory. Then `yarn install` and `yarn start`
+2. [AirTable/GraphQL API](https://github.com/RealFlyPilot/flypilot-airtable-graphql-api.git): Git Clone repo and `yarn install` and `yarn dev`
 
 ## Auth - Federation Provider
 // google client id: 60702670011-g6lf5t95d093pn5at4tbla0garkga6jj.apps.googleusercontent.com
@@ -19,21 +20,6 @@ Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncog
 
 [Material](https://material-ui.com/customization/default-theme/)
 
-```
-breakpoints: Object
-direction: "ltr"
-mixins: Object
-overrides: Object
-palette: Object
-props: Object
-shadows: Array[25]
-typography: Object
-shape: Object
-borderRadius: 4
-spacing: Object
-transitions: Object
-zIndex: Object 
-```
 
 ### Storybook 
 
@@ -45,6 +31,7 @@ zIndex: Object
 6. [WITH INFO](https://github.com/storybooks/storybook/tree/next/addons/info)
 7. [Story Source](https://github.com/storybooks/storybook/tree/next/addons/storysource)
 8. [Addon Events](https://www.npmjs.com/package/@storybook/addon-events)
+9. [Live Edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
 
 ### Figma
 
@@ -54,6 +41,10 @@ zIndex: Object
 ### AccelerationHQ Resources
 
 - [Design Library Invision](https://projects.invisionapp.com/d/main#/projects/prototypes/15630704)
-- - [App Map](https://www.plectica.com/maps/VCGLPYPNA?inviteEmail=liam%40plusminussays.com&inviteCode=6931072890195418)
+- [App Wireframes](http://acceleration.plusminussays.com/#g=1&p=form_field_library)
+- [App Map](https://www.plectica.com/maps/VCGLPYPNA?inviteEmail=liam%40plusminussays.com&inviteCode=6931072890195418)
 
-AWS Prod Deployment URL: https://dcayumoc37f2a.cloudfront.net/#/
+
+### Front End
+
+**AWS Prod Deployment URL: https://dcayumoc37f2a.cloudfront.net**

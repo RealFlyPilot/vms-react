@@ -1,54 +1,48 @@
-// import createStyles from '@material-ui/core/styles/createStyles'
+import createStyles from '@material-ui/core/styles/createStyles'
 
-// export const AccelerationTheme = createStyles({
-//   root: {
-//     '&$tertiary': {
-//       color: ''
-//     }
-//   },
-//   breakpoints: {},
+export const AccelerationTheme = {
+  palette: {
+    primary: {
+      '&$default': '',
 
-//   mixins: {},
+      '&$hover': ''
+    },
+    secondary: {
+      '&$default': '',
 
-//   palette: {
-//     primary: {
-//       '&$default': '',
+      '&$hover': ''
+    },
+    error: {
+      '&$default': '',
 
-//       '&$hover': ''
-//     },
-//     secondary: {
-//       '&$default': '',
+      '&$hover': ''
+    }
+  },
+  breakpoints: {},
 
-//       '&$hover': ''
-//     },
-//     error: {
-//       '&$default': '',
+  mixins: {},
+  typography: {
+    fontSize: 12,
+    fontFamily: ['Avenir'].join(',')
+  },
+  overrides: {
+    MuiButton: {
+      // Name of the component ⚛️ / style sheet
+      text: {
+        // Name of the rule
+        color: 'white' // Some CSS
+      }
+    }
+  },
+  props: {
+    // Name of the component ⚛️
+    MuiButtonBase: {
+      // The properties to apply
+      disableRipple: true // No more ripple, on the whole application 💣!
+    }
+  },
+  shadows: [],
 
-//       '&$hover': ''
-//     }
-//   },
-//   typography: {
-//     fontSize: 12,
-//     fontFamily: ['Avenir'].join(',')
-//   },
-//   overrides: {
-//     MuiButton: {
-//       // Name of the component ⚛️ / style sheet
-//       text: {
-//         // Name of the rule
-//         color: 'white' // Some CSS
-//       }
-//     }
-//   },
-//   props: {
-//     // Name of the component ⚛️
-//     MuiButtonBase: {
-//       // The properties to apply
-//       disableRipple: true // No more ripple, on the whole application 💣!
-//     }
-//   },
-//   shadows: [],
-
-//   spacing: {},
-//   transitions: {}
-// })
+  spacing: {},
+  transitions: {}
+}

@@ -889,6 +889,10 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/standalone@^7.0.0":
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.4.4.tgz#a40fbed37254e0a6dd55ea2db142c7b357fc4299"
+
 "@babel/template@^7.1.0", "@babel/template@^7.2.2", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -3792,6 +3796,10 @@ codemirror-graphql@^0.7.1:
 codemirror@^5.26.0:
   version "5.45.0"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.45.0.tgz#db5ebbb3bf44028c684053f3954d011efcec27ad"
+
+codemirror@^5.40.0:
+  version "5.46.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.46.0.tgz#be3591572f88911e0105a007c324856a9ece0fb7"
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -10480,6 +10488,12 @@ react-hyperscript@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-hyperscript/-/react-hyperscript-3.2.0.tgz#24144ff6b1beb07af7154794a782a74b34920868"
 
+react-iframe@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/react-iframe/-/react-iframe-1.8.0.tgz#8c78f2c59b894ca5605fa7e45e61e27e57e96091"
+  dependencies:
+    object-assign "^4.1.1"
+
 react-input-autosize@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
@@ -11925,6 +11939,13 @@ stealthy-require@^1.1.1:
 storybook-addon-figma@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/storybook-addon-figma/-/storybook-addon-figma-0.1.0.tgz#4c1e1af62e822aebd43332c43b7c3b63dc6ba4e8"
+
+storybook-addon-react-live-edit@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/storybook-addon-react-live-edit/-/storybook-addon-react-live-edit-2.0.2.tgz#74c952102fac762cbe5d2a0da3bf9ddb2eec2f5c"
+  dependencies:
+    "@babel/standalone" "^7.0.0"
+    codemirror "^5.40.0"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

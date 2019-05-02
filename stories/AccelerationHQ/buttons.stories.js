@@ -8,13 +8,9 @@ import { WithFigma } from 'storybook-addon-figma'
 import { VmsButton } from '../../src/apps/AccelerationHQ/components/VmsButton'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
-import { buttonRoot, componentLibraryRoot, formFieldLibraryRoot } from '../roots'
+import { buttonRoot, componentLibraryRoot } from '../roots'
 
 storiesOf(componentLibraryRoot, module)
-  .addDecorator(withKnobs)
-  .addDecorator(centered)
-
-storiesOf(`${formFieldLibraryRoot}`, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
@@ -25,7 +21,7 @@ storiesOf(`${buttonRoot}`, module)
 storiesOf(`${buttonRoot}/Primary`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Default', () => <VmsButton buttonType={`primary`}>Primary Button</VmsButton>, {
+  .add('Primary Button', () => <VmsButton buttonType={`primary`}>Primary Button</VmsButton>, {
     info: `
             #### Primary Button CSS
 
@@ -39,6 +35,11 @@ storiesOf(`${buttonRoot}/Primary`, module)
             - box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
           `
   })
+  .add('w/Icon', () => (
+    <VmsButton buttonType={`primary`} disabled>
+      Primary Button
+    </VmsButton>
+  ))
   .add('Disabled', () => (
     <VmsButton buttonType={`primary`} disabled>
       Primary Button

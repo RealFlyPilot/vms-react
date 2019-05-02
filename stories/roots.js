@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { setupGraphiQL } from '@storybook/addon-graphql'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 export const componentLibraryRoot = `AccelerationHQ|Component Library`
-export const formFieldLibraryRoot = `${componentLibraryRoot}/VMS Form Field Library`
-export const buttonRoot = `${formFieldLibraryRoot}/Vms Buttons`
+export const buttonRoot = `${componentLibraryRoot}/Buttons`
+export const formElementRoot = `${componentLibraryRoot}/Form Elements`
+export const tableElementRoot = `${componentLibraryRoot}/Table Elements`
 
 export const appModuleStoryRoot = `AccelerationHQ|App Modules`
 export const jobsModuleStoryRoot = `${appModuleStoryRoot}/Jobs`
