@@ -42,17 +42,12 @@
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -s ./public -p 6006",
 		"build-storybook": "build-storybook",
-		"deploy-storybook": "rm -rf .out && yarn build-storybook -o .out"
+		"deploy-storybook": "rm -rf .out && yarn build-storybook -o .out && cd .out && now"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
-	"browserslist": [
-		">0.2%",
-		"not dead",
-		"not ie <= 11",
-		"not op_mini all"
-	],
+	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ],
 	"devDependencies": {
 		"@babel/core": "^7.4.3",
 		"@sambego/storybook-styles": "^1.0.0",
