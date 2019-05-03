@@ -442,6 +442,28 @@ table thead tr th.vms-table-header__with-select {
     .vms-table-header__with-select .dropdown svg {
       fill: #607d8b; }
 
+.headline {
+  font-family: Avenir;
+  color: #000000; }
+  .headline.h1 {
+    font-size: 48px;
+    line-height: 54px; }
+  .headline.h2 {
+    font-size: 36px;
+    line-height: 45px; }
+  .headline.h3 {
+    font-size: 24px;
+    line-height: 36px; }
+  .headline.h4 {
+    font-size: 18px;
+    line-height: 27px; }
+  .headline.h5 {
+    font-size: 15px;
+    line-height: 18px; }
+  .headline.h6 {
+    font-size: 12px;
+    line-height: 18px; }
+
 .pm-hq.header {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 5px 0px; }
 
