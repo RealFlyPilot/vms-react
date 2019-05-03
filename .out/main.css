@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400);
 /* Blue/E2E7E9: #E2E7E9; */
 button.primary[disabled], button.secondary[disabled], button.tertiary[disabled], button.pill[disabled], button.link[disabled] {
   color: #c5c5c5;
@@ -23,7 +24,7 @@ button.primary, button.pill.primary, button.secondary, button.pill.secondary, bu
   height: 45px;
   outline: none;
   width: auto;
-  border-radius: 4px;
+  border-radius: 3px;
   font-size: 12px;
   line-height: 18px;
   font-family: Avenir;
@@ -76,8 +77,10 @@ button.primary.notify, button.secondary.notify, button.tertiary.notify {
   position: relative; }
   button.primary.notify:after, button.secondary.notify:after, button.tertiary.notify:after {
     position: absolute;
-    left: 0.1rem;
-    height: 94%;
+    left: 1px;
+    top: 1px;
+    bottom: 1px;
+    height: 43px;
     width: 4px;
     background: #d89e6d;
     border-radius: 2px;
@@ -260,47 +263,35 @@ body {
           flex-direction: row;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
   max-width: 90vw; }
-  .color-palette .color-card {
-    margin: 20px;
-    position: relative;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: flex-end;
-            justify-content: flex-end;
-    width: 9.375rem;
-    height: 15.625rem;
-    padding-bottom: 1.25rem;
-    border-radius: 0.3125rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-    .color-palette .color-card:hover {
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-    .color-palette .color-card > div {
+  .color-palette .color-card-container {
+    margin: 0 27px 27px 0; }
+    .color-palette .color-card-container .currentColor {
+      margin-top: 14px;
+      font-family: 'Roboto Mono';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 18px;
+      /* identical to box height, or 150% */
+      text-transform: uppercase; }
+    .color-palette .color-card-container .color-card {
       position: relative;
-      display: block;
-      width: 100%;
-      padding: 5px 0 0;
-      color: white;
-      font-size: 0.75rem;
-      text-align: center; }
-      .color-palette .color-card > div:nth-of-type(1) {
-        padding: 10px 0; }
-      .color-palette .color-card > div:nth-of-type(2) {
-        padding: 10px 0; }
-      .color-palette .color-card > div:nth-of-type(3) {
-        padding: 10px 0; }
-      .color-palette .color-card > div:nth-of-type(4) {
-        margin: 0 0 20px;
-        padding: 10px 0; }
+      display: -webkit-flex;
+      display: flex;
+      /* -webkit-flex-direction: column; */
+      /* flex-direction: column; */
+      /* -webkit-align-items: center; */
+      /* align-items: center; */
+      font-size: 12px;
+      width: 90px;
+      height: 90px;
+      /* padding-bottom: 1.25rem; */
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+      .color-palette .color-card-container .color-card:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 /* Styling shared between all form field library components */
 /* Blue/E2E7E9: #E2E7E9; */

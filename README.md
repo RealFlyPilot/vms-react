@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PlusMinus + Acceleration HQ
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f405f0a267684834921fb99c22186855)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RealFlyPilot/vms-react&amp;utm_campaign=Badge_Grade)
 
 ## Up and Running
 
@@ -12,6 +14,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 GraphQL endpoint: https://wd2hhy262rfdfpbllrvk3mfwdm.appsync-api.us-east-1.amazonaws.com/graphql
 Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/
 Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=7vntmdkkv5049fn5nkqmjh6kjh&redirect_uri=http://localhost:3000/
+
+
+
+## React To Web Component
+- [React Web Component](https://github.com/spring-media/react-web-component)
+- [Turning React Components Into Web Components](https://hackernoon.com/how-to-turn-react-component-into-native-web-component-84834315cb24)
+
+
+## React .NET
+**Holy Shit Tho**
+- https://www.dotnetify.net/elements
 
 
 ### React Material UI
@@ -28,10 +41,11 @@ Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncog
 3. [Backgrounds](https://github.com/storybooks/storybook/tree/next/addons/backgrounds)
 4. [GraphQl Data](https://github.com/storybooks/storybook/tree/next/addons/graphql)
 5. [Notes](https://github.com/storybooks/storybook/tree/next/addons/notes)
-6. [WITH INFO](https://github.com/storybooks/storybook/tree/next/addons/info)
+6. [With Info](https://github.com/storybooks/storybook/tree/next/addons/info)
 7. [Story Source](https://github.com/storybooks/storybook/tree/next/addons/storysource)
 8. [Addon Events](https://www.npmjs.com/package/@storybook/addon-events)
 9. [Live Edit](https://github.com/vertexbz/storybook-addon-react-live-edit)
+10. [Confluence Addon](https://github.com/thzinc/storybook-addon-confluence)
 
 ### Figma
 
