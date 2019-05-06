@@ -1,3 +1,33 @@
-$box_shadow_1: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
-$box_shadow_3: 0px 3px 3px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
 $box_shadow_inset_1: inset 0px 1px 1px rgba(0, 0, 0, 0.18), inset 0px 0px 1px rgba(0, 0, 0, 0.27);
+
+// Drop Shadow Down Effect Styles
+$box_shadow_down_1: rgba(0, 0, 0, 0.18) 0px 1px 1px 0px;
+$box-shadow_down_2: rgba(0, 0, 0, 0.18) 0px 1px 2px 0px;
+$box-shadow_down_3: rgba(0, 0, 0, 0.18) 0px 1px 3px 0px;
+$box-shadow_down_4: rgba(0, 0, 0, 0.18) 0px 2px 4px 0px;
+$box-shadow_down_5: rgba(0, 0, 0, 0.18) 0px 2px 5px 0px;
+$box-shadow_down_6: rgba(0, 0, 0, 0.09) 0px 2px 6px 0px;
+$box-shadow_down_7: rgba(0, 0, 0, 0.18) 0px 3px 7px 0px;
+$box-shadow_down_8: rgba(0, 0, 0, 0.18) 0px 3px 8px 0px;
+$box-shadow_down_9: rgba(0, 0, 0, 0.18) 0px 3px 9px 0px;
+
+// Drop Shadow Left Effect Styles
+$box_shadow_left_1: rgba(0, 0, 0, 0.18) -1px 0px 1px 0px;
+$box-shadow_left_2: rgba(0, 0, 0, 0.18) -1px 0px 2px 0px;
+$box-shadow_left_3: rgba(0, 0, 0, 0.18) -1px 0px 3px 0px;
+$box-shadow_left_4: rgba(0, 0, 0, 0.18) -2px 0px 4px 0px;
+$box-shadow_left_5: rgba(0, 0, 0, 0.18) -2px 0px 5px 0px;
+$box-shadow_left_6: rgba(0, 0, 0, 0.09) -2px 0px 6px 0px;
+$box-shadow_left_7: rgba(0, 0, 0, 0.18) -3px 0px 7px 0px;
+$box-shadow_left_8: rgba(0, 0, 0, 0.18) -3px 0px 8px 0px;
+$box-shadow_left_9: rgba(0, 0, 0, 0.18) -3px 0px 9px 0px;
+
+// $box_shadow_1
+// $box-shadow_2
+// $box-shadow_3
+// $box-shadow_4
+// $box-shadow_5
+// $box-shadow_6
+// $box-shadow_7
+// $box-shadow_8
+// $box-shadow_9

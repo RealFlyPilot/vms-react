@@ -7,7 +7,7 @@ import centered from '@storybook/addon-centered/react'
 import { WithFigma } from 'storybook-addon-figma'
 import { VmsButton } from '../../src/apps/AccelerationHQ/components/VmsButton'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
-import { withInfo, addParameters } from '@storybook/addon-info'
+import { withInfo } from '@storybook/addon-info'
 import { buttonRoot, componentLibraryRoot } from '../roots'
 import { FPO } from '../../src/apps/AccelerationHQ/components/Icons/index.js'
 
@@ -19,7 +19,7 @@ storiesOf(`${buttonRoot}`, module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
 
-storiesOf(`${buttonRoot}/All`, module)
+storiesOf(`${buttonRoot}`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
   .add('All VMS Buttons', () => (
