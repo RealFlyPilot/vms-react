@@ -8,9 +8,7 @@
 2. [AirTable/GraphQL API](https://github.com/RealFlyPilot/flypilot-airtable-graphql-api.git): Git Clone repo and `yarn install` and `yarn dev`
 
 ## Auth - Federation Provider
-// google client id: 60702670011-g6lf5t95d093pn5at4tbla0garkga6jj.apps.googleusercontent.com
-// google secret: r4CJRwiHmi2LLwe087WBFb3I
-// /oauth2/idpresponse
+
 GraphQL endpoint: https://wd2hhy262rfdfpbllrvk3mfwdm.appsync-api.us-east-1.amazonaws.com/graphql
 Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/
 Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=7vntmdkkv5049fn5nkqmjh6kjh&redirect_uri=http://localhost:3000/
