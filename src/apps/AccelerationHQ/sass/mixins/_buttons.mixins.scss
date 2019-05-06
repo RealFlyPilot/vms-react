@@ -1,0 +1,83 @@
+@import '../variables';
+// @import '../mixins/';
+
+%inactive {
+	&[disabled] {
+		color: $button_inactive_text;
+		box-shadow: none;
+		outline: none;
+		border: 0 none !important;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
+
+%raised {
+	box-shadow: $box_shadow_1;
+	&:hover {
+		box-shadow: $box_shadow_3;
+	}
+	&:active {
+		box-shadow: $box_shadow_inset_1;
+	}
+
+	&[disabled] {
+		color: $gray_C5;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+%button-base {
+	max-height: 45px;
+	height: 45px;
+	outline: none;
+	width: auto;
+	border-radius: 3px; // Changed this because while the specs are clear in figma - I might be crazy but it doesnt look the same in Storybook
+	font-size: 12px;
+	line-height: 18px;
+	font-family: Avenir;
+	text-align: center;
+	font-weight: 700;
+	// line-height: 45px;
+	padding: 0 27px;
+	border: none;
+
+	@extend %inactive; // all buttons seem to need to inherit these styles
+}
+
+%primary-base {
+	background-color: $blue_primary;
+	color: #ffffff;
+
+	@extend %raised;
+	@extend %button-base;
+
+	&:hover {
+		background-color: $blue_primary_hover;
+	}
+	&:active {
+		background-color: $blue_primary_active;
+	}
+	&[disabled] {
+		background: $primary_inactive_bg;
+	}
+}
+
+%secondary-base {
+	color: $blue_primary;
+	background: #ffffff;
+
+	@extend %raised;
+	@extend %button-base;
+
+	&:hover {
+		background: #e2e7e9;
+	}
+	&:active {
+		background: #f0f3f4;
+	}
+	&[disabled] {
+		background: #ffffff;
+	}
+}

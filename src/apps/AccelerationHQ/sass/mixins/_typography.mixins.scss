@@ -1,0 +1,387 @@
+@mixin headline_4_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 27px;
+	font-size: 18px;
+	letter-spacing: 0px;
+}
+@mixin headline_5_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin headline_6_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin overline_text_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin overline_text_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin overline_text_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin caption_text_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 9px;
+	letter-spacing: 0px;
+}
+@mixin caption_text_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 9px;
+	letter-spacing: 0px;
+}
+@mixin caption_text_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 9px;
+	letter-spacing: 0px;
+}
+@mixin button_text_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin button_text_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin button_text_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin headline_6_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin headline_5_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin headline_3_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 36px;
+	font-size: 24px;
+	letter-spacing: 0px;
+}
+@mixin headline_2_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 45px;
+	font-size: 36px;
+	letter-spacing: 0px;
+}
+@mixin headline_1_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 54px;
+	font-size: 48px;
+	letter-spacing: 0px;
+}
+@mixin headline_6_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin headline_4_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 27px;
+	font-size: 18px;
+	letter-spacing: 0px;
+}
+@mixin headline_3_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 36px;
+	font-size: 24px;
+	letter-spacing: 0px;
+}
+@mixin headline_2_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 45px;
+	font-size: 36px;
+	letter-spacing: 0px;
+}
+@mixin headline_1_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 54px;
+	font-size: 48px;
+	letter-spacing: 0px;
+}
+@mixin headline_5_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_2_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_1_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_2_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_1_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_2_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin subtitle_1_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin headline_4_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 27px;
+	font-size: 18px;
+	letter-spacing: 0px;
+}
+@mixin headline_3_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 36px;
+	font-size: 24px;
+	letter-spacing: 0px;
+}
+@mixin headline_2_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 45px;
+	font-size: 36px;
+	letter-spacing: 0px;
+}
+@mixin headline_1_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 54px;
+	font-size: 48px;
+	letter-spacing: 0px;
+}
+@mixin body_2_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin body_2_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin body_2_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin body_1_book($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin body_1_medium($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 500;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin body_1_heavy($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+@mixin link_text_inactive($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin link_text_clicked($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin link_text_hover($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
+@mixin link_text_default($text-align:"") {
+	@if $text-align != "" {
+		text-align: $text-align;
+	}
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 12px;
+	letter-spacing: 0px;
+}
