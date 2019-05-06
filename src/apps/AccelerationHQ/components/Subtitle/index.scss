@@ -1,6 +1,6 @@
 @import '../../sass/fonts';
 
-.headline {
+.subtitle {
 	font-family: Avenir;
 	color: #000000;
 
@@ -9,11 +9,11 @@
 	}
 	&.medium {
 		font-weight: 300;
-		font-family: 'Avenir Medium';
+		font-family: Avenir Medium;
 	}
 	&.book {
 		font-weight: 100;
-		font-family: 'Avenir Light';
+		font-family: Avenir Light;
 	}
 	&.h1 {
 		font-size: 48px;

@@ -114,16 +114,8 @@ storiesOf(`${buttonRoot}/Primary`, module)
             - box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18), 0px 0px 1px rgba(0, 0, 0, 0.27);
           `
   })
-  .add('Hover', () => (
-    <VmsButton buttonType={`primary`} Icon={FPO}>
-      Call To Action
-    </VmsButton>
-  ))
-  .add('Clicked', () => (
-    <VmsButton buttonType={`primary`} Icon={FPO}>
-      Call To Action
-    </VmsButton>
-  ))
+  .add('Hover', () => <VmsButton buttonType={`primary`}>Call To Action</VmsButton>)
+  .add('Clicked', () => <VmsButton buttonType={`primary`}>Call To Action</VmsButton>)
   .add('Inactive', () => (
     <VmsButton buttonType={`primary`} disabled>
       Call To Action

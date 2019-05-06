@@ -50,6 +50,32 @@ Test Your Hosted UI Endpoint: https://plusminussays-dev.auth.us-east-1.amazoncog
 ### Figma
 
 [URL](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=29%3A42)
+[Theme Generator](https://github.com/jxnblk/figma-theme)
+
+1. API Response
+```
+- document
+  |- children
+     |- canvas
+        |- children
+           |- frame
+           |   |- children
+           |       |- component
+           |       |- group
+           |- frame
+           |    |- children
+           |       |- component
+           |       |- group
+           |- frame
+           |    |- children
+           |       |- component
+           |       |- group
+           |- frame
+           |    |- children
+           |       |- component
+           |       |- group
+           
+```
 
 
 ### AccelerationHQ Resources

@@ -8,6 +8,9 @@ import { WithFigma } from 'storybook-addon-figma'
 import { withInfo } from '@storybook/addon-info'
 import { componentLibraryRoot } from '../roots'
 import { Headline } from '../../src/apps/AccelerationHQ/components/Headline/index.js'
+import { Subtitle } from '../../src/apps/AccelerationHQ/components/Subtitle/index.js'
+
+import '../../src/apps/AccelerationHQ/App.scss'
 
 storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
@@ -16,6 +19,62 @@ storiesOf(componentLibraryRoot, module)
 storiesOf(`${componentLibraryRoot}/Typography/`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
+
+storiesOf(`${componentLibraryRoot}/Typography/All`, module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
+  .add('All', () => (
+    <WithFigma
+      url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'}
+    >
+      <div
+        style={{
+          display: 'flex',
+          width: '100vw',
+          justifyContent: 'space-evenly',
+          alignItems: 'center'
+        }}
+      >
+        <h1
+          className='headline h1 book'
+          style={{ position: 'absolute', top: 0, left: 0, width: '100vw', textAlign: 'center', color: '#8A8A8A' }}
+        >
+          Acceleration Typography Library
+        </h1>
+        <div style={{ marginTop: '100px' }}>
+          <Headline content='Headline 1' type='h1' />
+          <Headline content='Headline 2' type='h2' />
+          <Headline content='Headline 3' type='h3' />
+          <Headline content='Headline 4' type='h4' />
+          <Headline content='Headline 5' type='h5' />
+          <Headline content='Headline 6' type='h6' />
+          <Subtitle content='Subtitle 1 - heavy' type='st-1' weight='heavy' />
+          <Subtitle content='Subtitle 1 - medium' type='st-1' weight='medium' />
+          <Subtitle content='Subtitle 1 - book' type='st-1' weight='book' />
+          <Subtitle content='Subtitle 2 - heavy' type='st-2' weight='heavy' />
+          <Subtitle content='Subtitle 2 - medium' type='st-2' weight='medium' />
+          <Subtitle content='Subtitle 2 - book' type='st-2' weight='book' />
+        </div>
+        <div>
+          <p className='body-text text-1 heavy'>Body Text 1 - Heavy</p>
+          <p className='body-text text-1 medium'>Body Text 1 - medium</p>
+          <p className='body-text text-1 book'>Body Text 1 - book</p>
+          <p className='body-text text-2 heavy'> Body Text 2 - Heavy</p>
+          <p className='body-text text-2 medium'> Body Text 2 - medium</p>
+          <p className='body-text text-2 book'> Body Text 2 - book</p>
+          <p className='btn-text heavy'>Button Text - Heavy</p>
+          <p className='btn-text medium'>Button Text - Medium</p>
+          <p className='btn-text book'>Button Text - Book</p>
+          <p className='caption-text heavy'>Caption Text - heavy</p>
+          <p className='caption-text medium'>Caption Text - medium</p>
+          <p className='caption-text book'>Caption Text - book</p>
+          <p className='overline-text heavy'>Overline Text - heavy</p>
+          <p className='overline-text medium'>Overline Text - medium</p>
+          <p className='overline-text book'>Overline Text - book</p>
+        </div>
+      </div>
+    </WithFigma>
+  ))
 
 storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
   .addDecorator(centered)
@@ -48,7 +107,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+        - font-family: Avenir;
+        - font-size: 48px;
+        - line-height: 54px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -71,7 +132,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+         - font-family: Avenir;
+        - font-size: 36px;
+        - line-height: 45px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -94,7 +157,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+           - font-family: Avenir;
+        - font-size: 24px;
+        - line-height: 36px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -117,7 +182,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+           - font-family: Avenir;
+        - font-size: 18px;
+        - line-height: 27px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -140,7 +207,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+           - font-family: Avenir;
+        - font-size: 15px;
+        - line-height: 18px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -163,7 +232,9 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
     {
       info: `
       ## Details
-        - 
+           - font-family: Avenir;
+        - font-size: 12px;
+        - line-height: 18px;
 
       ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
 
@@ -175,50 +246,110 @@ storiesOf(`${componentLibraryRoot}/Typography/Headlines`, module)
 storiesOf(`${componentLibraryRoot}/Typography/Subtitles`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Subtitle 1', () => (
+  .add(
+    'Subtitle 1',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
+      >
+        <Subtitle content='Subtitle 1 - heavy' type='st-1' weight='heavy' />
+        <Subtitle content='Subtitle 1 - medium' type='st-1' weight='medium' />
+        <Subtitle content='Subtitle 1 - book' type='st-1' weight='book' />
+      </WithFigma>
+    ),
+    {
+      info: `
+      ## Details
+           - font-family: Avenir;
+        - font-size: 15px;
+        - line-height: 18px;
+
+      ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
+      
+    
+      `
+    }
+  )
+  .add(
+    'Subtitle 2',
+    () => (
+      <WithFigma
+        url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
+      >
+        <Subtitle content='Subtitle 2 - heavy' type='st-2' weight='heavy' />
+        <Subtitle content='Subtitle 2 - medium' type='st-2' weight='medium' />
+        <Subtitle content='Subtitle 2 - book' type='st-2' weight='book' />
+      </WithFigma>
+    ),
+    {
+      info: `
+      ## Details
+           - font-family: Avenir;
+        - font-size: 12px;
+        - line-height: 18px;
+
+      ### [Figma](https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=2%3A0'})
+      `
+    }
+  )
+
+storiesOf(`${componentLibraryRoot}/Typography/Body Text`, module)
+  .addDecorator(centered)
+  .addDecorator(withInfo)
+  .add('Body 1', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
     >
-      <h6 className='subtitle-one'>Subtitle 1</h6>
+      <p className='body-text text-1 heavy'>Body Text 1 - Heavy</p>
+      <p className='body-text text-1 medium'>Body Text 1 - medium</p>
+      <p className='body-text text-1 book'>Body Text 1 - book</p>
     </WithFigma>
   ))
-  .add('Subtitle 2', () => (
+  .add('Body 2', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
     >
-      <h6 className='subtitle-two'>Subtitle 2</h6>
+      <p className='body-text text-2 heavy'> Body Text 2 - Heavy</p>
+      <p className='body-text text-2 medium'> Body Text 2 - medium</p>
+      <p className='body-text text-2 book'> Body Text 2 - book</p>
     </WithFigma>
   ))
 
 storiesOf(`${componentLibraryRoot}/Typography/Button Text`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Button Text', () => (
+  .add('All', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
     >
-      <h6 className='subtitle-one'>Button Text</h6>
+      <p className='btn-text heavy'>Button Text - Heavy</p>
+      <p className='btn-text medium'>Button Text - Medium</p>
+      <p className='btn-text book'>Button Text - Book</p>
     </WithFigma>
   ))
 
 storiesOf(`${componentLibraryRoot}/Typography/Caption Text`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Caption Text', () => (
+  .add('All', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
     >
-      <p className='caption'>Caption Text</p>
+      <p className='caption-text heavy'>Caption Text - heavy</p>
+      <p className='caption-text medium'>Caption Text - medium</p>
+      <p className='caption-text book'>Caption Text - book</p>
     </WithFigma>
   ))
 
 storiesOf(`${componentLibraryRoot}/Typography/Overline Text`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-  .add('Overline Text', () => (
+  .add('All', () => (
     <WithFigma
       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
     >
-      <p className='overline'>Overline Text</p>
+      <p className='overline-text heavy'>Overline Text - heavy</p>
+      <p className='overline-text medium'>Overline Text - medium</p>
+      <p className='overline-text book'>Overline Text - book</p>
     </WithFigma>
   ))

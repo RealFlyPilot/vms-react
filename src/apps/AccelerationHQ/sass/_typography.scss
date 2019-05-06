@@ -1,0 +1,40 @@
+@import './fonts';
+
+%body-text-base {
+	font-family: Avenir;
+	&.heavy {
+		font-weight: 600;
+	}
+	&.medium {
+		font-family: Avenir;
+	}
+
+	&.book {
+		font-family: Avenir Light;
+	}
+}
+
+.body-text.text-1 {
+	@extend %body-text-base;
+	font-size: 15px;
+	line-height: 18px;
+}
+.body-text.text-2,
+.btn-text,
+.overline-text {
+	@extend %body-text-base;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.caption-text {
+	@extend %body-text-base;
+	font-size: 9px;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+.overline-text {
+	text-transform: uppercase;
+	// font-weight: 900;
+}

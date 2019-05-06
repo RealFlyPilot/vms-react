@@ -1,0 +1,437 @@
+{
+  "colors": {
+    "Blue/0600—D3DBDF": "#d3dbdf",
+    "Blue/0500—E2E7E9": "#e2e7e9",
+    "Grey/2200—212121": "#212121",
+    "Blue/1400—607D8B": "#607d8b",
+    "Blue/0700—C5CFD4": "#c5cfd4",
+    "Yellow/1300—DABA75": "#daba75",
+    "Orange/1300—D89E6D": "#d89e6d",
+    "Red/2100—3D201D": "#3d201d",
+    "Red/2200—291613": "#291613",
+    "Red/2300—150B0A": "#150b0a",
+    "Red/2000—512B26": "#512b26",
+    "Red/1900—65362F": "#65362f",
+    "Red/1800—794039": "#794039",
+    "Red/1700—8D4B42": "#8d4b42",
+    "Red/1600—A1564B": "#a1564b",
+    "Red/1500—B56055": "#b56055",
+    "Red/1400—C96B5E": "#c96b5e",
+    "Red/1300—DD7567": "#dd7567",
+    "Red/1200—E08174": "#e08174",
+    "Red/1100—E38E82": "#e38e82",
+    "Red/1000—E69A90": "#e69a90",
+    "Red/0900—E9A79E": "#e9a79e",
+    "Red/0800—ECB3AC": "#ecb3ac",
+    "Red/0700—EFC0B9": "#efc0b9",
+    "Red/0600—F2CCC7": "#f2ccc7",
+    "Red/0500—F5D9D5": "#f5d9d5",
+    "Red/0400—F8E5E3": "#f8e5e3",
+    "Red/0300—FBF2F1": "#fbf2f1",
+    "Orange/2200—281D14": "#281d14",
+    "Orange/2300—140F0A": "#140f0a",
+    "Orange/2100—3B2C1E": "#3b2c1e",
+    "Orange/2000—4F3A28": "#4f3a28",
+    "Orange/1900—634832": "#634832",
+    "Orange/1800—76573C": "#76573c",
+    "Orange/1700—8A6546": "#8a6546",
+    "Orange/1600—9E7350": "#9e7350",
+    "Orange/1500—B1825A": "#b1825a",
+    "Orange/1400—C59064": "#c59064",
+    "Orange/1200—DBA67A": "#dba67a",
+    "Orange/1100—DFAF87": "#dfaf87",
+    "Orange/1000—E2B894": "#e2b894",
+    "Orange/0900—E6C1A2": "#e6c1a2",
+    "Orange/0800—E9CAAF": "#e9caaf",
+    "Orange/0700—EDD2BC": "#edd2bc",
+    "Orange/0600—F0DBC9": "#f0dbc9",
+    "Orange/0500—F4E4D7": "#f4e4d7",
+    "Orange/0400—F7EDE4": "#f7ede4",
+    "Orange/0300—FBF6F1": "#fbf6f1",
+    "Yellow/2300—14110B": "#14110b",
+    "Yellow/2200—282216": "#282216",
+    "Yellow/2100—3C3320": "#3c3320",
+    "Yellow/2000—50442B": "#50442b",
+    "Yellow/1900—645536": "#645536",
+    "Yellow/1800—776640": "#776640",
+    "Yellow/1700—8B774B": "#8b774b",
+    "Yellow/1600—9F8856": "#9f8856",
+    "Yellow/1500—B39960": "#b39960",
+    "Yellow/1400—C7AA6B": "#c7aa6b",
+    "Yellow/1200—DDC081": "#ddc081",
+    "Yellow/1100—E0C68E": "#e0c68e",
+    "Yellow/1000—E4CC9A": "#e4cc9a",
+    "Yellow/0900—E7D3A7": "#e7d3a7",
+    "Yellow/0800—EAD9B3": "#ead9b3",
+    "Yellow/0700—EEDFC0": "#eedfc0",
+    "Yellow/0600—F1E5CC": "#f1e5cc",
+    "Yellow/0500—F4ECD9": "#f4ecd9",
+    "Yellow/0400—F8F2E5": "#f8f2e5",
+    "Yellow/0300—FBF8F2": "#fbf8f2",
+    "Green/2300—0D100B": "#0d100b",
+    "Green/2200—191F15": "#191f15",
+    "Green/2100—262F1F": "#262f1f",
+    "Green/2000—323E2A": "#323e2a",
+    "Green/1900—3F4D34": "#3f4d34",
+    "Green/1800—4B5D3E": "#4b5d3e",
+    "Green/1700—586C48": "#586c48",
+    "Green/1600—647B53": "#647b53",
+    "Green/1500—718B5D": "#718b5d",
+    "Green/1400—7D9A67": "#7d9a67",
+    "Green/1300—89A971": "#89a971",
+    "Green/1200—93B07D": "#93b07d",
+    "Green/1100—9EB88A": "#9eb88a",
+    "Green/1000—A9C097": "#a9c097",
+    "Green/0900—B3C8A4": "#b3c8a4",
+    "Green/0800—BED0B1": "#bed0b1",
+    "Green/0700—C9D7BE": "#c9d7be",
+    "Green/0600—D4DFCB": "#d4dfcb",
+    "Green/0500—DEE7D8": "#dee7d8",
+    "Green/0400—E9EFE5": "#e9efe5",
+    "Green/0300—F4F7F2": "#f4f7f2",
+    "Cyan/2300—0E1111": "#0e1111",
+    "Cyan/2200—1B2222": "#1b2222",
+    "Blue/2400—090C0D": "#090c0d",
+    "Blue/2300—12171A": "#12171a",
+    "Cyan/2100—293333": "#293333",
+    "Cyan/2000—364444": "#364444",
+    "Cyan/1900—445555": "#445555",
+    "Cyan/1800—516666": "#516666",
+    "Cyan/1700—5F7777": "#5f7777",
+    "Cyan/1600—6C8989": "#6c8989",
+    "Cyan/1500—7A9A9A": "#7a9a9a",
+    "Cyan/1400—87AAAA": "#87aaaa",
+    "Cyan/1300—94BBBB": "#94bbbb",
+    "Cyan/1200—9DC1C1": "#9dc1c1",
+    "Cyan/1100—A7C7C7": "#a7c7c7",
+    "Cyan/1000—B1CDCD": "#b1cdcd",
+    "Cyan/0900—BAD3D3": "#bad3d3",
+    "Cyan/0800—C4D9D9": "#c4d9d9",
+    "Cyan/0700—CEE0E0": "#cee0e0",
+    "Cyan/0600—D8E6E6": "#d8e6e6",
+    "Cyan/0500—E1ECEC": "#e1ecec",
+    "Cyan/0400—EBF2F2": "#ebf2f2",
+    "Cyan/0300—F5F8F8": "#f5f8f8",
+    "Cyan/0200—FAFBFB": "#fafbfb",
+    "Blue/2200—1B2326": "#1b2326",
+    "Blue/2100—232E33": "#232e33",
+    "Blue/2000—2C3940": "#2c3940",
+    "Blue/1900—35454C": "#35454c",
+    "Blue/1800—3E5059": "#3e5059",
+    "Blue/1700—465B66": "#465b66",
+    "Blue/1600—4F6772": "#4f6772",
+    "Blue/1500—58727F": "#58727f",
+    "Blue/1300—6E8895": "#6e8895",
+    "Blue/1200—7C94A0": "#7c94a0",
+    "Blue/1100—8BA0AA": "#8ba0aa",
+    "Blue/1000—99ACB5": "#99acb5",
+    "Blue/0900—A8B8BF": "#a8b8bf",
+    "Blue/0800—B6C3CA": "#b6c3ca",
+    "Blue/0400—F0F3F4": "#f0f3f4",
+    "Grey/2300—000000": "#000000",
+    "Grey/2100—2C2C2C": "#2c2c2c",
+    "Grey/2000—373737": "#373737",
+    "Grey/1900—424242": "#424242",
+    "Grey/1800—515151": "#515151",
+    "Grey/1700—616161": "#616161",
+    "Grey/1600—6B6B6B": "#6b6b6b",
+    "Grey/1500—757575": "#757575",
+    "Grey/1400—808080": "#808080",
+    "Grey/1300—8A8A8A": "#8a8a8a",
+    "Grey/1200—949494": "#949494",
+    "Grey/1100—9E9E9E": "#9e9e9e",
+    "Grey/1000—ADADAD": "#adadad",
+    "Grey/0900—BDBDBD": "#bdbdbd",
+    "Grey/0800—C5C5C5": "#c5c5c5",
+    "Grey/0700—CECECE": "#cecece",
+    "Grey/0600—D7D7D7": "#d7d7d7",
+    "Grey/0500—E0E0E0": "#e0e0e0",
+    "Grey/0400—EEEEEE": "#eeeeee",
+    "Grey/0300—F5F5F5": "#f5f5f5",
+    "Grey/0200—FAFAFA": "#fafafa",
+    "Grey/0100—FFFFFF": "#ffffff"
+  },
+  "textStyles": {
+    "Headline 4/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": 1.28
+    },
+    "Headline 5/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Headline 6/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Overline Text/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Overline Text/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Overline Text/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Caption Text/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 9,
+      "lineHeight": 1.7066667175292969
+    },
+    "Caption Text/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 9,
+      "lineHeight": 1.7066667175292969
+    },
+    "Caption Text/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 9,
+      "lineHeight": 1.7066667175292969
+    },
+    "Button Text/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Button Text/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Button Text/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Headline 6/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Headline 5/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Headline 3/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 24,
+      "lineHeight": 1.28
+    },
+    "Headline 2/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 36,
+      "lineHeight": 1.066666717529297
+    },
+    "Headline 1/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 48,
+      "lineHeight": 0.96
+    },
+    "Headline 6/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Headline 4/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 18,
+      "lineHeight": 1.28
+    },
+    "Headline 3/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 24,
+      "lineHeight": 1.28
+    },
+    "Headline 2/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 36,
+      "lineHeight": 1.066666717529297
+    },
+    "Headline 1/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 48,
+      "lineHeight": 0.96
+    },
+    "Headline 5/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Subtitle 2/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Subtitle 1/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Subtitle 2/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Subtitle 1/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Subtitle 2/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Subtitle 1/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Headline 4/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": 1.28
+    },
+    "Headline 3/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 24,
+      "lineHeight": 1.28
+    },
+    "Headline 2/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 36,
+      "lineHeight": 1.066666717529297
+    },
+    "Headline 1/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 48,
+      "lineHeight": 0.96
+    },
+    "Body 2/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Body 2/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Body 2/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Body 1/Book": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Body 1/Medium": {
+      "fontFamily": "Avenir",
+      "fontWeight": 500,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Body 1/Heavy": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 15,
+      "lineHeight": 1.0240000152587891
+    },
+    "Link/Text/Inactive": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Link/Text/Clicked": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Link/Text/Hover": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    },
+    "Link/Text/Default": {
+      "fontFamily": "Avenir",
+      "fontWeight": 400,
+      "fontSize": 12,
+      "lineHeight": 1.28
+    }
+  },
+  "fonts": [
+    "Avenir"
+  ],
+  "fontSizes": [
+    12,
+    15,
+    18,
+    24,
+    36,
+    48,
+    9
+  ],
+  "fontWeights": [
+    400,
+    500
+  ],
+  "lineHeights": [
+    1.28,
+    1.0240000152587891,
+    1.7066667175292969,
+    1.066666717529297,
+    0.96
+  ]
+}

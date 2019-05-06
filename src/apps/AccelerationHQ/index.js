@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import ScrollToTop from './components/ScrollTop'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { blue, indigo } from '@material-ui/core/colors'
+import './App.scss'
 
 const theme = createMuiTheme({
   palette: {
