@@ -15,12 +15,8 @@ storiesOf(componentLibraryRoot, module)
 storiesOf(`${componentLibraryRoot}/List`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-
-storiesOf(`${componentLibraryRoot}/List/All`, module)
-  .addDecorator(centered)
-  .addDecorator(withInfo)
   .add(
-    'List',
+    'Demo',
     () => (
       <WithFigma
         url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=22%3A0'}

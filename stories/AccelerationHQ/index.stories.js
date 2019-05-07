@@ -8,44 +8,22 @@ import { WithFigma } from 'storybook-addon-figma'
 import { GridOverlay } from '../../src/apps/AccelerationHQ/components/GridOverlay'
 import { withInfo, addParameters } from '@storybook/addon-info'
 
-import './iconography.js'
-import './typography.js'
-import './colors.js'
-import './buttons.js'
-import './grids.js'
-import './elevation.js'
-import './tables.js'
-import './forms.js'
-import './filters.js'
-import './tab-system.js'
-import './list.js'
-import './summary-column.js'
-import './tooltips.js'
-import './navigation.js'
-import './modals.js'
-
-// storiesOf(componentLibraryRoot, module)
-//   .addDecorator(withKnobs)
-//   .addDecorator(centered)
-
-// storiesOf(`${componentLibraryRoot}`, module)
-//   .addDecorator(withKnobs)
-//   .addDecorator(centered)
-
-// // storiesOf(`${componentLibraryRoot}/Vms Colors/Color Pallete`, module)
-// //   .addDecorator(centered)
-// //   .addDecorator(withInfo)
-// //   .add('All', () => <VmsColorPallete />)
-// //   .add('By Color: Red', () => <VmsColorPallete color='red' />)
-// //   .add('All With Grid Background', () => (
-// //     <GridOverlay>
-// //       <VmsColorPallete />
-// //     </GridOverlay>
-// //   ))
-// //   .add('With Figma', () => (
-// //     <WithFigma
-// //       url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=6%3A0'}
-// //     >
-// //       <VmsColorPallete />
-// //     </WithFigma>
-// //   ))
+import './iconography'
+import './typography'
+import './colors'
+import './buttons'
+import './grids'
+import './elevation'
+import './tables'
+import './forms'
+import './filters'
+import './tab-system'
+import './list'
+import './summary-column'
+import './tooltips'
+import './navigation'
+import './modals'
+import './snackbar'
+import './move-select'
+import './animations'
+import './todo-list'

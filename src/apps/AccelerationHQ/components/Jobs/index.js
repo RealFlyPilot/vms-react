@@ -1,20 +1,8 @@
-import React, { Component, Fragment } from 'react'
-import withStyles from '@material-ui/core/styles/withStyles'
-// import { withRouter } from 'react-router-dom'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import SwipeableViews from 'react-swipeable-views'
+import React, { Component, Fragment, memo, useState, useRef, useEffect } from 'react'
 
-import ListSubheader from '@material-ui/core/ListSubheader'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import Collapse from '@material-ui/core/Collapse'
+import SwipeableViews from 'react-swipeable-views'
+import * as Icons from './icons'
+
 import ViewAgenda from '@material-ui/icons/ViewAgenda'
 import ViewModule from '@material-ui/icons/ViewModule'
 
@@ -22,212 +10,73 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import Topbar from '../Topbar'
 
-function TabContainer ({ children, dir }) {
-  return (
-    <Typography component='div' dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  )
+import { useSpring, animated } from 'react-spring'
+import { Global, Frame, Content, toggle } from './styles'
+// import * as Icons from './icons'
+
+import ResizeObserver from 'resize-observer-polyfill'
+
+export function usePrevious (value) {
+  const ref = useRef()
+  useEffect(() => void (ref.current = value), [value])
+  return ref.current
 }
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    overflow: 'hidden',
-    backgroundSize: 'cover',
-    backgroundPosition: '0 400px',
-    paddingBottom: 200
-  },
-  grid: {
-    width: 1200,
-    marginTop: 40,
-    [theme.breakpoints.down('sm')]: {
-      width: 'calc(100% - 20px)'
-    }
-  },
-  paper: {
-    padding: theme.spacing.unit * 3,
-    textAlign: 'left',
-    color: theme.palette.text.secondary
-  },
-  rangeLabel: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    paddingTop: theme.spacing.unit * 2
-  },
-  topBar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 32
-  },
-  outlinedButtom: {
-    textTransform: 'uppercase',
-    margin: theme.spacing.unit
-  },
-  actionButtom: {
-    textTransform: 'uppercase',
-    margin: theme.spacing.unit,
-    width: 152
-  },
-  blockCenter: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center'
-  },
-  block: {
-    padding: theme.spacing.unit * 2
-  },
-  box: {
-    marginBottom: 40,
-    height: 65
-  },
-  inlining: {
-    display: 'inline-block',
-    marginRight: 10
-  },
-  buttonBar: {
-    display: 'flex'
-  },
-  alignRight: {
-    display: 'flex',
-    justifyContent: 'flex-end'
-  },
-  noBorder: {
-    borderBottomStyle: 'hidden'
-  },
-  loadingState: {
-    opacity: 0.05
-  },
-  loadingMessage: {
-    position: 'absolute',
-    top: '40%',
-    left: '40%'
-  },
-  nested: {
-    paddingLeft: theme.spacing.unit * 4
-  }
+export function useMeasure () {
+  const ref = useRef()
+  const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 })
+  const [ro] = useState(() => new ResizeObserver(([entry]) => set(entry.contentRect)))
+  useEffect(() => {
+    if (ref.current) ro.observe(ref.current)
+    return () => ro.disconnect()
+  }, [])
+  return [{ ref }, bounds]
+}
+
+const Tree = memo(({ children, name, style, open = false }) => {
+  const [isOpen, setOpen] = useState(open)
+  const previous = usePrevious(isOpen)
+  const [bind, { height: viewHeight }] = useMeasure()
+  const { height, opacity, transform } = useSpring({
+    from: { height: 0, opacity: 0, transform: 'translate3d(20px,0,0)' },
+    to: { height: isOpen ? viewHeight : 0, opacity: isOpen ? 1 : 0, transform: `translate3d(${isOpen ? 0 : 20}px,0,0)` }
+  })
+  const Icon = Icons[`${children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO`]
+  return (
+    <Frame>
+      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
+      <span style={{ verticalAlign: 'middle', ...style }}>{name}</span>
+      <Content style={{ opacity, height: isOpen && previous === isOpen ? 'auto' : height }}>
+        <animated.div style={{ transform }} {...bind}>
+          {children}
+        </animated.div>
+      </Content>
+    </Frame>
+  )
 })
 
-class Jobs extends Component {
-  state = {
-    learnMoredialog: false,
-    getStartedDialog: false,
-    value: 0
-  }
+export const Jobs = ({ data }) => {
+  const { views } = data
 
-  componentDidMount () {
-    console.log(this.props)
-  }
-
-  openDialog = event => {
-    this.setState({ learnMoredialog: true })
-  }
-
-  dialogClose = event => {
-    this.setState({ learnMoredialog: false })
-  }
-
-  openGetStartedDialog = event => {
-    this.setState({ getStartedDialog: true })
-  }
-
-  closeGetStartedDialog = event => {
-    this.setState({ getStartedDialog: false })
-  }
-
-  handleChange = (event, value) => {
-    this.setState({ value })
-  }
-
-  handleChangeIndex = index => {
-    this.setState({ value: index })
-  }
-
-  render () {
-    const { classes, data } = this.props
-    const { views } = data
-    return (
-      <React.Fragment>
-        <CssBaseline />
-
-        <div className={classes.root}>
-          <Paper className={classes.paper}>
-            <Tabs
-              value={this.state.value}
-              onChange={this.handleChange}
-              variant='fullWidth'
-              indicatorColor='primary'
-              textColor='primary'
-            >
-              <Tab icon={<ViewModule />} />
-              <Tab icon={<ViewAgenda />} />
-              <Tab icon={<ViewAgenda />} />
-            </Tabs>
-
-            <SwipeableViews axis={'x-reverse'} index={this.state.value} onChangeIndex={this.handleChangeIndex}>
-              <TabContainer>
-                <Typography className={classes.heading}>{data.name} Views</Typography>
-                {views.map(view => (
-                  <ExpansionPanel>
-                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography className={classes.heading}>{view.name}</Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                      <Typography />
-                      <List
-                        component='nav'
-                        subheader={<ListSubheader component='div'>Views</ListSubheader>}
-                        className={classes.root}
-                      >
-                        {views.components && views.components.length
-                          ? views.components.map(component => {
-                            return (
-                              <Fragment>
-                                <ListItem button>
-                                  <ListItemIcon>
-                                    <ViewModule />
-                                  </ListItemIcon>
-                                  <ListItemText inset>{component.name}</ListItemText>
-                                </ListItem>
-
-                                {/* <Collapse in timeout='auto' unmountOnExit>
-                                        <Typography className={classes.heading}>Components</Typography>
-
-                                        <List component='div' disablePadding>
-                                          {view.components.map(comp => (
-                                            <ListItem
-                                              className={classes.nested}
-                                              style={{ background: '#cfd0d4' }}
-                                              divider
-                                            >
-                                              <ListItemIcon>
-                                                <ViewAgenda />
-                                              </ListItemIcon>
-                                              <ListItemText>{comp.name}</ListItemText>
-                                            </ListItem>
-                                          ))}
-                                        </List>
-                                      </Collapse> */}
-                              </Fragment>
-                            )
-                          })
-                          : null}
-                      </List>
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                ))}
-              </TabContainer>
-              <TabContainer>Views</TabContainer>
-              <TabContainer>Components</TabContainer>
-            </SwipeableViews>
-          </Paper>
-          )
-        </div>
-      </React.Fragment>
-    )
-  }
+  return (
+    <>
+      <Global />
+      <Tree name='App' open>
+        <Tree name='Jobs'>
+          <Tree name='Views'>
+            {views.map(view => (
+              <Tree name={view.name} style={{ color: '#37ceff' }}>
+                <Tree name='Components'>
+                  {view.components && view.components.length
+                    ? view.components.map(comp => <Tree name={comp.name} />)
+                    : null}
+                </Tree>
+              </Tree>
+            ))}
+          </Tree>
+        </Tree>
+      </Tree>
+    </>
+  )
 }
-
-export default withStyles(styles)(Jobs)

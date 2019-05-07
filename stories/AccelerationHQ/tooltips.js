@@ -7,6 +7,7 @@ import centered from '@storybook/addon-centered/react'
 import { WithFigma } from 'storybook-addon-figma'
 import { withInfo, addParameters } from '@storybook/addon-info'
 import { componentLibraryRoot } from '../roots'
+import VmsToolTip from '../../src/apps/AccelerationHQ/components/VmsToolTip/index.js'
 
 storiesOf(componentLibraryRoot, module)
   .addDecorator(withKnobs)
@@ -15,17 +16,13 @@ storiesOf(componentLibraryRoot, module)
 storiesOf(`${componentLibraryRoot}/Tooltip`, module)
   .addDecorator(centered)
   .addDecorator(withInfo)
-
-storiesOf(`${componentLibraryRoot}/Tooltip/All`, module)
-  .addDecorator(centered)
-  .addDecorator(withInfo)
   .add(
-    'Tooltip',
+    'FPO - Tooltip',
     () => (
       <WithFigma
         url={'https://www.figma.com/file/CRSiJREA5Lp34X9HHARnp5yn/Acceleration-%E2%80%94-Libraries?node-id=22%3A0'}
       >
-        <h1>Tooltip Placeholder</h1>
+        <VmsToolTip />
       </WithFigma>
     ),
     {
