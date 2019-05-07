@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const CheckMark = props => (
-	<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path d="M7 14L10.2929 17.2929C10.6834 17.6834 11.3166 17.6834 11.7071 17.2929L20 9" stroke={color} />
+export const CheckMark = ({ color = '#607D8B' }) => (
+	<svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0.5 4.5L4.5 8.5L12.5 0.5" stroke={color} stroke-linecap="round" stroke-linejoin="round" />
 	</svg>
 )
 
@@ -99,7 +99,7 @@ export const Share = ({ color = '#607D8B' }) => {
 	)
 }
 
-export const CheckBox = ({ checked = false }) => {
+export const CheckBox = ({ checked = false, color = '#607D8B' }) => {
 	return checked ? (
 		'checked'
 	) : (
@@ -112,7 +112,7 @@ export const CheckBox = ({ checked = false }) => {
 	)
 }
 
-export const DropdownArrow = ({ up = false, color }) => {
+export const DropdownArrow = ({ up = false, color = '#607D8B' }) => {
 	return up ? (
 		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M13.5 9V18" stroke={color} stroke-linecap="round" stroke-linejoin="round" />
@@ -126,7 +126,7 @@ export const DropdownArrow = ({ up = false, color }) => {
 	)
 }
 
-export const Heart = ({ filled = false, color }) => {
+export const Heart = ({ filled = false, color = '#607D8B' }) => {
 	return filled ? (
 		<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
@@ -149,35 +149,37 @@ export const Heart = ({ filled = false, color }) => {
 	)
 }
 
-export const RatingStar = ({ size, filled = false, color }) => {
+export const RatingStar = ({ size, filled = false, color = '#607D8B' }) => {
 	return filled ? (
-		<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M8.5079 20.5225L10.1685 15.6918L6.26961 12.9069C5.8738 12.6241 6.07381 12 6.56023 12H11.4375L13.0272 7.37554C13.1818 6.9256 13.8182 6.9256 13.9728 7.37554L15.5625 12H20.4398C20.9262 12 21.1262 12.6241 20.7304 12.9069L16.8315 15.6918L18.4921 20.5225C18.6503 20.9827 18.1246 21.3747 17.7286 21.0919L13.5 18.0714L9.27136 21.0919C8.87538 21.3747 8.34971 20.9827 8.5079 20.5225Z"
-				fill={color}
-			/>
-		</svg>
+	
+	
+		<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.5079 13.5225L4.16846 8.69176L0.269614 5.90687C-0.126202 5.62414 0.0738131 5 0.560233 5H5.4375L7.02716 0.375544C7.18183 -0.0744032 7.81817 -0.0744026 7.97284 0.375544L9.5625 5H14.4398C14.9262 5 15.1262 5.62414 14.7304 5.90687L10.8315 8.69176L12.4921 13.5225C12.6503 13.9827 12.1246 14.3747 11.7286 14.0919L7.5 11.0714L3.27136 14.0919C2.87538 14.3747 2.34971 13.9827 2.5079 13.5225Z" fill={color} />
+</svg>
+
+
 	) : (
-		<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M13.5 7.5L13.9789 7.35633C13.9155 7.14483 13.7208 7 13.5 7C13.2792 7 13.0845 7.14483 13.0211 7.35633L13.5 7.5ZM12 12.5V13C12.2208 13 12.4155 12.8552 12.4789 12.6437L12 12.5ZM6.5 12.5V12C6.27967 12 6.0853 12.1442 6.02145 12.3551C5.9576 12.566 6.03932 12.7938 6.22265 12.916L6.5 12.5ZM11 15.5L11.4642 15.6857C11.5521 15.4662 11.4741 15.2151 11.2773 15.084L11 15.5ZM9 20.5L8.53576 20.3143C8.45442 20.5177 8.51489 20.7503 8.68496 20.8883C8.85503 21.0263 9.09512 21.0375 9.27735 20.916L9 20.5ZM13.5 17.5L13.7773 17.084C13.6094 16.972 13.3906 16.972 13.2227 17.084L13.5 17.5ZM18 20.5L17.7226 20.916C17.9049 21.0375 18.145 21.0263 18.315 20.8883C18.4851 20.7503 18.5456 20.5177 18.4642 20.3143L18 20.5ZM16 15.5L15.7226 15.084C15.5259 15.2151 15.4479 15.4662 15.5358 15.6857L16 15.5ZM20.5 12.5L20.7774 12.916C20.9607 12.7938 21.0424 12.566 20.9785 12.3551C20.9147 12.1442 20.7203 12 20.5 12V12.5ZM15 12.5L14.5211 12.6437C14.5845 12.8552 14.7792 13 15 13V12.5ZM13.0211 7.35633L11.5211 12.3563L12.4789 12.6437L13.9789 7.64367L13.0211 7.35633ZM12 12H6.5V13H12V12ZM6.22265 12.916L10.7227 15.916L11.2773 15.084L6.77735 12.084L6.22265 12.916ZM10.5358 15.3143L8.53576 20.3143L9.46424 20.6857L11.4642 15.6857L10.5358 15.3143ZM9.27735 20.916L13.7773 17.916L13.2227 17.084L8.72265 20.084L9.27735 20.916ZM13.2227 17.916L17.7226 20.916L18.2774 20.084L13.7773 17.084L13.2227 17.916ZM18.4642 20.3143L16.4642 15.3143L15.5358 15.6857L17.5358 20.6857L18.4642 20.3143ZM16.2774 15.916L20.7774 12.916L20.2226 12.084L15.7226 15.084L16.2774 15.916ZM20.5 12H15V13H20.5V12ZM15.4789 12.3563L13.9789 7.35633L13.0211 7.64367L14.5211 12.6437L15.4789 12.3563Z"
-				fill="#D3DBDF"
-			/>
-		</svg>
+		<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.5 0.5L7.97891 0.356326C7.91547 0.144834 7.7208 0 7.5 0C7.2792 0 7.08453 0.144834 7.02109 0.356326L7.5 0.5ZM6 5.5V6C6.2208 6 6.41547 5.85517 6.47891 5.64367L6 5.5ZM0.5 5.5V5C0.279666 5 0.0853032 5.14423 0.021454 5.35511C-0.0423952 5.56599 0.0393213 5.79381 0.22265 5.91603L0.5 5.5ZM5 8.5L5.46424 8.6857C5.55205 8.46616 5.47408 8.21513 5.27735 8.08397L5 8.5ZM3 13.5L2.53576 13.3143C2.45442 13.5177 2.51489 13.7503 2.68496 13.8883C2.85503 14.0263 3.09512 14.0375 3.27735 13.916L3 13.5ZM7.5 10.5L7.77735 10.084C7.6094 9.97201 7.3906 9.97201 7.22265 10.084L7.5 10.5ZM12 13.5L11.7226 13.916C11.9049 14.0375 12.145 14.0263 12.315 13.8883C12.4851 13.7503 12.5456 13.5177 12.4642 13.3143L12 13.5ZM10 8.5L9.72265 8.08397C9.52592 8.21513 9.44795 8.46616 9.53576 8.6857L10 8.5ZM14.5 5.5L14.7774 5.91603C14.9607 5.79381 15.0424 5.56599 14.9785 5.35511C14.9147 5.14423 14.7203 5 14.5 5V5.5ZM9 5.5L8.52109 5.64367C8.58453 5.85517 8.7792 6 9 6V5.5ZM7.02109 0.356326L5.52109 5.35633L6.47891 5.64367L7.97891 0.643674L7.02109 0.356326ZM6 5H0.5V6H6V5ZM0.22265 5.91603L4.72265 8.91603L5.27735 8.08397L0.77735 5.08397L0.22265 5.91603ZM4.53576 8.3143L2.53576 13.3143L3.46424 13.6857L5.46424 8.6857L4.53576 8.3143ZM3.27735 13.916L7.77735 10.916L7.22265 10.084L2.72265 13.084L3.27735 13.916ZM7.22265 10.916L11.7226 13.916L12.2774 13.084L7.77735 10.084L7.22265 10.916ZM12.4642 13.3143L10.4642 8.3143L9.53576 8.6857L11.5358 13.6857L12.4642 13.3143ZM10.2774 8.91603L14.7774 5.91603L14.2226 5.08397L9.72265 8.08397L10.2774 8.91603ZM14.5 5H9V6H14.5V5ZM9.47891 5.35633L7.97891 0.356326L7.02109 0.643674L8.52109 5.64367L9.47891 5.35633Z" fill={color} />
+</svg>
+
 	)
 }
 
-export const SortArrow = ({ up = false, color }) => {
+export const SortArrow = ({ up = false, color = '#607D8B' }) => {
 	return up ? (
-		<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M13.5 9V18" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-			<path d="M17.5 13L13.5 9L9.5 13" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-		</svg>
+		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5 9V18" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.5 13L13.5 9L9.5 13" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 	) : (
-		<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M9.5 14L13.5 18L17.5 14" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-			<path d="M13.5 9V18" stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-		</svg>
+		<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5 14L13.5 18L17.5 14" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.5 9V18" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+		
 	)
 }
 
